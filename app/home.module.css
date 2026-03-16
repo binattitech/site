@@ -1,0 +1,565 @@
+/* ═══════════════════════════════════════════════════════════
+   Home — Binatti UI
+   Tokens: globals.css
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --space-12:  40px;
+  --space-16:  64px;
+  --space-18:  80px;
+  --space-21: 128px;
+  --space-23: 160px;
+  --blue-600: #2563eb;
+}
+
+/* ── Página ──────────────────────────────────────────────── */
+.page {
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Decoração flutuante sobre o hero ── */
+.heroDecorGroup5 {
+  position: absolute;
+  top: 328px;
+  left: calc(50% + 31.25px);
+  transform: translateX(-50%);
+  width: 682px;
+  height: 92px;
+  pointer-events: none;
+  z-index: 0;
+}
+.heroDecorGroup5 img { width: 100%; height: 100%; object-fit: contain; }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: center;
+  overflow: hidden;
+  padding: var(--space-16) var(--space-14);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Avatar group */
+.avatarGroup {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid #fffbf7;
+  overflow: hidden;
+  margin-right: -8px;
+  position: relative;
+  flex-shrink: 0;
+}
+.avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px;
+}
+
+/* Título hero */
+.heroTitle {
+  font-family: var(--font-family);
+  font-size: 96px;
+  line-height: 1.125;
+  letter-spacing: -2.88px;
+  color: var(--font-emphasis);
+  text-align: center;
+  width: 100%;
+}
+.heroTitleBold  { font-weight: 700; display: block; margin-bottom: 8px; }
+.heroTitleLight { font-weight: 400; display: block; }
+
+/* Subtítulo hero */
+.heroSubtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--font-default);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOLDER GROUP
+   ═══════════════════════════════════════════════════════════ */
+.folderGroup {
+  position: relative;
+  width: 100%;
+  height: 510px;
+  flex-shrink: 0;
+}
+
+.folderSlice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 270px;
+  overflow: hidden;
+}
+.folderSlice img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 271px;
+  object-fit: cover;
+}
+.folderLabel {
+  position: absolute;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.22px;
+  white-space: nowrap;
+  top: 30px;
+  transform: translateY(-50%);
+}
+.folderLabelWhite { color: white; }
+.folderLabelBlack { color: var(--font-emphasis); }
+/* center-positioned labels */
+.folderLabelCenter { left: 50%; transform: translate(-50%, -50%); }
+/* left-positioned labels */
+.folderLabelLeft   { left: 221.5px; transform: translate(-50%, -50%); }
+/* right-positioned labels */
+.folderLabelRight  { right: 220.5px; transform: translate(50%, -50%); }
+
+/* ═══════════════════════════════════════════════════════════
+   SOBRE
+   ═══════════════════════════════════════════════════════════ */
+.sobre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-21) var(--space-14);
+  width: 100%;
+}
+.sobreContent {
+  display: flex;
+  gap: var(--space-16);
+  align-items: center;
+  height: 451px;
+  width: 100%;
+}
+.sobreTxt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+}
+
+/* Heading com underline decorativo */
+.sobreHeading {
+  position: relative;
+  display: inline-grid;
+  place-items: start;
+}
+.sobreHeadingText {
+  font-family: var(--font-family);
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: var(--font-emphasis);
+  width: 556px;
+}
+.sobreHeadingRegular { font-weight: 400; display: block; margin-bottom: 8px; }
+.sobreHeadingBold    { font-weight: 700; display: block; }
+.sobreUnderline {
+  position: absolute;
+  left: 175px;
+  top: 29px;
+  width: 197px;
+  height: 8px;
+  pointer-events: none;
+}
+.sobreUnderline img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Decoração smile */
+.smileDecor {
+  position: absolute;
+  left: 377px;
+  top: 76px;
+  width: 70px;
+  height: 68px;
+  pointer-events: none;
+}
+.smileDecor img { width: 100%; height: 100%; object-fit: contain; }
+
+.sobreBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--font-default);
+  width: 100%;
+}
+
+.sobrePhoto {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  min-width: 0;
+}
+.sobrePhoto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TUTORIAIS
+   ═══════════════════════════════════════════════════════════ */
+.tutoriais {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-21) var(--space-14);
+  width: 100%;
+}
+.tutoriaisContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: flex-start;
+  width: 100%;
+}
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+.sectionTitle {
+  font-family: var(--font-family);
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: var(--font-emphasis);
+  width: 100%;
+}
+.sectionTitleRegular { font-weight: 400; }
+.sectionTitleBold    { font-weight: 700; }
+.sectionSubtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--font-emphasis);
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Decoração grlpwr */
+.grlpwrDecor {
+  position: absolute;
+  right: 0;
+  top: 22px;
+  width: 86px;
+  height: 89px;
+  pointer-events: none;
+}
+.grlpwrDecor img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Grid 3x2 de cards */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TRILHAS
+   ═══════════════════════════════════════════════════════════ */
+.trilhas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-21) var(--space-14);
+  width: 100%;
+}
+.trilhasContent {
+  display: flex;
+  gap: var(--space-16);
+  align-items: center;
+  height: 451px;
+  width: 100%;
+}
+.trilhasPhoto {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  min-width: 0;
+}
+.trilhasPhoto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.trilhasTxt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+}
+.trilhasHeading {
+  font-family: var(--font-family);
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: var(--font-emphasis);
+  width: 100%;
+}
+.trilhasBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--font-default);
+  width: 100%;
+}
+/* Decoração trilhas */
+.trilhasDecor {
+  position: absolute;
+  left: 398px;
+  top: 0;
+  width: 20px;
+  height: 52px;
+  pointer-events: none;
+}
+.trilhasDecor img { width: 100%; height: 100%; object-fit: contain; }
+
+/* ═══════════════════════════════════════════════════════════
+   ARTIGOS
+   ═══════════════════════════════════════════════════════════ */
+.artigos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-21) var(--space-14) var(--space-23);
+  width: 100%;
+}
+.artigosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: flex-start;
+  width: 100%;
+}
+.artigosHeaderTitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: var(--font-emphasis);
+  width: 100%;
+  margin-bottom: 0;
+}
+.artigosHeaderBody {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--font-emphasis);
+  max-width: 700px;
+}
+.artigosList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CTA
+   ═══════════════════════════════════════════════════════════ */
+.cta {
+  background-color: var(--blue-600);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-18) var(--space-14);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.ctaPhoto {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 730px;
+  height: 373px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ctaPhoto img {
+  position: absolute;
+  height: 133.45%;
+  width: 153.42%;
+  left: -53.42%;
+  top: -33.48%;
+  object-fit: cover;
+}
+.ctaTxt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.ctaTitle {
+  font-family: var(--font-family);
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: white;
+  width: 100%;
+}
+.ctaTitleBold    { font-weight: 700; }
+.ctaTitleRegular { font-weight: 400; }
+.ctaBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: rgba(255, 255, 255, 0.9);
+  width: 556px;
+}
+
+/* Decorativos CTA */
+.ctaDecorVector93 {
+  position: absolute;
+  left: 349px;
+  top: 48px;
+  width: 213px;
+  height: 20px;
+  pointer-events: none;
+}
+.ctaDecorGroup12 {
+  position: absolute;
+  left: 365px;
+  top: -15px;
+  width: 43px;
+  height: 29px;
+  pointer-events: none;
+}
+.ctaDecorGroup6 {
+  position: absolute;
+  right: 37px;
+  top: 83px;
+  width: 543px;
+  height: 241px;
+  pointer-events: none;
+}
+.ctaDecorGroup11 {
+  position: absolute;
+  bottom: 58px;
+  right: 564px;
+  width: 166px;
+  height: 249px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.ctaDecorGroup11Inner {
+  transform: rotate(-65.94deg);
+  width: 240px;
+  height: 74px;
+}
+.ctaDecorImg { width: 100%; height: 100%; object-fit: contain; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  align-items: flex-start;
+  padding: var(--space-14);
+  width: 100%;
+}
+.footerDivider {
+  width: 100%;
+  height: 1px;
+  background-color: #292524;
+}
+.footerMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.footerCopy {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.28px;
+  color: var(--font-default);
+  white-space: nowrap;
+}

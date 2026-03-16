@@ -1,0 +1,29 @@
+/*
+ * TagArea — Binatti UI
+ * Tokens: --font-muted, --font-default, --font-family, --space-3, --space-4
+ */
+
+:root {
+  --space-3: 4px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--font-muted);
+  border-radius: 9999px;
+  padding: var(--space-3) var(--space-4); /* 4px 8px */
+  flex-shrink: 0;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-weight: 500;                /* Medium */
+  font-size: 10px;
+  line-height: 1.04;
+  letter-spacing: -0.2px;          /* -2% de 10px */
+  color: var(--font-default);
+  text-align: center;
+  white-space: nowrap;
+}

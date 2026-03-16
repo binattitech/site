@@ -1,0 +1,115 @@
+/*
+ * Button — Binatti UI
+ * Propriedades: variant (filled | outline) × type (text | icon) × state (default | hover) × disabled
+ * Tokens: var(--action-primary-bg), var(--action-primary-fg), var(--action-outline-border),
+ *         var(--action-outline-fg), var(--shadow-button), var(--borderradius-5xs)
+ */
+
+/* ── Base ─────────────────────────────────────────────────── */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);          /* 0px — ícone e texto ficam encostados */
+  border-radius: var(--borderradius-5xs);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 600;              /* SemiBold */
+  line-height: 1.56;             /* 156% */
+  letter-spacing: -0.32px;       /* -2% de 16px */
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    box-shadow 150ms ease,
+    opacity 150ms ease;
+  position: relative;
+  background: none;
+}
+
+/* ── Tamanho text (md) ────────────────────────────────────── */
+.sizeText {
+  height: 44px;
+  padding: var(--space-4) var(--space-8);  /* 8px 24px */
+}
+
+/* ── Tamanho icon (md) ────────────────────────────────────── */
+.sizeIcon {
+  width: 44px;
+  height: 44px;
+  padding: var(--space-4);                 /* 8px */
+}
+
+/* ── Variante: filled ─────────────────────────────────────── */
+.filled {
+  background-color: var(--action-primary-bg);
+  color: var(--action-primary-fg);
+  box-shadow: var(--shadow-button);
+}
+
+.filled:hover:not(:disabled),
+.filled.stateHover:not(.disabled) {
+  /* overlay branco 10% sobre o preto */
+  background-image: linear-gradient(
+    90deg,
+    var(--foundation-white-10) 0%,
+    var(--foundation-white-10) 100%
+  );
+  box-shadow: var(--shadow-button);
+}
+
+/* ── Variante: outline ────────────────────────────────────── */
+.outline {
+  background-color: transparent;
+  color: var(--action-outline-fg);
+  border: 1px solid var(--action-outline-border);
+  box-shadow: none;
+}
+
+.outline:hover:not(:disabled),
+.outline.stateHover:not(.disabled) {
+  background-color: var(--foundation-black-10);
+}
+
+/* ── Estado desabilitado ──────────────────────────────────── */
+.button:disabled,
+.button.disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+  box-shadow: none;
+  background-image: none;
+}
+
+/* Filled disabled mantém fundo */
+.filled:disabled,
+.filled.disabled {
+  background-color: var(--action-primary-bg);
+  background-image: none;
+}
+
+/* Outline disabled mantém borda */
+.outline:disabled,
+.outline.disabled {
+  background-color: transparent;
+}
+
+/* ── Ícone interno ────────────────────────────────────────── */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Ícone no filled fica branco, no outline fica preto */
+.filled .icon {
+  color: var(--action-primary-fg);
+}
+
+.outline .icon {
+  color: var(--action-outline-fg);
+}

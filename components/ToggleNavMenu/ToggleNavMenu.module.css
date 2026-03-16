@@ -1,0 +1,46 @@
+/*
+ * ToggleNavMenu — Binatti UI
+ * Props: state (default | active)
+ * Tokens: --font-family, --font-default, --space-4, --space-6, --borderradius-lg
+ */
+
+:root {
+  --space-6: 16px;
+  --borderradius-lg: 8px;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--space-4) var(--space-6); /* 8px 16px */
+  border-radius: var(--borderradius-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.item:hover {
+  background-color: var(--foundation-black-10);
+}
+
+.label {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.28px; /* -2% de 14px */
+  color: var(--font-default);
+  white-space: nowrap;
+}
+
+/* default → medium (500) */
+.labelDefault {
+  font-weight: 500;
+}
+
+/* active → bold (700) */
+.labelActive {
+  font-weight: 700;
+}
