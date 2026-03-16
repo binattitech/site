@@ -30,9 +30,9 @@
   align-items: flex-start;
 }
 
-/* md */
+/* md — ocupa 100% da célula do grid */
 .tutorialMd {
-  width: 400px;
+  width: 100%;
 }
 
 /* sm */

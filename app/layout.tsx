@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Binatti UI",
-  description: "Binatti Community Design System",
+  title: "Binatti Community",
+  description: "Mulheres de tecnologia em comunidade",
 };
 
 export default function RootLayout({

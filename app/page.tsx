@@ -6,7 +6,7 @@ import s from "./home.module.css";
 
 /* ─── dados dos tutoriais ────────────────────────────────── */
 const TUTORIALS = [
-  { img: "/tutorial-1.png", title: "Como criar um Design System com Claude", author: "por Fulana", tag: "tutorial" },
+  { img: "/tutorial-1.png", title: "Como criar um Design System com Claude", author: "por Milena Duarte", tag: "tutorial" },
   { img: "/tutorial-2.png", title: "Acessibilidade no Figma do zero",         author: "por Ciclana", tag: "ux" },
   { img: "/tutorial-3.png", title: "Prototipando com componentes reais",       author: "por Beltrana", tag: "design" },
   { img: "/tutorial-4.png", title: "Git para designers: sem medo",             author: "por Fulana", tag: "dev" },
