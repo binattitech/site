@@ -3,6 +3,32 @@
    Tokens: globals.css
    ═══════════════════════════════════════════════════════════ */
 
+/* ── Manutenção ─────────────────────────────────────────── */
+.manutencao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background-color: #ffffff;
+}
+
+.manutencaoTexto {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.96px;
+  color: #000000;
+  text-align: center;
+  font-variation-settings: "opsz" 96, "wdth" 88;
+}
+
+@media (max-width: 768px) {
+  .manutencaoTexto {
+    font-size: clamp(32px, 8vw, 96px);
+  }
+}
+
 :root {
   --space-12:  40px;
   --space-16:  64px;
