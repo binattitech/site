@@ -1,0 +1,88 @@
+.badge {
+  --badge-bg:      transparent;
+  --badge-border:  transparent;
+  --badge-color:   var(--fg-default);
+  --badge-radius:  var(--radius-full);
+  --badge-px:      var(--space-2);
+  --badge-py:      var(--space-1);
+  --badge-font:    var(--font-family);
+  --badge-size:    var(--text-xxs-size);
+  --badge-lh:      var(--text-xxs-lh);
+  --badge-tracking: var(--text-xxs-tracking);
+  --badge-weight:  var(--font-weight-semibold);
+  --badge-transform: uppercase;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--badge-border);
+  border-radius: var(--badge-radius);
+  background: var(--badge-bg);
+  padding: var(--badge-py) var(--badge-px);
+}
+
+.label {
+  font-family: var(--badge-font);
+  font-size: var(--badge-size);
+  font-weight: var(--badge-weight);
+  line-height: var(--badge-lh);
+  letter-spacing: var(--badge-tracking);
+  color: var(--badge-color);
+  text-transform: var(--badge-transform);
+  white-space: nowrap;
+}
+
+/* ── size sm ──────────────────────────────────────────────── */
+.size-sm {
+  --badge-px:       var(--space-2);
+  --badge-py:       var(--space-1);
+  --badge-size:     var(--text-xxs-size);
+  --badge-lh:       var(--text-xxs-lh);
+  --badge-tracking: var(--text-xxs-tracking);
+}
+
+/* ── size md ──────────────────────────────────────────────── */
+.size-md {
+  --badge-px:       var(--space-3);
+  --badge-py:       var(--space-1-5);
+  --badge-size:     var(--text-xs-size);
+  --badge-lh:       var(--text-xs-lh);
+  --badge-tracking: var(--text-xs-tracking);
+  --badge-transform: none;
+}
+
+/* ── variant outline ──────────────────────────────────────── */
+.variant-outline.size-sm {
+  --badge-border: var(--fg-muted);
+  --badge-color:  var(--fg-default);
+}
+
+.variant-outline.size-md {
+  --badge-border: var(--fg-white);
+  --badge-color:  var(--fg-white);
+}
+
+/* ── variant filled ──────────────────────────────────────── */
+.variant-filled {
+  --badge-bg:     var(--violet-600);
+  --badge-color:  var(--fg-white);
+}
+
+/* ── variant mono ─────────────────────────────────────────── */
+.variant-mono {
+  --badge-font:     var(--font-mono);
+  --badge-color:    var(--red-600);
+  --badge-size:     var(--text-xs-size);
+  --badge-lh:       var(--text-xs-lh);
+  --badge-tracking: 0.02em;
+  --badge-weight:   var(--font-weight-medium);
+  --badge-px:       var(--space-0);
+  --badge-py:       var(--space-0);
+  --badge-border:   transparent;
+  --badge-transform: uppercase;
+}
+
+/* ── radius ───────────────────────────────────────────────── */
+.radius-rounded { --badge-radius: var(--radius-full); }
+.radius-square  { --badge-radius: var(--radius-6xs); }
+.radius-none    { --badge-radius: var(--radius-none); }

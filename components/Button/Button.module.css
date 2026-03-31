@@ -1,115 +1,97 @@
 /*
  * Button — Binatti UI
- * Propriedades: variant (filled | outline) × type (text | icon) × state (default | hover) × disabled
- * Tokens: var(--action-primary-bg), var(--action-primary-fg), var(--action-outline-border),
- *         var(--action-outline-fg), var(--shadow-button), var(--borderradius-5xs)
+ * variant (filled | outline) × kind (text | icon) × state (default | hover | disabled)
  */
 
-/* ── Base ─────────────────────────────────────────────────── */
 .button {
+  --button-bg:        var(--action-filled-bg-default);
+  --button-bg-hover:  var(--action-filled-bg-hover);
+  --button-color:     var(--fg-offwhite);
+  --button-border:    transparent;
+  --button-radius:    var(--radius-6xs);
+  --button-shadow:    var(--shadow-button-black);
+  --button-px:        var(--space-6);
+  --button-height:    2.75rem;
+  --button-gap:       var(--space-3);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-5);          /* 0px — ícone e texto ficam encostados */
-  border-radius: var(--borderradius-5xs);
-  border: none;
+  gap: var(--button-gap);
+  height: var(--button-height);
+  border-radius: var(--button-radius);
+  border: 1px solid var(--button-border);
   cursor: pointer;
   font-family: var(--font-family);
-  font-size: 16px;
-  font-weight: 600;              /* SemiBold */
-  line-height: 1.56;             /* 156% */
-  letter-spacing: -0.32px;       /* -2% de 16px */
+  font-size: var(--text-md-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
   white-space: nowrap;
   text-decoration: none;
   transition:
     background-color 150ms ease,
     box-shadow 150ms ease,
     opacity 150ms ease;
-  position: relative;
-  background: none;
+  background: var(--button-bg);
+  color: var(--button-color);
+  box-shadow: var(--button-shadow);
 }
 
-/* ── Tamanho text (md) ────────────────────────────────────── */
 .sizeText {
-  height: 44px;
-  padding: var(--space-4) var(--space-8);  /* 8px 24px */
+  padding: 0 var(--button-px);
 }
 
-/* ── Tamanho icon (md) ────────────────────────────────────── */
 .sizeIcon {
-  width: 44px;
-  height: 44px;
-  padding: var(--space-4);                 /* 8px */
+  --button-gap:   0px;
+  --button-px:    0px;
+  width:  var(--button-height);
+  padding: 0;
 }
 
-/* ── Variante: filled ─────────────────────────────────────── */
-.filled {
-  background-color: var(--action-primary-bg);
-  color: var(--action-primary-fg);
-  box-shadow: var(--shadow-button);
+/* ── filled states ─────────────────────────────────────────── */
+.button[data-variant="filled"]:hover:not(:disabled),
+.button[data-variant="filled"].stateHover:not(.disabled) {
+  --button-bg: var(--action-filled-bg-hover);
 }
 
-.filled:hover:not(:disabled),
-.filled.stateHover:not(.disabled) {
-  /* overlay branco 10% sobre o preto */
-  background-image: linear-gradient(
-    90deg,
-    var(--foundation-white-10) 0%,
-    var(--foundation-white-10) 100%
-  );
-  box-shadow: var(--shadow-button);
-}
-
-/* ── Variante: outline ────────────────────────────────────── */
-.outline {
-  background-color: transparent;
-  color: var(--action-outline-fg);
-  border: 1px solid var(--action-outline-border);
+/* ── outline variant ──────────────────────────────────────── */
+.button[data-variant="outline"] {
+  --button-bg:     transparent;
+  --button-border: var(--action-outline-border);
+  --button-color:  var(--fg-emphasis);
+  --button-shadow: none;
   box-shadow: none;
 }
 
-.outline:hover:not(:disabled),
-.outline.stateHover:not(.disabled) {
-  background-color: var(--foundation-black-10);
+.button[data-variant="outline"]:hover:not(:disabled),
+.button[data-variant="outline"].stateHover:not(.disabled) {
+  --button-bg: var(--action-outline-bg-hover);
 }
 
-/* ── Estado desabilitado ──────────────────────────────────── */
+/* ── disabled ─────────────────────────────────────────────── */
 .button:disabled,
 .button.disabled {
   cursor: not-allowed;
   opacity: 0.3;
-  box-shadow: none;
-  background-image: none;
 }
 
-/* Filled disabled mantém fundo */
-.filled:disabled,
-.filled.disabled {
-  background-color: var(--action-primary-bg);
-  background-image: none;
-}
-
-/* Outline disabled mantém borda */
-.outline:disabled,
-.outline.disabled {
-  background-color: transparent;
-}
-
-/* ── Ícone interno ────────────────────────────────────────── */
+/* ── icon slot (kind=icon) ────────────────────────────────── */
 .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   flex-shrink: 0;
 }
 
-/* Ícone no filled fica branco, no outline fica preto */
-.filled .icon {
-  color: var(--action-primary-fg);
-}
-
-.outline .icon {
-  color: var(--action-outline-fg);
+/* ── arrow slot (kind=text, showIcon=true) ────────────────── */
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
