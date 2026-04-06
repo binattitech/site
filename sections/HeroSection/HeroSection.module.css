@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════════
+   HeroSection
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--section-gap);
+  padding: var(--space-9) var(--section-padding-x) 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Content block ─────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+  position: relative;
+}
+
+/* ── Avatar group ──────────────────────────────────────── */
+.avatarGroup {
+  display: flex;
+  align-items: center;
+  padding-right: var(--space-2);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--fg-offwhite);
+  overflow: hidden;
+  margin-right: -8px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+}
+
+/* ── Typography ────────────────────────────────────────── */
+.title {
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: 96px;
+  font-weight: var(--font-weight-heading);
+  line-height: 0.96;
+  letter-spacing: -0.96px;
+  color: var(--fg-emphasis);
+  text-align: center;
+  width: 100%;
+  font-variation-settings: "opsz" 96, "wdth" 88;
+  white-space: pre-line;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--fg-default);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* ── Folder stack ──────────────────────────────────────── */
+.folderStack {
+  position: relative;
+  width: 100%;
+  height: 484px;
+  flex-shrink: 0;
+}
+
+.folderSlice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 270px;
+  overflow: hidden;
+}
+
+.folderSlice img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 271px;
+  object-fit: cover;
+}
+
+.folderLabel {
+  position: absolute;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.22px;
+  white-space: nowrap;
+  top: 20px;
+  transform: translateY(-50%);
+  color: var(--fg-offwhite);
+}
+
+.labelLeft {
+  left: 221.5px;
+  transform: translate(-50%, -50%);
+}
+
+.labelRight {
+  right: 220.5px;
+  transform: translate(50%, -50%);
+}
+
+.labelCenter {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.labelBlack {
+  color: var(--fg-emphasis);
+}
+
+/* ── Active folder (bottom) ────────────────────────────── */
+.folderActive {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 210px;
+  background-color: #dc2626;
+  border-radius: 0 0 20px 20px;
+  padding: var(--space-6) var(--space-12);
+  display: flex;
+  align-items: flex-start;
+  box-shadow: inset 0px -247px 96px 0px rgba(0, 0, 0, 0.25);
+}
+
+.folderActiveLabel {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.22px;
+  color: var(--fg-offwhite);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 79.938rem) {
+  .title {
+    font-size: clamp(48px, 8vw, 96px);
+  }
+}
+
+@media (max-width: 47.938rem) {
+  .title {
+    font-size: clamp(36px, 10vw, 64px);
+  }
+
+  .folderStack {
+    height: 380px;
+  }
+
+  .folderLabel {
+    font-size: 16px;
+  }
+
+  .labelLeft {
+    left: 120px;
+  }
+
+  .labelRight {
+    right: 120px;
+  }
+}

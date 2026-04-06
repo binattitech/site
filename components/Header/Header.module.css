@@ -1,104 +1,117 @@
 /*
  * Header — Binatti UI
- * Sizes: lg (1248px) | md (768px) | sm (320px)
- * Tokens: --bg, --font-family, --space-4/5/6/7/8/10/14, --borderradius-lg
+ * Totalmente responsivo via media queries — sem prop "size"
  */
-
-:root {
-  --space-7:  20px;
-  --space-10: 32px;
-  --space-14: 48px;
-}
 
 /* ── Wrapper externo ──────────────────────────────────────── */
 .header {
-  background-color: var(--bg);
+  --header-bg: var(--bg-default);
+
+  background-color: var(--header-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+
+  /* desktop default */
+  padding: var(--space-3) var(--space-16);
 }
 
-/* ── Variantes de tamanho ─────────────────────────────────── */
-.sizeLg { padding: var(--space-5) var(--space-14); } /* 12px 48px */
-.sizeMd { padding: var(--space-5) var(--space-10); } /* 12px 32px */
-.sizeSm { padding: var(--space-4) var(--space-7);  } /* 8px  20px */
-
-/* ── Barra interna (nav) ──────────────────────────────────── */
+/* ── Barra interna ────────────────────────────────────────── */
 .nav {
   flex: 1;
-  min-width: 0;
   position: relative;
-  border-radius: var(--borderradius-lg);
-}
-
-/* lg/md: altura fixa para alinhar logo, menu e botões */
-.navLg,
-.navMd {
-  height: 48px;
-}
-
-/* sm: flex row logo + hamburger */
-.navSm {
+  height: var(--space-11); /* 44px */
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* ── Logo ─────────────────────────────────────────────────── */
 .logo {
-  width: 86px;
-  height: 48px;
-  flex-shrink: 0;
-  position: relative;
-}
-
-/* lg/md: logo posicionado no canto esquerdo */
-.logoAbsolute {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
 }
 
-.logo img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.logoImg {
+  height: var(--space-11); /* 44px */
+  width: auto;
+  display: block;
 }
 
-/* ── Menu central (lg + md) ───────────────────────────────── */
+/* ── Menu central ─────────────────────────────────────────── */
 .menu {
   position: absolute;
   left: 50%;
-  top: 0;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  height: 48px;
+  gap: var(--space-2);
 }
 
-/* ── Ações direita ────────────────────────────────────────── */
-/* lg: dois botões texto */
+/* ── Botões de ação (lg) ──────────────────────────────────── */
 .actions {
-  position: absolute;
-  right: 0;
-  top: 2px;
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-/* md/sm: um botão ícone */
-.iconAction {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
-.iconActionInline {
-  flex-shrink: 0;
+/* ── Hamburger (md + sm) — oculto no desktop ──────────────── */
+.hamburger {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+/* ── Tablet (768px – 1279px) ──────────────────────────────── */
+@media (max-width: 79.938rem) {
+  .header {
+    padding: var(--space-3) var(--space-12);
+  }
+
+  .actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ── Mobile (até 767px) ───────────────────────────────────── */
+@media (max-width: 47.938rem) {
+  .header {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  /* nav vira flex row: logo à esq, hamburger à dir */
+  .nav {
+    height: auto;
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    position: static;
+    transform: none;
+  }
 }

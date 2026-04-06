@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { ArrowRight } from "@phosphor-icons/react";
 import TagArea from "@/components/TagArea";
 import styles from "./Card.module.css";
 
@@ -20,28 +23,6 @@ export interface CardProps {
   imageAlt?: string;
   className?: string;
   onClick?: () => void;
-}
-
-/* ── Seta direita (articles md) ────────────────────────────── */
-function ArrowRight({ size }: { size: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 10H16M16 10L11 5M16 10L11 15"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
 }
 
 export default function Card({

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { SunDim, MoonStars } from "@phosphor-icons/react";
+import Switch from "@/components/Switch";
 import styles from "./SwitchGroup.module.css";
 
 export type SwitchGroupMode = "light" | "dark";
@@ -25,31 +26,20 @@ export default function SwitchGroup({
       className={[styles.group, className ?? ""].filter(Boolean).join(" ")}
       data-active={activeMode}
     >
-      {/* Claro */}
-      <button
-        className={styles.tab}
-        data-active={isLight}
+      <Switch
+        label="claro"
+        state={isLight ? "active" : "default"}
+        icon={<SunDim size={16} color={isLight ? "var(--fg-offwhite)" : "var(--fg-emphasis)"} />}
         onClick={() => onToggle?.("light")}
         aria-pressed={isLight}
-      >
-        <span className={styles.tabIcon} aria-hidden="true">
-          <SunDim size={16} color={isLight ? "var(--fg-offwhite)" : "var(--fg-emphasis)"} />
-        </span>
-        <span className={styles.tabLabel}>claro</span>
-      </button>
-
-      {/* Escuro */}
-      <button
-        className={styles.tab}
-        data-active={isDark}
+      />
+      <Switch
+        label="escuro"
+        state={isDark ? "active" : "default"}
+        icon={<MoonStars size={16} color={isDark ? "var(--fg-offwhite)" : "var(--fg-emphasis)"} />}
         onClick={() => onToggle?.("dark")}
         aria-pressed={isDark}
-      >
-        <span className={styles.tabIcon} aria-hidden="true">
-          <MoonStars size={16} color={isDark ? "var(--fg-offwhite)" : "var(--fg-emphasis)"} />
-        </span>
-        <span className={styles.tabLabel}>escuro</span>
-      </button>
+      />
     </div>
   );
 }

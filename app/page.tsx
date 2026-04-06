@@ -1,9 +1,25 @@
-import s from "./home.module.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import HeroSection from "@/sections/HeroSection";
+import SobreSection from "@/sections/SobreSection";
+import TutoriaisSection from "@/sections/TutoriaisSection";
+import TrilhasSection from "@/sections/TrilhasSection";
+import ArtigosSection from "@/sections/ArtigosSection";
+import CTASection from "@/sections/CTASection";
 
 export default function Home() {
   return (
-    <main className={s.manutencao}>
-      <p className={s.manutencaoTexto}>Ainda estou fazendo o design</p>
-    </main>
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+        <SobreSection />
+        <TutoriaisSection />
+        <TrilhasSection />
+        <ArtigosSection />
+        <CTASection />
+      </main>
+      <Footer />
+    </>
   );
 }

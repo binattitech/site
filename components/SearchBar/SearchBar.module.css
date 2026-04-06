@@ -1,0 +1,99 @@
+/*
+ * SearchBar — Binatti UI
+ * state (default | hover | typing)
+ */
+
+.container {
+  --searchbar-bg:     var(--bg-default);
+  --searchbar-border: var(--action-outline-border);
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-6);
+  border: 1px solid var(--searchbar-border);
+  border-radius: var(--radius-none);
+  background: var(--searchbar-bg);
+  overflow: hidden;
+  width: 100%;
+}
+
+.container.hover,
+.container[data-state="hover"] {
+  --searchbar-bg: var(--action-outline-bg-hover);
+}
+
+/* ── Input (estado typing) ───────────────────────────────── */
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-size: var(--text-md-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
+  color: var(--fg-default);
+}
+
+/* ── Placeholder button (estados default e hover) ─────── */
+.placeholderBtn {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: text;
+  padding: 0;
+}
+
+.placeholderText {
+  font-family: var(--font-family);
+  font-size: var(--text-md-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
+  color: var(--fg-muted);
+}
+
+.placeholderBold {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ── Botão limpar (X) ────────────────────────────────────── */
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+/* ── Botão buscar ────────────────────────────────────────── */
+.searchBtn {
+  --btn-bg: var(--action-filled-bg-default);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: none;
+  border-radius: var(--radius-6xs);
+  background: var(--btn-bg);
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-button-black);
+  transition: background-color 150ms ease;
+}
+
+.searchBtn:hover {
+  --btn-bg: var(--action-filled-bg-hover);
+}

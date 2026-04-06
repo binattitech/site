@@ -1,0 +1,17 @@
+/*
+ * SwitchGroup — Binatti UI
+ * Container que agrupa dois <Switch> (claro / escuro).
+ * Estilos dos itens internos são de responsabilidade do Switch.
+ */
+
+.group {
+  --group-border: var(--action-outline-border);
+  --group-radius: var(--radius-4-5xs);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border: 1px solid var(--group-border);
+  border-radius: var(--group-radius);
+}

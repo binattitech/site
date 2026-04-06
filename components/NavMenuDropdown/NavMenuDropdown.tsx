@@ -61,7 +61,6 @@ export default function NavMenuDropdown({
               key={item.label}
               content={item.label}
               state={item.active ? "active" : "default"}
-              className={styles.navItem}
               onClick={item.href ? () => { window.location.href = item.href! } : undefined}
             />
           ))}
@@ -74,14 +73,12 @@ export default function NavMenuDropdown({
           variant="outline"
           kind="text"
           content={volunteerLabel}
-          className={styles.ctaButton}
           onClick={onVolunteer}
         />
         <Button
           variant="filled"
           kind="text"
           content={studyLabel}
-          className={styles.ctaButton}
           onClick={onStudy}
         />
       </div>

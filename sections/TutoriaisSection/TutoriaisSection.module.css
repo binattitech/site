@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════════════════════════
+   TutoriaisSection
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ── Section header ────────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: 64px;
+  font-weight: var(--font-weight-heading);
+  line-height: 0.96;
+  letter-spacing: -0.64px;
+  color: var(--fg-emphasis);
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--fg-default);
+  max-width: 700px;
+}
+
+/* ── Card grid 3×2 ─────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 79.938rem) {
+  .heading { font-size: 48px; }
+  .grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 47.938rem) {
+  .heading { font-size: 36px; }
+  .grid    { grid-template-columns: 1fr; }
+}

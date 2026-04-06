@@ -3,19 +3,13 @@
  * variant: tutorial | articles
  * size:    md | sm
  * states:  default | hover
- *
- * Tokens: --bg, --action-outline-border, --font-emphasis, --font-default,
- *         --font-mono, --red-600, --space-4/6/7/10
  */
-
-:root {
-  --red-600: #dc2626;
-  --space-7: 20px;
-}
 
 /* ── Base ─────────────────────────────────────────────────── */
 .card {
-  border: 1px solid var(--action-outline-border);
+  --card-border: var(--action-outline-border);
+
+  border: 1px solid var(--card-border);
   display: flex;
   position: relative;
   transition: padding 150ms ease, border-width 150ms ease;
@@ -25,19 +19,19 @@
    TUTORIAL
    ════════════════════════════════════════════════════════════ */
 .tutorial {
-  background-color: var(--bg);
+  --card-bg: var(--bg-default);
+
+  background-color: var(--card-bg);
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* md — ocupa 100% da célula do grid */
 .tutorialMd {
   width: 100%;
 }
 
-/* sm */
 .tutorialSm {
-  width: 100%;           /* ocupa o container disponível */
+  width: 100%;
 }
 
 /* hover: borda ligeiramente mais espessa */
@@ -64,38 +58,42 @@
 
 /* ── Área de texto do tutorial ── */
 .textArea {
-  border-top: 1px solid var(--action-outline-border);
+  border-top: 1px solid var(--card-border);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);   /* 8px */
+  gap: var(--space-2);   /* 8px */
   align-items: flex-start;
   width: 100%;
   flex-shrink: 0;
 }
 
-.textAreaMd { padding: var(--space-10); }   /* 32px */
-.textAreaSm { padding: var(--space-7);  }   /* 20px */
+.textAreaMd { padding: var(--space-8);  }  /* 32px */
+.textAreaSm { padding: var(--space-5);  }  /* 20px */
 
 /* ── Etiqueta categoria (mono, uppercase, vermelho) ── */
 .category {
+  --category-color: var(--red-600);
+
   font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 1.44;
-  letter-spacing: 0.2px;        /* +2% de 10px */
-  color: var(--red-600);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-xxs-size);
+  line-height: var(--text-mono-upper-lh);
+  letter-spacing: var(--text-mono-upper-tracking);
+  color: var(--category-color);
   text-transform: uppercase;
   width: 100%;
 }
 
 /* ── Título tutorial md ── */
 .titleMd {
+  --title-color: var(--fg-emphasis);
+
   font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 1.28;
-  letter-spacing: -0.28px;      /* -1% de 28px */
-  color: var(--font-emphasis);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-3xl-size);
+  line-height: var(--text-3xl-lh);
+  letter-spacing: var(--text-3xl-tracking);
+  color: var(--title-color);
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
@@ -103,12 +101,14 @@
 
 /* ── Título tutorial sm ── */
 .titleSm {
+  --title-color: var(--fg-emphasis);
+
   font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.44;
-  letter-spacing: -0.4px;       /* -2% de 20px */
-  color: var(--font-emphasis);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
+  color: var(--title-color);
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
@@ -124,12 +124,14 @@
 }
 
 .author {
+  --author-color: var(--fg-default);
+
   font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.36;
-  letter-spacing: 0;
-  color: var(--font-default);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-lh);
+  letter-spacing: var(--text-xs-tracking);
+  color: var(--author-color);
   flex: 1;
   min-width: 0;
 }
@@ -141,7 +143,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid var(--action-outline-border);
+  border-bottom: 1px solid var(--card-border);
   background: transparent;
 }
 
@@ -149,32 +151,32 @@
 .articlesMd {
   flex-direction: row;
   align-items: center;
-  gap: var(--space-6);              /* 16px */
-  padding: var(--space-10) 0;       /* 32px 0 */
+  gap: var(--space-4);              /* 16px */
+  padding: var(--space-8) 0;        /* 32px 0 */
   width: 100%;
 }
 
 .articlesMdHover {
-  padding-left: var(--space-10);    /* 32px — desloca conteúdo no hover */
+  padding-left: var(--space-8);     /* 32px — desloca conteúdo no hover */
 }
 
 /* sm: coluna */
 .articlesSm {
   flex-direction: column;
   gap: 0;
-  padding: var(--space-7) 0;        /* 20px 0 */
+  padding: var(--space-5) 0;        /* 20px 0 */
   width: 100%;
 }
 
 .articlesSmHover {
-  padding-left: var(--space-7);     /* 20px — desloca conteúdo no hover */
+  padding-left: var(--space-5);     /* 20px — desloca conteúdo no hover */
 }
 
 /* ── Bloco de cabeçalho do artigo ── */
 .articleHeader {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);              /* 8px */
+  gap: var(--space-2);              /* 8px */
   align-items: flex-start;
 }
 
@@ -192,7 +194,7 @@
 .articleCategoryRow {
   display: flex;
   align-items: center;
-  gap: var(--space-4);              /* 8px */
+  gap: var(--space-2);              /* 8px */
   width: 100%;
 }
 
@@ -203,12 +205,14 @@
 
 /* ── Título article md ── */
 .articleTitleMd {
+  --title-color: var(--fg-emphasis);
+
   font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 1.28;
-  letter-spacing: -0.28px;
-  color: var(--font-emphasis);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-3xl-size);
+  line-height: var(--text-3xl-lh);
+  letter-spacing: var(--text-3xl-tracking);
+  color: var(--title-color);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -217,12 +221,14 @@
 
 /* ── Título article sm ── */
 .articleTitleSm {
+  --title-color: var(--fg-emphasis);
+
   font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.44;
-  letter-spacing: -0.4px;
-  color: var(--font-emphasis);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
+  color: var(--title-color);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -231,11 +237,14 @@
 
 /* ── Seta direita (articles md) ── */
 .arrow {
+  --arrow-color: var(--fg-emphasis);
+
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--arrow-color);
 }
 
-.arrowDefault { width: 20px; height: 20px; }
-.arrowHover   { width: 24px; height: 24px; }
+.arrowDefault { width: var(--space-5);  height: var(--space-5);  }  /* 20px */
+.arrowHover   { width: var(--space-6);  height: var(--space-6);  }  /* 24px */

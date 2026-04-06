@@ -1,29 +1,29 @@
 /*
  * TagArea — Binatti UI
- * Tokens: --font-muted, --font-default, --font-family, --space-3, --space-4
  */
 
-:root {
-  --space-3: 4px;
-}
-
 .tag {
+  --tag-border:  var(--fg-muted);
+  --tag-radius:  var(--radius-full);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--font-muted);
-  border-radius: 9999px;
-  padding: var(--space-3) var(--space-4); /* 4px 8px */
+  border: 1px solid var(--tag-border);
+  border-radius: var(--tag-radius);
+  padding: var(--space-1) var(--space-2); /* 4px 8px */
   flex-shrink: 0;
 }
 
 .label {
+  --tag-color: var(--fg-default);
+
   font-family: var(--font-family);
-  font-weight: 500;                /* Medium */
-  font-size: 10px;
-  line-height: 1.04;
-  letter-spacing: -0.2px;          /* -2% de 10px */
-  color: var(--font-default);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-xxs-size);
+  line-height: var(--text-xxs-lh);
+  letter-spacing: var(--text-xxs-tracking);
+  color: var(--tag-color);
   text-align: center;
   white-space: nowrap;
 }

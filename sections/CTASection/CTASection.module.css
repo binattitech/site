@@ -1,0 +1,173 @@
+/*
+ * CTASection — Binatti Community
+ * Blue background section with group photo and call-to-action.
+ */
+
+.section {
+  /* Component variables */
+  --cta-bg:             var(--blue-600);
+  --cta-heading-color:  var(--white);
+  --cta-body-color:     var(--white-80);
+  --cta-padding-x:      var(--section-padding-x);
+  --cta-padding-y:      var(--space-32);
+  --cta-content-gap:    var(--section-content-gap);
+  --cta-paragraph-gap:  var(--section-paragraph-gap);
+
+  position: relative;
+  overflow: hidden;
+  background: var(--cta-bg);
+  padding: var(--cta-padding-y) var(--cta-padding-x);
+}
+
+/* ── Photo — positioned absolute bottom-right ─────────────── */
+.photo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 730px;
+  height: 373px;
+  pointer-events: none;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* ── Content wrapper — full width, relative for decorations ── */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cta-content-gap);
+  width: 100%;
+}
+
+/* ── Heading wrapper — relative to contain inline decorations ─ */
+.headingWrapper {
+  position: relative;
+  max-width: 600px;
+}
+
+.heading {
+  --heading-color:      var(--cta-heading-color);
+  --heading-size:       var(--text-6xl-size);
+  --heading-lh:         var(--text-grotesque-lh);
+  --heading-tracking:   var(--text-grotesque-tracking-6xl);
+
+  font-family:    var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-weight:    var(--font-weight-heading);
+  font-size:      var(--heading-size);
+  line-height:    var(--heading-lh);
+  letter-spacing: var(--heading-tracking);
+  color:          var(--heading-color);
+  font-variation-settings: 'opsz' 96, 'wdth' 88;
+  margin: 0;
+}
+
+/* Crown decoration — above "nome" on first line */
+.decorCrown {
+  position: absolute;
+  top: 47px;
+  left: 94px;
+  width: 46px;
+  height: 35px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Green underline — below second heading line */
+.decorUnderline {
+  position: absolute;
+  top: 126px;
+  left: 100px;
+  width: 225px;
+  height: 25px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Body text ─────────────────────────────────────────────── */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cta-paragraph-gap);
+  max-width: 500px;
+}
+
+.paragraph {
+  --p-color:    var(--cta-body-color);
+  --p-size:     var(--text-xl-size);
+  --p-lh:       var(--text-xl-lh);
+  --p-tracking: var(--text-xl-tracking);
+
+  font-family:    var(--font-family);
+  font-weight:    var(--font-weight-regular);
+  font-size:      var(--p-size);
+  line-height:    var(--p-lh);
+  letter-spacing: var(--p-tracking);
+  color:          var(--p-color);
+  margin: 0;
+}
+
+.paragraph strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--cta-body-color);
+}
+
+/* ── Decorative doodle group (overlays photo area) ─────────── */
+.decorGroup {
+  position: absolute;
+  top: 231px;
+  right: 20px;
+  width: 543px;
+  height: 241px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Responsive — Tablet ───────────────────────────────────── */
+@media (max-width: 79.938rem) {
+  .section {
+    --cta-padding-y: var(--space-20);
+  }
+
+  .photo {
+    width: 480px;
+    height: 300px;
+  }
+
+  .decorGroup {
+    width: 380px;
+    height: 170px;
+  }
+}
+
+/* ── Responsive — Mobile ───────────────────────────────────── */
+@media (max-width: 47.938rem) {
+  .section {
+    --cta-padding-y: var(--space-12);
+  }
+
+  .heading {
+    --heading-size: var(--text-4xl-size);
+  }
+
+  .photo {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    right: auto;
+    bottom: auto;
+  }
+
+  .decorGroup,
+  .decorCrown,
+  .decorUnderline {
+    display: none;
+  }
+}

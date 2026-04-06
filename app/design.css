@@ -237,6 +237,8 @@
   --font-weight-semibold:   600;
   --font-weight-bold:       700;
   --font-weight-extrabold:  800; /* Bricolage Grotesque only */
+  --font-weight-heading:    var(--font-weight-extrabold); /* padrão para todos os headings */
+  --font-variation-heading: 'wdth' 88, 'opsz' 96;        /* width 88, optical size 96 — Bricolage Grotesque */
 
 
   /* ============================================================
@@ -308,7 +310,7 @@
 
   /* Grotesque heading variant (Bricolage Grotesque ExtraBold)
      Line-height is always 96% for display headings */
-  --text-grotesque-lh:       96%;
+  --text-grotesque-lh: 96%;
   --text-grotesque-tracking-xl:  0.04em;   /* xl grotesque */
   --text-grotesque-tracking-2xl: 0.04em;   /* 2xl grotesque */
   --text-grotesque-tracking-3xl: 0.02em;   /* 3xl grotesque */
@@ -443,6 +445,33 @@
   --section-lg-content-gap:    var(--space-8);   /* 2rem */
   --section-lg-paragraph-gap:  var(--space-4);   /* 1rem */
 
+  /* Tokens responsivos — usados diretamente nas sections */
+  --section-padding-x:      var(--section-lg-padding-x);
+  --section-padding-y:      var(--section-lg-padding-y);
+  --section-gap:            var(--section-lg-layout-gap);
+  --section-content-gap:    var(--section-lg-content-gap);
+  --section-paragraph-gap:  var(--section-lg-paragraph-gap);
+
+}
+
+@media (max-width: 79.938rem) {
+  :root {
+    --section-padding-x:      var(--section-md-padding-x);
+    --section-padding-y:      var(--section-md-padding-y);
+    --section-gap:            var(--section-md-layout-gap);
+    --section-content-gap:    var(--section-md-content-gap);
+    --section-paragraph-gap:  var(--section-md-paragraph-gap);
+  }
+}
+
+@media (max-width: 47.938rem) {
+  :root {
+    --section-padding-x:      var(--section-sm-padding-x);
+    --section-padding-y:      var(--section-sm-padding-y);
+    --section-gap:            var(--section-sm-layout-gap);
+    --section-content-gap:    var(--section-sm-content-gap);
+    --section-paragraph-gap:  var(--section-sm-paragraph-gap);
+  }
 }
 
 

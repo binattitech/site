@@ -1,0 +1,89 @@
+/* ═══════════════════════════════════════════════════════════
+   SobreSection
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  gap: var(--section-gap);
+  align-items: center;
+  width: 100%;
+}
+
+/* ── Text column ───────────────────────────────────────── */
+.txt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-content-gap);
+  align-items: flex-start;
+  position: relative;
+  min-width: 0;
+}
+
+.heading {
+  --heading-size: 64px;
+
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: var(--heading-size);
+  font-weight: var(--font-weight-heading);
+  line-height: 0.96;
+  letter-spacing: -0.64px;
+  color: var(--fg-emphasis);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-paragraph-gap);
+  width: 100%;
+}
+
+.paragraph {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--fg-default);
+}
+
+/* ── Photo column ──────────────────────────────────────── */
+.photo {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  min-width: 0;
+  align-self: stretch;
+}
+
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 79.938rem) {
+  .heading { --heading-size: 48px; }
+}
+
+@media (max-width: 47.938rem) {
+  .content { flex-direction: column; }
+  .heading { --heading-size: 36px; }
+  .photo {
+    width: 100%;
+    align-self: auto;
+    aspect-ratio: 4 / 3;
+  }
+}

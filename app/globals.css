@@ -1,54 +1,8 @@
 /*
- * Design Tokens — gerados a partir de tokens.json (Binatti UI)
- * Fonte dos valores: Semantic Colors/Mode 1
+ * globals.css — Binatti Community
+ * CSS reset e estilos base apenas.
+ * Todos os tokens ficam em design.css.
  */
-
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@500&family=DM+Sans:wght@400;500;600;700&display=swap");
-
-:root {
-  /* ── Primitivos ───────────────────────────────────────── */
-  --black: #000000;
-  --white: #ffffff;
-
-  /* Stone palette (Tailwind) */
-  --stone-text-600: #57534e;
-  --stone-text-400: #a8a29e;
-
-  /* ── Semânticos de cor ────────────────────────────────── */
-  --action-primary-bg: var(--black);
-  --action-primary-fg: var(--white);
-
-  --action-outline-border: var(--black);
-  --action-outline-fg: var(--black);
-
-  --font-emphasis: var(--black);
-  --font-default: var(--stone-text-600);
-  --font-muted: var(--stone-text-400);
-
-  --bg: #fffbed;
-
-  /* Hover overlay sobre filled */
-  --foundation-black-10: rgba(0, 0, 0, 0.1);
-  --foundation-white-10: rgba(255, 255, 255, 0.1);
-
-  /* ── Sombras ──────────────────────────────────────────── */
-  /* shadow/button */
-  --shadow-button:
-    0px 1px 3px 0px rgba(0, 0, 0, 0.05),
-    0px 2px 1px 0px rgba(0, 0, 0, 0.05);
-
-  /* ── Espaçamentos ─────────────────────────────────────── */
-  --space-4: 8px;   /* space-4 */
-  --space-5: 0px;   /* space-5 (gap dentro do button) */
-  --space-8: 24px;  /* space-8 */
-
-  /* ── Border radius ────────────────────────────────────── */
-  --borderradius-5xs: 4px;
-
-  /* ── Tipografia ───────────────────────────────────────── */
-  --font-family: "DM Sans", sans-serif;
-  --font-mono: "DM Mono", monospace;
-}
 
 *,
 *::before,
@@ -60,8 +14,8 @@
 
 html,
 body {
-  background-color: var(--bg);
-  color: var(--font-emphasis);
+  background-color: var(--bg-default);
+  color: var(--fg-emphasis);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
 }
