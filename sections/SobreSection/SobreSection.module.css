@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--section-padding-y) var(--section-padding-x);
+  padding: var(--section-padding-y);
   width: 100%;
 }
 

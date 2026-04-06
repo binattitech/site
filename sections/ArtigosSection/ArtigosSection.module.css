@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--section-padding-y) var(--section-padding-x);
+  padding: var(--section-padding-x) var(--section-padding-y);
   width: 100%;
 }
 
@@ -57,9 +57,13 @@
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 79.938rem) {
-  .heading { font-size: 48px; }
+  .heading {
+    font-size: 48px;
+  }
 }
 
 @media (max-width: 47.938rem) {
-  .heading { font-size: 36px; }
+  .heading {
+    font-size: 36px;
+  }
 }

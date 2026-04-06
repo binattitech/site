@@ -8,15 +8,13 @@
   --cta-bg:             var(--blue-600);
   --cta-heading-color:  var(--white);
   --cta-body-color:     var(--white-80);
-  --cta-padding-x:      var(--section-padding-x);
-  --cta-padding-y:      var(--space-32);
   --cta-content-gap:    var(--section-content-gap);
   --cta-paragraph-gap:  var(--section-paragraph-gap);
 
   position: relative;
   overflow: hidden;
   background: var(--cta-bg);
-  padding: var(--cta-padding-y) var(--cta-padding-x);
+  padding: var(--section-padding-x) var(--section-padding-y);
 }
 
 /* ── Photo — positioned absolute bottom-right ─────────────── */

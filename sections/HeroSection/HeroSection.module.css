@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   gap: var(--section-gap);
-  padding: var(--space-9) var(--section-padding-x) 0;
+  padding: var(--space-9) var(--section-padding-y) 0;
   width: 100%;
   overflow: hidden;
   position: relative;

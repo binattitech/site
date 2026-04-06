@@ -4,7 +4,7 @@
  */
 
 .item {
-  --toggle-radius:   var(--radius-4xs);
+  --toggle-radius:   var(--radius-6xs);
   --toggle-bg-hover: var(--action-outline-bg-hover);
 
   display: inline-flex;
