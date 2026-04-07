@@ -7,7 +7,7 @@
 .header {
   --header-bg: var(--bg-default);
 
-  background-color: var(--header-bg);
+
   display: flex;
   align-items: center;
   justify-content: center;
