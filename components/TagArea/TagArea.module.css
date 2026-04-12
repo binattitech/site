@@ -20,7 +20,7 @@
 
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-xxs-size);
+  font-size: var(--text-xs-size);
   line-height: var(--text-xxs-lh);
   letter-spacing: var(--text-xxs-tracking);
   color: var(--tag-color);

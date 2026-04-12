@@ -76,7 +76,7 @@
 
   font-family: var(--font-mono);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-xxs-size);
+  font-size: var(--text-xs-size);
   line-height: var(--text-mono-upper-lh);
   letter-spacing: var(--text-mono-upper-tracking);
   color: var(--category-color);
@@ -105,13 +105,21 @@
 
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-xl-size);
-  line-height: var(--text-xl-lh);
-  letter-spacing: var(--text-xl-tracking);
+  font-size: var(--text-md-size); /* mobile: 16px */
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
   color: var(--title-color);
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+}
+
+@media (min-width: 80rem) {
+  .titleSm {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-lh);
+    letter-spacing: var(--text-xl-tracking);
+  }
 }
 
 /* ── Meta info (author + tag) ── */
@@ -225,14 +233,22 @@
 
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-xl-size);
-  line-height: var(--text-xl-lh);
-  letter-spacing: var(--text-xl-tracking);
+  font-size: var(--text-md-size); /* mobile: 16px */
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
   color: var(--title-color);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+}
+
+@media (min-width: 80rem) {
+  .articleTitleSm {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-lh);
+    letter-spacing: var(--text-xl-tracking);
+  }
 }
 
 /* ── Seta direita (articles md) ── */

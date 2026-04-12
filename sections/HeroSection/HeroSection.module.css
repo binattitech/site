@@ -54,10 +54,10 @@
 .title {
   font-family: var(--font-heading);
   font-variation-settings: var(--font-variation-heading);
-  font-size: 96px;
+  font-size: var(--text-7xl-size); /* mobile: 4rem=64px | desktop: 6rem=96px */
   font-weight: var(--font-weight-heading);
-  line-height: 0.96;
-  letter-spacing: -0.96px;
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: -0.01em;
   color: var(--fg-emphasis);
   text-align: center;
   width: 100%;
@@ -67,10 +67,10 @@
 
 .subtitle {
   font-family: var(--font-family);
-  font-size: 20px;
+  font-size: var(--text-md-size); /* mobile: 16px */
   font-weight: 400;
-  line-height: 1.44;
-  letter-spacing: -0.4px;
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
   color: var(--fg-default);
   text-align: center;
   max-width: 600px;
@@ -81,7 +81,7 @@
 .folderStack {
   position: relative;
   width: 100%;
-  height: 484px;
+  height: 380px; /* mobile */
   flex-shrink: 0;
 }
 
@@ -106,9 +106,9 @@
   position: absolute;
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 22px;
-  line-height: 1.2;
-  letter-spacing: -0.22px;
+  font-size: var(--text-md-size); /* mobile: 16px */
+  line-height: var(--text-2xl-lh);
+  letter-spacing: var(--text-2xl-tracking);
   white-space: nowrap;
   top: 20px;
   transform: translateY(-50%);
@@ -116,12 +116,12 @@
 }
 
 .labelLeft {
-  left: 221.5px;
+  left: 120px; /* mobile */
   transform: translate(-50%, -50%);
 }
 
 .labelRight {
-  right: 220.5px;
+  right: 120px; /* mobile */
   transform: translate(50%, -50%);
 }
 
@@ -152,44 +152,24 @@
 .folderActiveLabel {
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 22px;
-  line-height: 1.2;
-  letter-spacing: -0.22px;
+  font-size: var(--text-md-size); /* mobile: 16px */
+  line-height: var(--text-2xl-lh);
+  letter-spacing: var(--text-2xl-tracking);
   color: var(--fg-offwhite);
 }
 
 /* ── Responsive ────────────────────────────────────────── */
-@media (max-width: 79.938rem) {
-  .title {
-    font-size: clamp(48px, 8vw, 96px);
-  }
+@media (min-width: 48rem) {
+  .folderStack { height: 484px; }
 
-  .subtitle {
-    font-size: 16px;
-  }
+  .folderLabel { font-size: var(--text-2xl-size); } /* 22px */
+
+  .labelLeft  { left: 221.5px; }
+  .labelRight { right: 220.5px; }
+
+  .folderActiveLabel { font-size: var(--text-2xl-size); } /* 22px */
 }
 
-@media (max-width: 47.938rem) {
-  .title {
-    font-size: clamp(36px, 10vw, 64px);
-  }
-
-  .folderStack {
-    height: 380px;
-  }
-
-  .folderLabel {
-    font-size: 16px;
-  }
-
-  .labelLeft {
-    left: 120px;
-  }
-
-  .labelRight {
-    right: 120px;
-  }
-    .subtitle {
-      font-size: 16px;
-    }
+@media (min-width: 80rem) {
+  .subtitle { font-size: var(--text-xl-size); } /* 20px */
 }

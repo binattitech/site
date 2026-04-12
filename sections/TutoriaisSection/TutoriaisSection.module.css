@@ -32,19 +32,19 @@
 .heading {
   font-family: var(--font-heading);
   font-variation-settings: var(--font-variation-heading);
-  font-size: 64px;
+  font-size: var(--text-5xl-size); /* mobile: 36px | tablet: 48px */
   font-weight: var(--font-weight-heading);
-  line-height: 0.96;
-  letter-spacing: -0.64px;
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-6xl);
   color: var(--fg-emphasis);
 }
 
 .subtitle {
   font-family: var(--font-family);
-  font-size: 20px;
+  font-size: var(--text-md-size); /* mobile: 16px */
   font-weight: 400;
-  line-height: 1.44;
-  letter-spacing: -0.4px;
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
   color: var(--fg-default);
   max-width: 700px;
 }
@@ -52,17 +52,17 @@
 /* ── Card grid 3×2 ─────────────────────────────────────── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr; /* mobile: 1 col */
   width: 100%;
 }
 
 /* ── Responsive ────────────────────────────────────────── */
-@media (max-width: 79.938rem) {
-  .heading { font-size: 48px; }
-  .grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 48rem) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 47.938rem) {
-  .heading { font-size: 36px; }
-  .grid    { grid-template-columns: 1fr; }
+@media (min-width: 80rem) {
+  .heading  { font-size: var(--text-6xl-size); } /* 64px */
+  .subtitle { font-size: var(--text-xl-size);  } /* 20px */
+  .grid     { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

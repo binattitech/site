@@ -41,9 +41,10 @@ export default function ArtigosSection() {
         <div className={styles.header}>
           <h2 className={styles.heading}>Artigos</h2>
           <p className={styles.subtitle}>
-            Conhecimento que fica na cabeça de uma pessoa não serve pra
-            comunidade. Aqui cada membra escreve o que aprendeu e o que você
-            encontra foi testado na prática, não copiado de documentação.
+            Conhecimento que fica na cabeça de uma pessoa{" "}
+            <strong>não serve pra comunidade</strong>. Aqui cada membra escreve
+            o que aprendeu e o que você encontra foi testado na prática,{" "}
+            <strong>não copiado</strong> de documentação.
           </p>
         </div>
 

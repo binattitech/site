@@ -19,11 +19,19 @@
 
 .title {
   font-family: var(--font-family);
-  font-size: var(--text-xl-size);
+  font-size: var(--text-md-size); /* mobile: 16px */
   font-weight: var(--font-weight-semibold);
-  line-height: var(--text-xl-lh);
-  letter-spacing: var(--text-xl-tracking);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
   color: var(--fg-emphasis);
+}
+
+@media (min-width: 80rem) {
+  .title {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-lh);
+    letter-spacing: var(--text-xl-tracking);
+  }
 }
 
 .list {

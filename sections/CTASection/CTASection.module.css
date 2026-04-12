@@ -99,9 +99,9 @@
 
 .paragraph {
   --p-color:    var(--cta-body-color);
-  --p-size:     var(--text-xl-size);
-  --p-lh:       var(--text-xl-lh);
-  --p-tracking: var(--text-xl-tracking);
+  --p-size:     var(--text-md-size);     /* mobile: 16px */
+  --p-lh:       var(--text-md-lh);
+  --p-tracking: var(--text-md-tracking);
 
   font-family:    var(--font-family);
   font-weight:    var(--font-weight-regular);
@@ -167,5 +167,14 @@
   .decorCrown,
   .decorUnderline {
     display: none;
+  }
+}
+
+/* ── Responsive — Desktop ──────────────────────────────────── */
+@media (min-width: 80rem) {
+  .paragraph {
+    --p-size:     var(--text-xl-size);
+    --p-lh:       var(--text-xl-lh);
+    --p-tracking: var(--text-xl-tracking);
   }
 }
