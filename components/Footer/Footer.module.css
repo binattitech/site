@@ -21,7 +21,7 @@
 
 @media (min-width: 80rem) {
   .footer {
-    --footer-px: var(--section-lg-padding-x);
+    --footer-px: var(--breakpoints-lg-section-padding-1);
   }
 }
 

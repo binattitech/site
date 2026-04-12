@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   InstagramLogo,
   LinkedinLogo,
@@ -12,8 +12,6 @@ import type { SwitchGroupMode } from "@/components/SwitchGroup";
 import styles from "./Footer.module.css";
 
 export interface FooterProps {
-  activeMode?: SwitchGroupMode;
-  onToggle?: (mode: SwitchGroupMode) => void;
   instagramUrl?: string;
   linkedinUrl?: string;
   youtubeUrl?: string;
@@ -22,21 +20,35 @@ export interface FooterProps {
 }
 
 export default function Footer({
-  activeMode = "light",
-  onToggle,
   instagramUrl = "https://www.instagram.com/binatti.co/",
   linkedinUrl = "https://www.linkedin.com/company/binatticommunity/",
   youtubeUrl = "https://www.youtube.com/@binatti_co",
   emailUrl = "mailto:oi@binatti.co",
   className,
 }: FooterProps) {
+  const [mode, setMode] = useState<SwitchGroupMode>("light");
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme") as SwitchGroupMode | null;
+    const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+    setMode(stored ?? preferred);
+  }, []);
+
+  function handleToggle(next: SwitchGroupMode) {
+    setMode(next);
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  }
+
   return (
     <footer
       className={[styles.footer, className ?? ""].filter(Boolean).join(" ")}
       data-theme="dark"
     >
       {/* Theme toggle */}
-      <SwitchGroup activeMode={activeMode} onToggle={onToggle} />
+      <SwitchGroup activeMode={mode} onToggle={handleToggle} />
 
       {/* Social links */}
       <div className={styles.social} aria-label="Redes sociais">

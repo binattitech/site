@@ -8,7 +8,7 @@ export default function SobreSection() {
         {/* Text */}
         <div className={styles.txt}>
           <h2 className={styles.heading}>
-            Mais que Códigos:{"\n"}uma comunidade
+            Mais que Códigos: <br /> uma comunidade
           </h2>
 
           <div className={styles.body}>

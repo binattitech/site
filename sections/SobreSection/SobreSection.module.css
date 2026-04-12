@@ -6,13 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--section-padding-y);
+  padding: var(--breakpoints-section-padding-2);
   width: 100%;
 }
 
 .content {
   display: flex;
-  gap: var(--section-gap);
+  gap: var(--breakpoints-section-layout-gap);
   align-items: center;
   width: 100%;
 }
@@ -22,7 +22,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--section-content-gap);
+  gap: var(--breakpoints-section-content-gap);
   align-items: flex-start;
   position: relative;
   min-width: 0;
@@ -43,7 +43,7 @@
 .body {
   display: flex;
   flex-direction: column;
-  gap: var(--section-paragraph-gap);
+  gap: var(--breakpoints-section-content-paragraph-gap);
   width: 100%;
 }
 

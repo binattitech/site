@@ -7,14 +7,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--section-padding-x) var(--section-padding-y);
+  padding: var(--breakpoints-section-padding-1) var(--breakpoints-section-padding-2);
   width: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--section-gap);
+  gap: var(--breakpoints-section-layout-gap);
   align-items: flex-start;
   width: 100%;
 }
@@ -60,10 +60,17 @@
   .heading {
     font-size: 48px;
   }
+
+  .subtitle {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 47.938rem) {
   .heading {
     font-size: 36px;
+  }
+  .subtitle {
+    font-size: 16px;
   }
 }

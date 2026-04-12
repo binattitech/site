@@ -2,7 +2,20 @@
    design.css — Binatti Community
    Single source of truth for all design tokens.
    Synced from Figma → tokens.json
-   
+
+   Structure:
+     1. GLOBAL COLORS — Foundation primitives (black, white, off-white + opacity)
+     2. GLOBAL COLORS — Off White scale
+     3. GLOBAL COLORS — Stone scale
+     4. GLOBAL COLORS — Full palette (Tailwind families)
+     5. TYPOGRAPHY
+     6. SPACING
+     7. BORDER RADIUS
+     8. SHADOWS
+     9. BREAKPOINTS
+    10. SECTION LAYOUT
+    11. SEMANTIC COLORS — Light (default, defined last, references globals above)
+
    DO NOT hardcode any visual value outside this file.
    All components must reference variables defined here.
    ============================================================ */
@@ -10,76 +23,53 @@
 :root {
 
   /* ============================================================
-     SEMANTIC COLORS — LIGHT THEME (default)
-     ============================================================ */
-
-  /* Actions — filled button */
-  --action-filled-bg-default:    #000000;   /* black */
-  --action-filled-bg-hover:      #292524;   /* Stone.800 */
-  --action-filled-shadow:        #0000000d; /* black 5% */
-
-  /* Actions — outline button */
-  --action-outline-border:       #000000;   /* black */
-  --action-outline-bg-hover:     #0000001a; /* black 10% */
-
-  /* Foreground — text and icons */
-  --fg-emphasis:                 #000000;   /* black — maximum contrast */
-  --fg-default:                  #777262;   /* Off White.600 — body text */
-  --fg-muted:                    #a49f8d;   /* Off White.400 — secondary text */
-  --fg-offwhite:                 #fffbed;   /* off-white */
-  --fg-white:                    #ffffff;   /* white */
-
-  /* Background */
-  --bg-default:                  #fffbed;   /* off-white */
-
-
-  /* ============================================================
      GLOBAL COLORS — FOUNDATION
      ============================================================ */
 
   --black:                       #000000;
   --white:                       #ffffff;
-  --off-white:                   #fffbed;   /* Off White.50 */
+  --off-white:                   #fffbed;   /* Off White.50 — same value as --off-white-scale-50 */
 
-  /* Black with opacity */
-  --black-5:                     #0000000d;
-  --black-10:                    #0000001a;
-  --black-20:                    #00000033;
-  --black-30:                    #0000004d;
-  --black-40:                    #00000066;
-  --black-50:                    #00000080;
-  --black-60:                    #00000099;
-  --black-70:                    #000000b3;
-  --black-80:                    #000000cc;
-  --black-90:                    #000000e6;
+  /* Black with opacity — suffix = % value (e.g. --black-alpha-5 = 5% opacity) */
+  --black-alpha-5:               #0000000d;
+  --black-alpha-10:              #0000001a;
+  --black-alpha-20:              #00000033;
+  --black-alpha-30:              #0000004d;
+  --black-alpha-40:              #00000066;
+  --black-alpha-50:              #00000080;
+  --black-alpha-60:              #00000099;
+  --black-alpha-70:              #000000b3;
+  --black-alpha-80:              #000000cc;
+  --black-alpha-90:              #000000e6;
 
   /* White with opacity */
-  --white-5:                     #ffffff0d;
-  --white-10:                    #ffffff1a;
-  --white-20:                    #ffffff33;
-  --white-30:                    #ffffff4d;
-  --white-40:                    #ffffff66;
-  --white-50:                    #ffffff80;
-  --white-60:                    #ffffff99;
-  --white-70:                    #ffffffb3;
-  --white-80:                    #ffffffcc;
-  --white-90:                    #ffffffe6;
+  --white-alpha-5:               #ffffff0d;
+  --white-alpha-10:              #ffffff1a;
+  --white-alpha-20:              #ffffff33;
+  --white-alpha-30:              #ffffff4d;
+  --white-alpha-40:              #ffffff66;
+  --white-alpha-50:              #ffffff80;
+  --white-alpha-60:              #ffffff99;
+  --white-alpha-70:              #ffffffb3;
+  --white-alpha-80:              #ffffffcc;
+  --white-alpha-90:              #ffffffe6;
 
   /* Off-white with opacity */
-  --off-white-5:                 #fffbed0d;
-  --off-white-10:                #fffbed1a;
-  --off-white-20:                #fffbed33;
-  --off-white-30:                #fffbed4d;
-  --off-white-40:                #fffbed66;
-  --off-white-50:                #fffbed80;
-  --off-white-60:                #fffbed99;
-  --off-white-70:                #fffbedb3;
-  --off-white-80:                #fffbedcc;
-  --off-white-90:                #fffbede6;
+  --off-white-alpha-5:           #fffbed0d;
+  --off-white-alpha-10:          #fffbed1a;
+  --off-white-alpha-20:          #fffbed33;
+  --off-white-alpha-30:          #fffbed4d;
+  --off-white-alpha-40:          #fffbed66;
+  --off-white-alpha-50:          #fffbed80;
+  --off-white-alpha-60:          #fffbed99;
+  --off-white-alpha-70:          #fffbedb3;
+  --off-white-alpha-80:          #fffbedcc;
+  --off-white-alpha-90:          #fffbede6;
 
 
   /* ============================================================
      GLOBAL COLORS — OFF WHITE SCALE
+     Suffix = Tailwind step (50–950). No conflict with -alpha-* series.
      ============================================================ */
 
   --off-white-50:                #fffbed;
@@ -396,109 +386,210 @@
 
   /* ============================================================
      SHADOWS
+     Referencing opacity vars — no hardcoded alpha hex.
      ============================================================ */
 
   --shadow-button-black:
-    0px 1px 3px 0px #0000000d,
-    0px 2px 1px -1px #0000000d;
+    0px 1px 3px 0px var(--black-alpha-5),
+    0px 2px 1px -1px var(--black-alpha-5);
 
   --shadow-button-white:
-    0px 1px 3px 0px #ffffff0d,
-    0px 2px 1px -1px #ffffff0d;
+    0px 1px 3px 0px var(--white-alpha-5),
+    0px 2px 1px -1px var(--white-alpha-5);
 
 
   /* ============================================================
      BREAKPOINTS
      ============================================================ */
 
-  --breakpoint-sm-min: 20rem;     /* 320px */
-  --breakpoint-sm-max: 47.938rem; /* 767px */
-  --breakpoint-md-min: 48rem;     /* 768px */
-  --breakpoint-md-max: 79.938rem; /* 1279px */
-  --breakpoint-lg-min: 80rem;     /* 1280px */
-  --breakpoint-lg-max: 120rem;    /* 1920px */
+  --breakpoints-sm-min: 20rem;     /* 320px */
+  --breakpoints-sm-max: 47.938rem; /* 767px */
+  --breakpoints-md-min: 48rem;     /* 768px */
+  --breakpoints-md-max: 79.938rem; /* 1279px */
+  --breakpoints-lg-min: 80rem;     /* 1280px */
+  --breakpoints-lg-max: 120rem;    /* 1920px */
 
 
   /* ============================================================
      SECTION LAYOUT — RESPONSIVE SPACING
-     Use these variables for all section padding and gaps.
+     Names mirror Figma token structure exactly:
+       breakpoints.[bp].section.padding.1   → horizontal padding
+       breakpoints.[bp].section.padding.2   → vertical padding
+       breakpoints.[bp].section.layout.gap
+       breakpoints.[bp].section.content.gap
+       breakpoints.[bp].section.content.paragraph.gap
      ============================================================ */
 
-  /* Mobile (sm) */
-  --section-sm-padding-x:      var(--space-16);  /* 4rem */
-  --section-sm-padding-y:      var(--space-4);   /* 1rem */
-  --section-sm-layout-gap:     var(--space-6);   /* 1.5rem */
-  --section-sm-content-gap:    var(--space-4);   /* 1rem */
-  --section-sm-paragraph-gap:  var(--space-2);   /* 0.5rem */
+  /* sm — Figma: Semantic Dimension / sm */
+  --breakpoints-sm-section-padding-1:             var(--space-16);  /* 64px */
+  --breakpoints-sm-section-padding-2:             var(--space-4);   /* 16px */
+  --breakpoints-sm-section-layout-gap:            var(--space-6);   /* 24px */
+  --breakpoints-sm-section-content-gap:           var(--space-4);   /* 16px */
+  --breakpoints-sm-section-content-paragraph-gap: var(--space-2);   /* 8px  */
 
-  /* Tablet (md) */
-  --section-md-padding-x:      var(--space-24);  /* 6rem */
-  --section-md-padding-y:      var(--space-12);  /* 3rem */
-  --section-md-layout-gap:     var(--space-12);  /* 3rem */
-  --section-md-content-gap:    var(--space-6);   /* 1.5rem */
-  --section-md-paragraph-gap:  var(--space-3);   /* 0.75rem */
+  /* md — Figma: Semantic Dimension / md */
+  --breakpoints-md-section-padding-1:             var(--space-24);  /* 96px  */
+  --breakpoints-md-section-padding-2:             var(--space-12);  /* 48px  */
+  --breakpoints-md-section-layout-gap:            var(--space-12);  /* 48px  */
+  --breakpoints-md-section-content-gap:           var(--space-6);   /* 24px  */
+  --breakpoints-md-section-content-paragraph-gap: var(--space-3);   /* 12px  */
 
-  /* Desktop (lg) */
-  --section-lg-padding-x:      var(--space-32);  /* 8rem */
-  --section-lg-padding-y:      var(--space-16);  /* 4rem */
-  --section-lg-layout-gap:     var(--space-16);  /* 4rem */
-  --section-lg-content-gap:    var(--space-8);   /* 2rem */
-  --section-lg-paragraph-gap:  var(--space-4);   /* 1rem */
+  /* lg — Figma: Semantic Dimension / lg */
+  --breakpoints-lg-section-padding-1:             var(--space-32);  /* 128px */
+  --breakpoints-lg-section-padding-2:             var(--space-16);  /* 64px  */
+  --breakpoints-lg-section-layout-gap:            var(--space-16);  /* 64px  */
+  --breakpoints-lg-section-content-gap:           var(--space-8);   /* 32px  */
+  --breakpoints-lg-section-content-paragraph-gap: var(--space-4);   /* 16px  */
 
-  /* Tokens responsivos — usados diretamente nas sections */
-  --section-padding-x:      var(--section-lg-padding-x);
-  --section-padding-y:      var(--section-lg-padding-y);
-  --section-gap:            var(--section-lg-layout-gap);
-  --section-content-gap:    var(--section-lg-content-gap);
-  --section-paragraph-gap:  var(--section-lg-paragraph-gap);
+  /* Responsive aliases — override per breakpoint in media queries below.
+     Default = lg values. Use these in all components. */
+  --breakpoints-section-padding-1:             var(--breakpoints-lg-section-padding-1);
+  --breakpoints-section-padding-2:             var(--breakpoints-lg-section-padding-2);
+  --breakpoints-section-layout-gap:            var(--breakpoints-lg-section-layout-gap);
+  --breakpoints-section-content-gap:           var(--breakpoints-lg-section-content-gap);
+  --breakpoints-section-content-paragraph-gap: var(--breakpoints-lg-section-content-paragraph-gap);
+
+
+  /* ============================================================
+     SEMANTIC COLORS — LIGHT THEME (default)
+     Declared last so all global vars above are already in scope.
+
+     Alias map (Figma → CSS):
+       action.filled.bg.default  → black            → var(--black)
+       action.filled.bg.hover    → Stone/800         → var(--stone-800)
+       action.filled.shadow      → foundation/black/5%  → var(--black-alpha-5)
+       action.outline.border     → black             → var(--black)
+       action.outline.bg.hover   → foundation/black/10% → var(--black-alpha-10)
+       fg.emphasis               → black             → var(--black)
+       fg.default                → Off White/600     → var(--off-white-600)
+       fg.muted                  → Off White/400     → var(--off-white-400)
+       fg.offWhite               → off-white         → var(--off-white)
+       fg.white                  → white             → var(--white)
+       bg.default                → off-white         → var(--off-white)
+     ============================================================ */
+
+  /* Actions — filled button */
+  --action-filled-bg-default:    var(--black);
+  --action-filled-bg-hover:      var(--stone-800);
+  --action-filled-shadow:        var(--black-alpha-5);
+
+  /* Actions — outline button */
+  --action-outline-border:       var(--black);
+  --action-outline-bg-hover:     var(--black-alpha-10);
+
+  /* Foreground — text and icons */
+  --fg-emphasis:                 var(--black);
+  --fg-default:                  var(--off-white-600);
+  --fg-muted:                    var(--off-white-400);
+  --fg-offwhite:                 var(--off-white);
+  --fg-white:                    var(--white);
+
+  /* Background */
+  --bg-default:                  var(--off-white);
 
 }
 
 @media (max-width: 79.938rem) {
   :root {
-    --section-padding-x:      var(--section-md-padding-x);
-    --section-padding-y:      var(--section-md-padding-y);
-    --section-gap:            var(--section-md-layout-gap);
-    --section-content-gap:    var(--section-md-content-gap);
-    --section-paragraph-gap:  var(--section-md-paragraph-gap);
+    --breakpoints-section-padding-1:             var(--breakpoints-md-section-padding-1);
+    --breakpoints-section-padding-2:             var(--breakpoints-md-section-padding-2);
+    --breakpoints-section-layout-gap:            var(--breakpoints-md-section-layout-gap);
+    --breakpoints-section-content-gap:           var(--breakpoints-md-section-content-gap);
+    --breakpoints-section-content-paragraph-gap: var(--breakpoints-md-section-content-paragraph-gap);
   }
 }
 
 @media (max-width: 47.938rem) {
   :root {
-    --section-padding-x:      var(--section-sm-padding-x);
-    --section-padding-y:      var(--section-sm-padding-y);
-    --section-gap:            var(--section-sm-layout-gap);
-    --section-content-gap:    var(--section-sm-content-gap);
-    --section-paragraph-gap:  var(--section-sm-paragraph-gap);
+    --breakpoints-section-padding-1:             var(--breakpoints-sm-section-padding-1);
+    --breakpoints-section-padding-2:             var(--breakpoints-sm-section-padding-2);
+    --breakpoints-section-layout-gap:            var(--breakpoints-sm-section-layout-gap);
+    --breakpoints-section-content-gap:           var(--breakpoints-sm-section-content-gap);
+    --breakpoints-section-content-paragraph-gap: var(--breakpoints-sm-section-content-paragraph-gap);
+
+    /* Typography — display sizes only shift 1 step down at sm.
+       Body text (xxs–2xl) stays unchanged.
+       Hardcoded values required: var() chains would cascade incorrectly. */
+
+    --text-3xl-size:     1.375rem;   /* 2xl — was 1.75rem */
+    --text-3xl-lh:       120%;
+    --text-3xl-tracking: -0.01em;
+
+    --text-4xl-size:     1.75rem;    /* 3xl — was 2.25rem */
+    --text-4xl-lh:       128%;
+    --text-4xl-tracking: -0.01em;
+
+    --text-5xl-size:     2.25rem;    /* 4xl — was 3rem */
+    --text-5xl-lh:       120%;
+    --text-5xl-tracking: -0.01em;
+
+    --text-6xl-size:     3rem;       /* 5xl — was 4rem */
+    --text-6xl-lh:       120%;
+    --text-6xl-tracking: -0.01em;
+
+    --text-7xl-size:     4rem;       /* 6xl — was 6rem */
+    --text-7xl-lh:       112.5%;
+    --text-7xl-tracking: -0.03em;
+
+    /* Grotesque tracking follows the same 1-step-down shift */
+    --text-grotesque-tracking-3xl: 0.04em;   /* ← was xl */
+    --text-grotesque-tracking-4xl: 0.02em;   /* ← was 3xl */
+    --text-grotesque-tracking-5xl: 0.01em;   /* ← was 4xl */
+    --text-grotesque-tracking-6xl: -0.01em;  /* ← was 5xl */
+    --text-grotesque-tracking-7xl: -0.01em;  /* ← was 6xl */
   }
 }
 
 
 /* ============================================================
    DARK THEME
-   Applied via [data-theme="dark"] on <html> or <body>
+   Two sources of truth — both apply the same variables:
+   1. [data-theme="dark"]  → set by ThemeProvider (manual + localStorage)
+   2. prefers-color-scheme → fallback when no data-theme is set (SSR / no-JS)
+   [data-theme="light"] always forces light, overriding OS preference.
    ============================================================ */
 
+/* Alias map (Figma Semantic Colors / dark):
+     action.filled.bg.default  → off-white                   → var(--off-white)
+     action.filled.bg.hover    → Off White/200                → var(--off-white-200)
+     action.filled.shadow      → foundation/offWhite_50/5%   → var(--off-white-alpha-5)
+     action.outline.border     → off-white                   → var(--off-white)
+     action.outline.bg.hover   → foundation/offWhite_50/10%  → var(--off-white-alpha-10)
+     fg.emphasis               → off-white                   → var(--off-white)
+     fg.default                → Off White/400               → var(--off-white-400)
+     fg.muted                  → Off White/600               → var(--off-white-600)
+     fg.offWhite               → black                       → var(--black)
+     fg.white                  → white                       → var(--white)
+     bg.default                → black                       → var(--black)
+*/
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --action-filled-bg-default:  var(--off-white);
+    --action-filled-bg-hover:    var(--off-white-200);
+    --action-filled-shadow:      var(--off-white-alpha-5);
+    --action-outline-border:     var(--off-white);
+    --action-outline-bg-hover:   var(--off-white-alpha-10);
+    --fg-emphasis:               var(--off-white);
+    --fg-default:                var(--off-white-400);
+    --fg-muted:                  var(--off-white-600);
+    --fg-offwhite:               var(--black);
+    --fg-white:                  var(--white);
+    --bg-default:                var(--black);
+  }
+}
+
 [data-theme="dark"] {
-
-  /* Actions — filled button */
-  --action-filled-bg-default:  #fffbed;   /* off-white */
-  --action-filled-bg-hover:    #d2cdbb;   /* Off White.200 */
-  --action-filled-shadow:      #fffbed0d; /* off-white 5% */
-
-  /* Actions — outline button */
-  --action-outline-border:     #fffbed;   /* off-white */
-  --action-outline-bg-hover:   #fffbed1a; /* off-white 10% */
-
-  /* Foreground — text and icons */
-  --fg-emphasis:               #fffbed;   /* off-white — maximum contrast */
-  --fg-default:                #a49f8d;   /* Off White.400 — body text */
-  --fg-muted:                  #777262;   /* Off White.600 — secondary text */
-  --fg-offwhite:               #000000;   /* black */
-  --fg-white:                  #ffffff;   /* white */
-
-  /* Background */
-  --bg-default:                #000000;   /* black */
+  --action-filled-bg-default:  var(--off-white);
+  --action-filled-bg-hover:    var(--off-white-200);
+  --action-filled-shadow:      var(--off-white-alpha-5);
+  --action-outline-border:     var(--off-white);
+  --action-outline-bg-hover:   var(--off-white-alpha-10);
+  --fg-emphasis:               var(--off-white);
+  --fg-default:                var(--off-white-400);
+  --fg-muted:                  var(--off-white-600);
+  --fg-offwhite:               var(--black);
+  --fg-white:                  var(--white);
+  --bg-default:                var(--black);
 
 }

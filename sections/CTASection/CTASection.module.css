@@ -7,14 +7,14 @@
   /* Component variables */
   --cta-bg:             var(--blue-600);
   --cta-heading-color:  var(--white);
-  --cta-body-color:     var(--white-80);
-  --cta-content-gap:    var(--section-content-gap);
-  --cta-paragraph-gap:  var(--section-paragraph-gap);
+  --cta-body-color:     var(--white-alpha-80);
+  --cta-content-gap:    var(--breakpoints-section-content-gap);
+  --cta-paragraph-gap:  var(--breakpoints-section-content-paragraph-gap);
 
   position: relative;
   overflow: hidden;
   background: var(--cta-bg);
-  padding: var(--section-padding-x) var(--section-padding-y);
+  padding: var(--breakpoints-section-padding-1) var(--breakpoints-section-padding-2);
 }
 
 /* ── Photo — positioned absolute bottom-right ─────────────── */

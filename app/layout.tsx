@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, DM_Mono, Bricolage_Grotesque } from "next/font/google";
 import "./design.css";
 import "./globals.css";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -41,7 +42,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${dmSans.variable} ${dmMono.variable} ${bricolageGrotesque.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider />
+        {children}
+      </body>
     </html>
   );
 }
