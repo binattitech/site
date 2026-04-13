@@ -47,10 +47,7 @@ export default function Footer({
       className={[styles.footer, className ?? ""].filter(Boolean).join(" ")}
       data-theme="dark"
     >
-      {/* Theme toggle */}
-      <SwitchGroup activeMode={mode} onToggle={handleToggle} />
-
-      {/* Social links */}
+      {/* ── Redes sociais ── */}
       <div className={styles.social} aria-label="Redes sociais">
         <a
           href={instagramUrl}
@@ -88,13 +85,16 @@ export default function Footer({
         </a>
       </div>
 
-      {/* Divider */}
+      {/* ── Divisor ── */}
       <div className={styles.divider} aria-hidden="true" />
 
-      {/* Copyright */}
-      <p className={styles.copyright}>
-        @2025 Binatti Community. Todos os direitos reservados.
-      </p>
+      {/* ── Bottom: theme toggle + copyright ── */}
+      <div className={styles.bottom}>
+        <SwitchGroup activeMode={mode} onToggle={handleToggle} />
+        <p className={styles.copyright}>
+          @2025 Binatti Community. Todos os direitos reservados.
+        </p>
+      </div>
     </footer>
   );
 }

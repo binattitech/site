@@ -23,8 +23,6 @@ export default function Switch({
   ...rest
 }: SwitchProps) {
   const isDisabled = state === "disabled";
-  const isActive = state === "active";
-  const iconColor = isActive ? "var(--fg-offwhite)" : "var(--fg-emphasis)";
 
   return (
     <button
@@ -35,7 +33,7 @@ export default function Switch({
     >
       {showIcon && (
         <span className={styles.iconSlot} aria-hidden="true">
-          {icon ?? <ArrowRight size={16} color={iconColor} />}
+          {icon ?? <ArrowRight size={16} weight="regular" />}
         </span>
       )}
       <span className={styles.label}>{label}</span>

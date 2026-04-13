@@ -15,3 +15,13 @@
   border: 1px solid var(--group-border);
   border-radius: var(--group-radius);
 }
+
+/* Garante que o hover do Switch reflete o modo selecionado,
+   independente do tema do container (ex: footer sempre escuro) */
+.group[data-active="light"] {
+  --action-outline-bg-hover: var(--black-alpha-10);
+}
+
+.group[data-active="dark"] {
+  --action-outline-bg-hover: var(--off-white-alpha-10);
+}

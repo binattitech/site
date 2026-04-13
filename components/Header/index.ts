@@ -1,2 +1,2 @@
 export { default } from "./Header";
-export type { HeaderProps, HeaderSize, NavItem } from "./Header";
+export type { HeaderProps, NavItem } from "./Header";

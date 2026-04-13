@@ -41,7 +41,7 @@
   font-weight: var(--font-weight-semibold);
   line-height: var(--text-sm-lh);
   letter-spacing: var(--text-sm-tracking);
-  color: var(--switch-color);
+  color: inherit;
   white-space: nowrap;
 }
 
@@ -52,4 +52,5 @@
   width: 1rem;
   height: 1rem;
   flex-shrink: 0;
+  color: inherit;
 }

@@ -4,25 +4,17 @@
  */
 
 .footer {
-  --footer-bg: var(--black);
-  --footer-px: var(--space-16);
-  --footer-py: var(--space-12);
+  --footer-bg: var(--bg-default);
 
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: var(--space-5);
-  padding: var(--footer-py) var(--footer-px);
+  padding: var(--space-12) var(--breakpoints-section-padding-2);
   background: var(--footer-bg);
   width: 100%;
   overflow: hidden;
-}
-
-@media (min-width: 80rem) {
-  .footer {
-    --footer-px: var(--breakpoints-lg-section-padding-1);
-  }
 }
 
 /* ── Redes sociais ──────────────────────────────────────── */
@@ -53,6 +45,15 @@
   flex-shrink: 0;
 }
 
+/* ── Bottom row ─────────────────────────────────────────── */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  width: 100%;
+}
+
 /* ── Copyright ──────────────────────────────────────────── */
 .copyright {
   font-family: var(--font-family);
@@ -61,5 +62,18 @@
   line-height: var(--text-sm-lh);
   letter-spacing: var(--text-sm-tracking);
   color: var(--fg-default);
-  white-space: nowrap;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (min-width: 80rem) {
+  .bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .copyright {
+    flex: 1;
+    text-align: right;
+    white-space: nowrap;
+  }
 }

@@ -19,7 +19,7 @@ export default function SwitchGroup({
   className,
 }: SwitchGroupProps) {
   const isLight = activeMode === "light";
-  const isDark = activeMode === "dark";
+  const isDark  = activeMode === "dark";
 
   return (
     <div
@@ -29,14 +29,14 @@ export default function SwitchGroup({
       <Switch
         label="claro"
         state={isLight ? "active" : "default"}
-        icon={<SunDim size={16} color={isLight ? "var(--fg-offwhite)" : "var(--fg-emphasis)"} />}
+        icon={<SunDim size={16} weight="regular" />}
         onClick={() => onToggle?.("light")}
         aria-pressed={isLight}
       />
       <Switch
         label="escuro"
         state={isDark ? "active" : "default"}
-        icon={<MoonStars size={16} color={isDark ? "var(--fg-offwhite)" : "var(--fg-emphasis)"} />}
+        icon={<MoonStars size={16} weight="regular" />}
         onClick={() => onToggle?.("dark")}
         aria-pressed={isDark}
       />
