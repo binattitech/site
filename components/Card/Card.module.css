@@ -161,8 +161,8 @@
 .articlesMd {
   flex-direction: row;
   align-items: center;
-  gap: var(--space-4);              /* 16px */
-  padding: var(--space-8) 0;        /* 32px 0 */
+  gap: var(--breakpoints-section-content-paragraph-gap); /* 8px→12px→16px */
+  padding: var(--breakpoints-section-content-gap) 0;    /* 16px→24px→32px */
   width: 100%;
 }
 
@@ -297,8 +297,6 @@
   /* ── Articles: layout vertical ── */
   .articlesMd {
     flex-direction: column;
-    gap:            var(--space-2);  /* 8px */
-    padding:        var(--space-4) 0;/* 16px — sm */
   }
 
   /* Mostrar categoria+tag inline (estrutura mobile) */

@@ -4,40 +4,25 @@ import styles from "./CTASection.module.css";
 export default function CTASection() {
   return (
     <section className={styles.section}>
-      {/* Group photo — bottom right, absolute */}
-      <div className={styles.photo} aria-hidden="true">
-        <img src="/cta-photo.png" alt="" />
-      </div>
-
-      {/* Decorative doodle overlay on photo area */}
-      <img
-        className={styles.decorGroup}
-        src="/decor-group6.png"
-        alt=""
-        aria-hidden="true"
-      />
-
       {/* Main content */}
       <div className={styles.content}>
         {/* Heading with decorative overlays */}
         <div className={styles.headingWrapper}>
-          <img
-            className={styles.decorCrown}
-            src="/illustrations/@svg9.svg"
-            alt=""
-            aria-hidden="true"
-          />
           <h2 className={styles.heading}>
             Seu nome no
             <br />
-            que você cria
+            que{" "}
+            <span className={styles.voceCriaWrapper}>
+              {/* @svg9: coroa em cima do "v" de "você" */}
+              <span className={styles.vWrapper}>
+                v
+                <img className={styles.decorCrown} src="/illustrations/@svg9.svg" alt="" aria-hidden="true" />
+              </span>
+              ocê cria
+              {/* @svg8: sublinhado sob "você cria" */}
+              <img className={styles.decorUnderline} src="/illustrations/@svg8.svg" alt="" aria-hidden="true" />
+            </span>
           </h2>
-          <img
-            className={styles.decorUnderline}
-            src="/illustrations/@svg8.svg"
-            alt=""
-            aria-hidden="true"
-          />
         </div>
 
         {/* Body text */}
@@ -56,6 +41,11 @@ export default function CTASection() {
         <div className={styles.buttonWrapper}>
           <Button content="Quero ser Voluntária" showIcon variant="filled" />
         </div>
+      </div>
+
+      {/* Group photo — flex item, right side, touches bottom */}
+      <div className={styles.photo} aria-hidden="true">
+        <img src="/img/imgCTA.png" alt="" />
       </div>
     </section>
   );

@@ -17,38 +17,32 @@
   padding: var(--breakpoints-section-padding-1) var(--breakpoints-section-padding-2);
 }
 
-/* ── Photo — positioned absolute bottom-right ─────────────── */
+/* ── Photo — absolute, gap no topo, toca o bottom ────────── */
 .photo {
   position: absolute;
+  top: var(--space-12);
   bottom: 0;
   right: 0;
-  width: 730px;
-  height: 373px;
+  width: auto;
   pointer-events: none;
-  /* adiciona: */
-  border: none;
-  outline: none;
-  box-shadow: none;
+  z-index: 0;
 }
 
 .photo img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  width: auto;
   display: block;
-  /* adiciona: */
-  border: none;
-  outline: none;
 }
 
-/* ── Content wrapper — full width, relative for decorations ── */
+/* ── Content wrapper ──────────────────────────────────────── */
 .content {
   position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: var(--cta-content-gap);
   width: 100%;
+  padding-right: var(--breakpoints-section-layout-gap);
 }
 
 /* ── Heading wrapper — relative to contain inline decorations ─ */
@@ -73,26 +67,40 @@
   margin: 0;
 }
 
-/* Crown decoration — above "nome" on first line */
-.decorCrown {
-  position: absolute;
-  top: 47px;
-  left: 94px;
-  width: 46px;
-  height: 35px;
-  pointer-events: none;
-  user-select: none;
+/* Wrapper do "v" em "você" — ancora a coroa */
+.vWrapper {
+  position: relative;
+  display: inline-block;
 }
 
-/* Green underline — below second heading line */
-.decorUnderline {
-  position: absolute;
-  top: 126px;
-  left: 100px;
-  width: 225px;
-  height: 25px;
+/* @svg9: coroa acima do "v" */
+.decorCrown {
+  position:       absolute;
+  bottom:         calc(100% - 0.05em);
+  left:           50%;
+  transform:      translateX(-50%);
+  width:          0.75em;
+  height:         auto;
   pointer-events: none;
-  user-select: none;
+  user-select:    none;
+}
+
+/* Wrapper de "você cria" — ancora o sublinhado */
+.voceCriaWrapper {
+  position:    relative;
+  display:     inline-block;
+  white-space: nowrap;
+}
+
+/* @svg8: sublinhado sob "você cria" */
+.decorUnderline {
+  position:       absolute;
+  top:            calc(100% - 0.1em);
+  left:           0;
+  width:          100%;
+  height:         auto;
+  pointer-events: none;
+  user-select:    none;
 }
 
 /* ── Body text ─────────────────────────────────────────────── */
@@ -129,57 +137,39 @@
   align-self: flex-start;
 }
 
-/* ── Decorative doodle group (overlays photo area) ─────────── */
-.decorGroup {
-  position: absolute;
-  top: 231px;
-  right: 20px;
-  width: 543px;
-  height: 241px;
-  pointer-events: none;
-  user-select: none;
-}
-
 /* ── Responsive — Tablet ───────────────────────────────────── */
 @media (max-width: 79.938rem) {
   .section {
     --cta-padding-y: var(--space-20);
-  }
-
-  .photo {
-    width: 480px;
-    height: 300px;
-  }
-
-  .decorGroup {
-    width: 380px;
-    height: 170px;
   }
 }
 
 /* ── Responsive — Mobile ───────────────────────────────────── */
 @media (max-width: 47.938rem) {
   .section {
-    --cta-padding-y: var(--space-12);
+    padding-bottom: 0;
   }
 
   .heading {
     --heading-size: var(--text-5xl-size);
   }
 
+  /* Sai do position:absolute e entra no fluxo normal, abaixo do content */
   .photo {
     position: relative;
-    width: 100%;
-    height: 260px;
-    right: auto;
+    top: auto;
     bottom: auto;
+    right: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
   }
 
-  .decorGroup,
-  .decorCrown,
-  .decorUnderline {
-    display: none;
+  .photo img {
+    width: 100%;
+    height: auto;
   }
+
 }
 
 /* ── Responsive — Desktop ──────────────────────────────────── */
