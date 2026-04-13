@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════════════════════
+   BlogHeroSection
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  padding: var(--breakpoints-section-padding-2) var(--breakpoints-section-padding-2) 0;
+  width: 100%;
+}
+
+/* ── Container — bordered split layout ─────────────────── */
+.container {
+  --hero-border: var(--action-outline-border);
+
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--hero-border);
+  width: 100%;
+}
+
+/* ── Left side ─────────────────────────────────────────── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-gap);
+  padding: var(--breakpoints-section-content-gap);
+  flex: 1;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-paragraph-gap);
+}
+
+.heading {
+  --heading-color: var(--fg-emphasis);
+
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: var(--text-4xl-size); /* mobile: 36px */
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-7xl);
+  color: var(--heading-color);
+}
+
+.body {
+  --body-color: var(--fg-default);
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-md-size); /* mobile: 16px */
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
+  color: var(--body-color);
+}
+
+/* ── Chip row ───────────────────────────────────────────── */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ── Divider ────────────────────────────────────────────── */
+.divider {
+  --divider-color: var(--action-outline-border);
+
+  width: 100%;
+  height: 1px;
+  background: var(--divider-color);
+  flex-shrink: 0;
+}
+
+/* ── Right side ─────────────────────────────────────────── */
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.right > * {
+  flex: 1;
+  height: 100%;
+}
+
+/* ── Responsive — desktop: side-by-side ─────────────────── */
+@media (min-width: 80rem) {
+  .container {
+    flex-direction: row;
+  }
+
+  .divider {
+    width: 1px;
+    height: auto;
+    align-self: stretch;
+  }
+
+  .heading {
+    font-size: var(--text-7xl-size); /* desktop: 96px */
+  }
+
+  .body {
+    font-size: var(--text-xl-size); /* desktop: 20px */
+  }
+}

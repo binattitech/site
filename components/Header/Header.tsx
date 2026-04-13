@@ -23,7 +23,7 @@ export interface HeaderProps {
 
 const DEFAULT_NAV: NavItem[] = [
   { label: "Trilhas" },
-  { label: "Blog" },
+  { label: "Blog", href: "/blog" },
   { label: "Sobre" },
 ];
 
