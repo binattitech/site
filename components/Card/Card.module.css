@@ -12,6 +12,7 @@
   border: 1px solid var(--card-border);
   display: flex;
   position: relative;
+  cursor: pointer;
   transition: padding 150ms ease, border-width 150ms ease;
 }
 
@@ -65,6 +66,7 @@
   align-items: flex-start;
   width: 100%;
   flex-shrink: 0;
+  transition: background 150ms ease;
 }
 
 .textAreaMd { padding: var(--space-8);  }  /* 32px */
@@ -198,12 +200,22 @@
   flex-shrink: 0;
 }
 
-/* Linha categoria+tag (sm) */
+/* Linha categoria+tag — mobile only, escondida por padrão */
 .articleCategoryRow {
-  display: flex;
+  display: none;
   align-items: center;
   gap: var(--space-2);              /* 8px */
   width: 100%;
+}
+
+/* Categoria standalone — desktop only */
+.categoryDesktop {
+  /* visível por padrão */
+}
+
+/* Wrapper tag+seta — display:contents faz os filhos entrarem no flex row */
+.articleActions {
+  display: contents;
 }
 
 .articleCategoryFlex {
@@ -264,3 +276,85 @@
 
 .arrowDefault { width: var(--space-5);  height: var(--space-5);  }  /* 20px */
 .arrowHover   { width: var(--space-6);  height: var(--space-6);  }  /* 24px */
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (< 48rem)
+   Tutorial md → sm visual  |  Articles md → sm visual
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 47.938rem) {
+  /* ── Tutorial: padding e título menores ── */
+  .textAreaMd {
+    padding: var(--space-5);        /* 20px — sm */
+  }
+
+  .titleMd {
+    font-size:      var(--text-xl-size);
+    line-height:    var(--text-xl-lh);
+    letter-spacing: var(--text-xl-tracking);
+  }
+
+  /* ── Articles: layout vertical ── */
+  .articlesMd {
+    flex-direction: column;
+    gap:            var(--space-2);  /* 8px */
+    padding:        var(--space-4) 0;/* 16px — sm */
+  }
+
+  /* Mostrar categoria+tag inline (estrutura mobile) */
+  .articleCategoryRow {
+    display: flex;
+  }
+
+  /* Esconder categoria standalone (estrutura desktop) */
+  .categoryDesktop {
+    display: none;
+  }
+
+  /* Esconder tag+seta */
+  .articleActions {
+    display: none;
+  }
+
+  /* Título menor */
+  .articleTitleMd {
+    font-size:      var(--text-xl-size);
+    line-height:    var(--text-xl-lh);
+    letter-spacing: var(--text-xl-tracking);
+    white-space:    normal;          /* permite quebra de linha no mobile */
+  }
+
+  /* Hover indent menor no mobile */
+  .articlesMd:hover {
+    padding-left: var(--space-5);   /* 20px — sm hover */
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   HOVER STATES — CSS :hover (complementa os modificadores de prop)
+   ════════════════════════════════════════════════════════════ */
+
+/* Tutorial: fundo do texto escurece levemente + borda fica mais espessa */
+.tutorial:hover {
+  border-width: 2px;
+}
+
+.tutorial:hover .textArea {
+  background: var(--action-outline-bg-hover);
+}
+
+/* Articles md: conteúdo desliza para a direita + seta cresce */
+.articlesMd:hover {
+  padding-left: var(--space-8);
+}
+
+/* Articles sm: conteúdo desliza levemente para a direita */
+.articlesSm:hover {
+  padding-left: var(--space-5);
+}
+
+/* Seta cresce via scale para não causar reflow */
+.articles:hover .arrow {
+  transform: scale(1.2);
+  transition: transform 150ms ease;
+}

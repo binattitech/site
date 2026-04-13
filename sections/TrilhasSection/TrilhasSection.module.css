@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--breakpoints-section-padding-2);
+  padding: var(--breakpoints-section-padding-1) var(--breakpoints-section-padding-2);
   width: 100%;
 }
 
@@ -23,7 +23,6 @@
   position: relative;
   width: 100%;
   align-self: auto;
-  aspect-ratio: 4 / 3;
 }
 
 .photo img {
@@ -73,6 +72,11 @@
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (min-width: 48rem) {
+  .heading {
+      font-size: var(--text-6xl-size);
+    }
+  
+    /* 64px */
   .content {
     flex-direction: row;
   }

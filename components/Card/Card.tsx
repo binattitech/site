@@ -77,12 +77,12 @@ export default function Card({
   }
 
   /* ── Articles ──────────────────────────────────────────── */
+  // Layout é sempre md; CSS faz a troca responsive para mobile (sm visual).
   const cardClass = [
     styles.card,
     styles.articles,
-    isMd
-      ? [styles.articlesMd, isHover ? styles.articlesMdHover : ""].filter(Boolean).join(" ")
-      : [styles.articlesSm, isHover ? styles.articlesSmHover : ""].filter(Boolean).join(" "),
+    styles.articlesMd,
+    isHover ? styles.articlesMdHover : "",
     className ?? "",
   ].filter(Boolean).join(" ");
 
@@ -90,35 +90,28 @@ export default function Card({
     <article className={cardClass} data-variant="articles" data-size={size} data-states={states} onClick={onClick}>
 
       {/* Bloco de cabeçalho */}
-      <div className={[
-        styles.articleHeader,
-        isMd ? styles.articleHeaderMd : styles.articleHeaderSm,
-      ].join(" ")}>
+      <div className={[styles.articleHeader, styles.articleHeaderMd].join(" ")}>
 
-        {/* md: categoria em linha própria */}
-        {isMd && <p className={styles.category}>{category}</p>}
+        {/* Mobile: categoria + tag na mesma linha (sm style) */}
+        <div className={styles.articleCategoryRow}>
+          <p className={[styles.category, styles.articleCategoryFlex].join(" ")}>{category}</p>
+          <TagArea content={tag} />
+        </div>
 
-        {/* sm: categoria + tag na mesma linha */}
-        {isSm && (
-          <div className={styles.articleCategoryRow}>
-            <p className={[styles.category, styles.articleCategoryFlex].join(" ")}>{category}</p>
-            <TagArea content={tag} />
-          </div>
-        )}
+        {/* Desktop: categoria em linha própria (md style) */}
+        <p className={[styles.category, styles.categoryDesktop].join(" ")}>{category}</p>
 
-        <p className={isMd ? styles.articleTitleMd : styles.articleTitleSm}>{title}</p>
+        <p className={styles.articleTitleMd}>{title}</p>
         <span className={styles.author}>{author}</span>
       </div>
 
-      {/* md: tag + seta direita */}
-      {isMd && (
-        <>
-          <TagArea content={tag} />
-          <div className={[styles.arrow, isHover ? styles.arrowHover : styles.arrowDefault].join(" ")}>
-            <ArrowRight size={isHover ? 24 : 20} />
-          </div>
-        </>
-      )}
+      {/* Desktop: tag + seta — display:contents faz eles entrarem no flex row */}
+      <div className={styles.articleActions}>
+        <TagArea content={tag} />
+        <div className={[styles.arrow, isHover ? styles.arrowHover : styles.arrowDefault].join(" ")}>
+          <ArrowRight size={isHover ? 24 : 20} />
+        </div>
+      </div>
     </article>
   );
 }

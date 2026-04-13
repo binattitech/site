@@ -12,8 +12,11 @@ export default function Home() {
     <>
       <Header />
       <main>
-
-
+        <HeroSection />
+        <TrilhasSection />
+        <TutoriaisSection />
+        <ArtigosSection />
+        <CTASection />
       </main>
       <Footer />
     </>
