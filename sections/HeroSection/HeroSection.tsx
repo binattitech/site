@@ -26,7 +26,24 @@ export default function HeroSection() {
 
         {/* Heading */}
         <h1 className={styles.title}>
-          {`Trilhas de conhecimento\nem comunidade`}
+          Trilhas de conhecimento
+          <br />
+          {/* "em" com sublinhado decorativo (@svg1) */}
+          <span className={styles.emWrapper}>
+            em
+            <img className={styles.decorSvg1} src="/illustrations/@svg1.svg" alt="" aria-hidden="true" />
+          </span>
+          {" "}
+          {/* "comunidade" com gem no "i" (@svg2) e coração ao final (@svg3) */}
+          <span className={styles.comunidadeWrapper}>
+            comun
+            <span className={styles.iWrapper}>
+              i
+              <img className={styles.decorSvg2} src="/illustrations/@svg2.svg" alt="" aria-hidden="true" />
+            </span>
+            dade
+            <img className={styles.decorSvg3} src="/illustrations/@svg3.svg" alt="" aria-hidden="true" />
+          </span>
         </h1>
 
         {/* Subtitle */}

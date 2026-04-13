@@ -70,6 +70,23 @@
   color: var(--fg-default);
 }
 
+/* ── Decorative SVG ────────────────────────────────────── */
+.trilhasWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.decorSvg7 {
+  position:       absolute;
+  left:           calc(100% + 0.1em);
+  top:            50%;
+  transform:      translateY(-50%);
+  height:         1em;
+  width:          auto;
+  pointer-events: none;
+  user-select:    none;
+}
+
 /* ── Responsive ────────────────────────────────────────── */
 @media (min-width: 48rem) {
   .heading {

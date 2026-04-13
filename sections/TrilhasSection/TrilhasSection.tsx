@@ -12,7 +12,18 @@ export default function TrilhasSection() {
 
         {/* Text */}
         <div className={styles.txt}>
-          <h2 className={styles.heading}>O que são as Trilhas</h2>
+          <h2 className={styles.heading}>
+            O que são as{" "}
+            <span className={styles.trilhasWrapper}>
+              Trilhas
+              <img
+                className={styles.decorSvg7}
+                src="/illustrations/@svg7.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+          </h2>
 
           <div className={styles.body}>
             <p className={styles.paragraph}>

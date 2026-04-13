@@ -77,6 +77,70 @@
   width: 100%;
 }
 
+/* ── Decorative SVGs — ancorados ao texto ──────────────── */
+/* Todos os tamanhos em `em` = escalam com o font-size do h1.
+   Wrappers inline-block criam contexto de posicionamento
+   sem quebrar o layout de texto centralizado.                */
+
+/* Wrapper de "em" — ancora o sublinhado */
+.emWrapper {
+  position: relative;
+  display:  inline-block;
+}
+
+/* @svg1: brush stroke underline sob "em"
+   Largura > emWrapper para ter a extensão do Figma (~1.4em ≈ 135px @ 96px) */
+.decorSvg1 {
+  position:       absolute;
+  bottom:         -0.1em;
+  left:           50%;
+  transform:      translateX(-50%);
+  width:          1.4em;
+  height:         auto;
+  pointer-events: none;
+  user-select:    none;
+}
+
+/* Wrapper do "i" em "comun[i]dade" */
+.iWrapper {
+  position: relative;
+  display:  inline-block;
+}
+
+/* @svg2: gem cobrindo a bolinha do "i"
+   A bolinha fica perto do topo do caractere (ascender).
+   top: -0.05em ancora o gem no topo do iWrapper,
+   cobrindo o dot. (~0.3em ≈ 29px @ 96px)             */
+.decorSvg2 {
+  position:       absolute;
+  top:            0.05em;
+  left:           50%;
+  transform:      translateX(-50%);
+  width:          0.3em;
+  height:         auto;
+  pointer-events: none;
+  user-select:    none;
+}
+
+/* Wrapper de "comunidade" — ancora o coração */
+.comunidadeWrapper {
+  position: relative;
+  display:  inline-block;
+}
+
+/* @svg3: coração à direita de "comunidade"
+   (~0.56em ≈ 54px @ 96px) */
+.decorSvg3 {
+  position:       absolute;
+  left:           calc(100% + 0.12em);
+  top:            50%;
+  transform:      translateY(-50%);
+  width:          0.56em;
+  height:         auto;
+  pointer-events: none;
+  user-select:    none;
+}
+
 /* ── Folder stack ──────────────────────────────────────── */
 .folderStack {
   position: relative;
