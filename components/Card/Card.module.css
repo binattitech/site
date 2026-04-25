@@ -35,7 +35,6 @@
   width: 100%;
 }
 
-/* hover: borda ligeiramente mais espessa */
 .tutorialHover {
   border-width: 2px;
 }
@@ -62,17 +61,22 @@
   border-top: 1px solid var(--card-border);
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);   /* 8px */
+  gap: var(--space-2);
   align-items: flex-start;
   width: 100%;
   flex-shrink: 0;
   transition: background 150ms ease;
 }
 
-.textAreaMd { padding: var(--space-8);  }  /* 32px */
-.textAreaSm { padding: var(--space-5);  }  /* 20px */
+.textAreaMd {
+  padding: var(--space-8);
+}
 
-/* ── Etiqueta categoria (mono, uppercase, vermelho) ── */
+.textAreaSm {
+  padding: var(--space-5);
+}
+
+/* ── Etiqueta categoria ── */
 .category {
   --category-color: var(--red-600);
 
@@ -83,7 +87,6 @@
   letter-spacing: var(--text-mono-upper-tracking);
   color: var(--category-color);
   text-transform: uppercase;
-  width: 100%;
 }
 
 /* ── Título tutorial md ── */
@@ -107,7 +110,7 @@
 
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-md-size); /* mobile: 16px */
+  font-size: var(--text-md-size);
   line-height: var(--text-md-lh);
   letter-spacing: var(--text-md-tracking);
   color: var(--title-color);
@@ -157,36 +160,24 @@
   background: transparent;
 }
 
-/* md: linha horizontal */
+/* Row externo: texto à esquerda, tag+seta à direita, centralizados verticalmente */
 .articlesMd {
   flex-direction: row;
   align-items: center;
-  gap: var(--breakpoints-section-content-paragraph-gap); /* 8px→12px→16px */
-  padding: var(--breakpoints-section-content-gap) 0;    /* 16px→24px→32px */
+  gap: var(--breakpoints-section-content-paragraph-gap);
+  padding: var(--breakpoints-section-content-gap) 0;
   width: 100%;
 }
 
 .articlesMdHover {
-  padding-left: var(--space-8);     /* 32px — desloca conteúdo no hover */
+  padding-left: var(--space-8);
 }
 
-/* sm: coluna */
-.articlesSm {
-  flex-direction: column;
-  gap: 0;
-  padding: var(--space-5) 0;        /* 20px 0 */
-  width: 100%;
-}
-
-.articlesSmHover {
-  padding-left: var(--space-5);     /* 20px — desloca conteúdo no hover */
-}
-
-/* ── Bloco de cabeçalho do artigo ── */
+/* ── Bloco de texto ── */
 .articleHeader {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);              /* 8px */
+  gap: var(--space-2);
   align-items: flex-start;
 }
 
@@ -195,35 +186,27 @@
   min-width: 0;
 }
 
-.articleHeaderSm {
-  width: 100%;
-  flex-shrink: 0;
+/* Categoria standalone — desktop only */
+.categoryDesktop {
+  display: block;
 }
 
-/* Linha categoria+tag — mobile only, escondida por padrão */
+/* Linha categoria + tag — mobile only (escondida por padrão) */
 .articleCategoryRow {
   display: none;
   align-items: center;
-  gap: var(--space-2);              /* 8px */
+  justify-content: space-between;
   width: 100%;
+  gap: var(--space-2);
 }
 
-/* Categoria standalone — desktop only */
-.categoryDesktop {
-  /* visível por padrão */
-}
-
-/* Wrapper tag+seta — display:contents faz os filhos entrarem no flex row */
-.articleActions {
-  display: contents;
-}
-
-.articleCategoryFlex {
+/* Categoria dentro da linha mobile — estica para empurrar a tag à direita */
+.categoryMobile {
   flex: 1;
   min-width: 0;
 }
 
-/* ── Título article md ── */
+/* ── Título article ── */
 .articleTitleMd {
   --title-color: var(--fg-emphasis);
 
@@ -239,31 +222,15 @@
   width: 100%;
 }
 
-/* ── Título article sm ── */
-.articleTitleSm {
-  --title-color: var(--fg-emphasis);
-
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--text-md-size); /* mobile: 16px */
-  line-height: var(--text-md-lh);
-  letter-spacing: var(--text-md-tracking);
-  color: var(--title-color);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
+/* ── Tag + seta — desktop only, centralizados no meio do card ── */
+.articleActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
 }
 
-@media (min-width: 80rem) {
-  .articleTitleSm {
-    font-size: var(--text-xl-size);
-    line-height: var(--text-xl-lh);
-    letter-spacing: var(--text-xl-tracking);
-  }
-}
-
-/* ── Seta direita (articles md) ── */
+/* ── Seta ── */
 .arrow {
   --arrow-color: var(--fg-emphasis);
 
@@ -274,65 +241,67 @@
   color: var(--arrow-color);
 }
 
-.arrowDefault { width: var(--space-5);  height: var(--space-5);  }  /* 20px */
-.arrowHover   { width: var(--space-6);  height: var(--space-6);  }  /* 24px */
+.arrowDefault {
+  width: var(--space-5);
+  height: var(--space-5);
+}
+
+.arrowHover {
+  width: var(--space-6);
+  height: var(--space-6);
+}
 
 /* ════════════════════════════════════════════════════════════
    RESPONSIVE — Mobile (< 48rem)
-   Tutorial md → sm visual  |  Articles md → sm visual
    ════════════════════════════════════════════════════════════ */
-
 @media (max-width: 47.938rem) {
-  /* ── Tutorial: padding e título menores ── */
+
+  /* Tutorial: padding e título menores */
   .textAreaMd {
-    padding: var(--space-5);        /* 20px — sm */
+    padding: var(--space-5);
   }
 
   .titleMd {
-    font-size:      var(--text-xl-size);
-    line-height:    var(--text-xl-lh);
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-lh);
     letter-spacing: var(--text-xl-tracking);
   }
 
-  /* ── Articles: layout vertical ── */
+  /* Articles: layout vertical */
   .articlesMd {
-    flex-direction: column;
+    align-items: flex-start;
   }
 
-  /* Mostrar categoria+tag inline (estrutura mobile) */
+  /* Mostra linha categoria + tag */
   .articleCategoryRow {
     display: flex;
   }
 
-  /* Esconder categoria standalone (estrutura desktop) */
+  /* Esconde categoria standalone */
   .categoryDesktop {
     display: none;
   }
 
-  /* Esconder tag+seta */
+  /* Esconde tag + seta */
   .articleActions {
     display: none;
   }
 
-  /* Título menor */
   .articleTitleMd {
-    font-size:      var(--text-xl-size);
-    line-height:    var(--text-xl-lh);
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-lh);
     letter-spacing: var(--text-xl-tracking);
-    white-space:    normal;          /* permite quebra de linha no mobile */
+    white-space: normal;
   }
 
-  /* Hover indent menor no mobile */
   .articlesMd:hover {
-    padding-left: var(--space-5);   /* 20px — sm hover */
+    padding-left: var(--space-5);
   }
 }
 
 /* ════════════════════════════════════════════════════════════
-   HOVER STATES — CSS :hover (complementa os modificadores de prop)
+   HOVER STATES
    ════════════════════════════════════════════════════════════ */
-
-/* Tutorial: fundo do texto escurece levemente + borda fica mais espessa */
 .tutorial:hover {
   border-width: 2px;
 }
@@ -341,17 +310,10 @@
   background: var(--action-outline-bg-hover);
 }
 
-/* Articles md: conteúdo desliza para a direita + seta cresce */
 .articlesMd:hover {
   padding-left: var(--space-8);
 }
 
-/* Articles sm: conteúdo desliza levemente para a direita */
-.articlesSm:hover {
-  padding-left: var(--space-5);
-}
-
-/* Seta cresce via scale para não causar reflow */
 .articles:hover .arrow {
   transform: scale(1.2);
   transition: transform 150ms ease;

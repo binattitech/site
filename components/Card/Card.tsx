@@ -7,18 +7,17 @@ import TagArea from "@/components/TagArea";
 import styles from "./Card.module.css";
 
 export type CardVariant = "tutorial" | "articles";
-export type CardSize    = "md" | "sm";
-export type CardStates  = "default" | "hover";
+export type CardSize = "md" | "sm";
+export type CardStates = "default" | "hover";
 
 export interface CardProps {
-  variant?:  CardVariant;
-  size?:     CardSize;
-  states?:   CardStates;
-  title?:    string;
-  author?:   string;
+  variant?: CardVariant;
+  size?: CardSize;
+  states?: CardStates;
+  title?: string;
+  author?: string;
   category?: string;
-  tag?:      string;
-  /** Src da imagem (tutorial) */
+  tag?: string;
   imageSrc?: string;
   imageAlt?: string;
   className?: string;
@@ -26,23 +25,21 @@ export interface CardProps {
 }
 
 export default function Card({
-  variant  = "tutorial",
-  size     = "md",
-  states   = "default",
-  title    = "Como criar um Design System com Claude",
-  author   = "por Fulana",
+  variant = "tutorial",
+  size = "md",
+  states = "default",
+  title = "Como criar um Design System com Claude",
+  author = "por Fulana",
   category = "NA PRÁTICA COM IA",
-  tag      = "tag content",
+  tag = "tag content",
   imageSrc = "/placeholder-card.png",
   imageAlt = "",
   className,
   onClick,
 }: CardProps) {
   const isTutorial = variant === "tutorial";
-  const isArticles = variant === "articles";
-  const isMd       = size === "md";
-  const isSm       = size === "sm";
-  const isHover    = states === "hover";
+  const isMd = size === "md";
+  const isHover = states === "hover";
 
   /* ── Tutorial ──────────────────────────────────────────── */
   if (isTutorial) {
@@ -52,21 +49,35 @@ export default function Card({
       isMd ? styles.tutorialMd : styles.tutorialSm,
       isHover ? styles.tutorialHover : "",
       className ?? "",
-    ].filter(Boolean).join(" ");
+    ]
+      .filter(Boolean)
+      .join(" ");
 
     return (
-      <article className={cardClass} data-variant="tutorial" data-size={size} data-states={states} onClick={onClick}>
-        {/* Imagem 16:9 */}
+      <article
+        className={cardClass}
+        data-variant="tutorial"
+        data-size={size}
+        data-states={states}
+        onClick={onClick}
+      >
         <div className={styles.image}>
-          <Image src={imageSrc} alt={imageAlt} fill style={{ objectFit: "cover" }} />
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
 
-        {/* Texto */}
-        <div className={[styles.textArea, isMd ? styles.textAreaMd : styles.textAreaSm].join(" ")}>
+        <div
+          className={[
+            styles.textArea,
+            isMd ? styles.textAreaMd : styles.textAreaSm,
+          ].join(" ")}
+        >
           <p className={styles.category}>{category}</p>
-
           <p className={isMd ? styles.titleMd : styles.titleSm}>{title}</p>
-
           <div className={styles.meta}>
             <span className={styles.author}>{author}</span>
             <TagArea content={tag} />
@@ -77,38 +88,52 @@ export default function Card({
   }
 
   /* ── Articles ──────────────────────────────────────────── */
-  // Layout é sempre md; CSS faz a troca responsive para mobile (sm visual).
   const cardClass = [
     styles.card,
     styles.articles,
     styles.articlesMd,
     isHover ? styles.articlesMdHover : "",
     className ?? "",
-  ].filter(Boolean).join(" ");
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <article className={cardClass} data-variant="articles" data-size={size} data-states={states} onClick={onClick}>
-
-      {/* Bloco de cabeçalho */}
+    <article
+      className={cardClass}
+      data-variant="articles"
+      data-size={size}
+      data-states={states}
+      onClick={onClick}
+    >
+      {/* Bloco de texto — flex: 1 */}
       <div className={[styles.articleHeader, styles.articleHeaderMd].join(" ")}>
+        {/* Categoria standalone — desktop only */}
+        <p className={[styles.category, styles.categoryDesktop].join(" ")}>
+          {category}
+        </p>
 
-        {/* Mobile: categoria + tag na mesma linha (sm style) */}
+        {/* Linha categoria + tag — mobile only */}
         <div className={styles.articleCategoryRow}>
-          <p className={[styles.category, styles.articleCategoryFlex].join(" ")}>{category}</p>
+          <p className={[styles.category, styles.categoryMobile].join(" ")}>
+            {category}
+          </p>
           <TagArea content={tag} />
         </div>
-
-        {/* Desktop: categoria em linha própria (md style) */}
-        <p className={[styles.category, styles.categoryDesktop].join(" ")}>{category}</p>
 
         <p className={styles.articleTitleMd}>{title}</p>
         <span className={styles.author}>{author}</span>
       </div>
 
-      {/* Desktop: tag + seta — display:contents faz eles entrarem no flex row */}
+      {/* Tag + seta — desktop only, centralizados verticalmente no meio do card */}
       <div className={styles.articleActions}>
         <TagArea content={tag} />
-        <div className={[styles.arrow, isHover ? styles.arrowHover : styles.arrowDefault].join(" ")}>
+        <div
+          className={[
+            styles.arrow,
+            isHover ? styles.arrowHover : styles.arrowDefault,
+          ].join(" ")}
+        >
           <ArrowRight size={isHover ? 24 : 20} />
         </div>
       </div>
