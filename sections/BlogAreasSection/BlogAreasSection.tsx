@@ -116,13 +116,6 @@ export default function BlogAreasSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.heading}>Todas as áreas</h2>
-          <p className={styles.subtitle}>
-            Conteúdo escrito por mulheres em tech, testado na prática e
-            organizado por área de atuação.
-          </p>
-        </div>
 
         <div className={styles.grid}>
           {ARTIGOS.map((a) => (

@@ -41,10 +41,10 @@ export default function Header({
       <div className={styles.nav}>
 
         {/* ── Logo ── */}
-        <div className={styles.logo}>
+        <a href="/" className={styles.logo} aria-label="Ir para a home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logoSrc} alt={logoAlt} className={styles.logoImg} />
-        </div>
+        </a>
 
         {/* ── Menu central (hidden on sm) ── */}
         <nav className={styles.menu} aria-label="Navegação principal">
