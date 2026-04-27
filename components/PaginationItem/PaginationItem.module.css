@@ -1,0 +1,53 @@
+/*
+ * PaginationItem — Binatti UI
+ * state (default | hover | active | disabled)
+ */
+
+.item {
+  --item-bg:     transparent;
+  --item-border: var(--action-outline-border);
+  --item-color:  var(--fg-emphasis);
+  --item-opacity: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;   /* 36px */
+  height: 2.25rem;  /* 36px */
+  padding: var(--space-1) var(--space-1-5);
+  border: 1px solid var(--item-border);
+  border-radius: var(--radius-6xs);
+  background: var(--item-bg);
+  color: var(--item-color);
+  opacity: var(--item-opacity);
+  font-family: var(--font-family);
+  font-size: var(--text-sm-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  cursor: pointer;
+  transition: background-color 100ms ease;
+  flex-shrink: 0;
+}
+
+.item:hover,
+.item[data-state="hover"] {
+  --item-bg: var(--action-outline-bg-hover);
+}
+
+.item[data-state="active"] {
+  --item-bg:     var(--action-filled-bg-default);
+  --item-color:  var(--fg-offwhite);
+  --item-border: transparent;
+}
+
+.item[data-state="active"]:hover {
+  --item-bg: var(--action-filled-bg-hover);
+}
+
+.item[data-state="disabled"],
+.item:disabled {
+  --item-opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}

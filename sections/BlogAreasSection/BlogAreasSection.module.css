@@ -44,6 +44,14 @@
   max-width: 600px;
 }
 
+/* ── Grid + Pagination wrapper ──────────────────────────── */
+.gridWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8); /* 32px entre grid e pagination */
+  width: 100%;
+}
+
 /* ── Grid — 1 col mobile, 2 col tablet, 3 col desktop ───── */
 .grid {
   display: grid;

@@ -1,5 +1,11 @@
+"use client";
+
+import React, { useState } from "react";
 import Card from "@/components/Card";
+import Pagination from "@/components/Pagination";
 import styles from "./BlogAreasSection.module.css";
+
+const ITEMS_PER_PAGE = 9;
 
 const ARTIGOS = [
   {
@@ -113,24 +119,39 @@ const ARTIGOS = [
 ];
 
 export default function BlogAreasSection() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(ARTIGOS.length / ITEMS_PER_PAGE);
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const artigos = ARTIGOS.slice(start, start + ITEMS_PER_PAGE);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
 
-        <div className={styles.grid}>
-          {ARTIGOS.map((a) => (
-            <Card
-              key={a.title}
-              variant="tutorial"
-              size="md"
-              title={a.title}
-              author={a.author}
-              category={a.category}
-              tag={a.tag}
-              imageSrc="/placeholder-card.png"
-            />
-          ))}
+        <div className={styles.gridWrapper}>
+          <div className={styles.grid}>
+            {artigos.map((a) => (
+              <Card
+                key={a.title}
+                variant="tutorial"
+                size="md"
+                title={a.title}
+                author={a.author}
+                category={a.category}
+                tag={a.tag}
+                imageSrc="/placeholder-card.png"
+              />
+            ))}
+          </div>
+
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
         </div>
+
       </div>
     </section>
   );

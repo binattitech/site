@@ -1,0 +1,38 @@
+/*
+ * PaginationGroup — Binatti UI
+ * prev button + page items + next button
+ */
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2); /* 8px */
+}
+
+/* ── Botões prev / next ───────────────────────────────────── */
+.arrow {
+  --arrow-border: var(--action-outline-border);
+  --arrow-bg:     transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;   /* 36px */
+  height: 2.25rem;  /* 36px */
+  border: 1px solid var(--arrow-border);
+  border-radius: var(--radius-6xs);
+  background: var(--arrow-bg);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 100ms ease;
+}
+
+.arrow:hover:not(:disabled) {
+  --arrow-bg: var(--action-outline-bg-hover);
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
