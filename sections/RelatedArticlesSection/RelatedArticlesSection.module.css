@@ -1,0 +1,59 @@
+/* ═══════════════════════════════════════════════════════════
+   RelatedArticlesSection
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--breakpoints-section-padding-1) var(--breakpoints-section-padding-2);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-layout-gap);
+  width: 100%;
+}
+
+/* ── Header: heading + button ─────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* ── Section heading ──────────────────────────────────────── */
+.heading {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: var(--text-6xl-size);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-6xl);
+  color: var(--fg-emphasis);
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Cards grid — shared borders via outline ──────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 80rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

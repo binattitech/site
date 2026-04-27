@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════════════════════
+   ArticleHeroSection
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  --hero-card-border: var(--action-outline-border);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-9) var(--breakpoints-section-padding-2) 0;
+  width: 100%;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  --card-bg: var(--bg-default);
+
+  background: var(--card-bg);
+  box-shadow: inset 0 0 0 1px var(--hero-card-border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Cover image ──────────────────────────────────────────── */
+.image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 24 / 5;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Text area ────────────────────────────────────────────── */
+.textArea {
+  border-top: 1px solid var(--hero-card-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* ── Title ────────────────────────────────────────────────── */
+.title {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-5xl-size);
+  line-height: var(--text-5xl-lh);
+  letter-spacing: var(--text-5xl-tracking);
+  color: var(--fg-emphasis);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Meta row ─────────────────────────────────────────────── */
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.metaRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* ── Date text ────────────────────────────────────────────── */
+.date {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-lh);
+  letter-spacing: var(--text-xs-tracking);
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 47.938rem) {
+  .textArea {
+    padding: var(--space-5);
+  }
+
+  .metaRight {
+    flex-wrap: wrap;
+  }
+}

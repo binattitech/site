@@ -1,0 +1,86 @@
+/* ═══════════════════════════════════════════════════════════
+   ArticleBodySection
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--breakpoints-section-padding-1) var(--breakpoints-section-padding-2);
+  width: 100%;
+}
+
+/* ── Two-column layout ────────────────────────────────────── */
+.body {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ── Text column ──────────────────────────────────────────── */
+.textColumn {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-gap);
+}
+
+/* ── Intro paragraphs ─────────────────────────────────────── */
+.introParagraphs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-paragraph-gap);
+}
+
+/* ── Article section (heading + paragraphs) ───────────────── */
+.articleSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-gap);
+}
+
+/* ── Section heading ──────────────────────────────────────── */
+.sectionHeading {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-4xl-size);
+  line-height: var(--text-4xl-lh);
+  letter-spacing: var(--text-4xl-tracking);
+  color: var(--fg-emphasis);
+  width: 100%;
+}
+
+/* ── Text container ───────────────────────────────────────── */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-paragraph-gap);
+}
+
+/* ── Paragraph ────────────────────────────────────────────── */
+.paragraph {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
+  color: var(--fg-default);
+  width: 100%;
+}
+
+/* ── Sidebar (TOC) — desktop only ─────────────────────────── */
+.sidebar {
+  width: 18.5625rem; /* 297px */
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--space-16); /* offset for sticky header (~64px) */
+}
+
+@media (max-width: 79.938rem) {
+  .sidebar {
+    display: none;
+  }
+}

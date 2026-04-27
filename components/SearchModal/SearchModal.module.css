@@ -69,6 +69,7 @@
   text-align: center;
   padding: var(--space-6);
   width: 100%;
+}
 
 .empty strong {
   font-weight: var(--font-weight-bold);
