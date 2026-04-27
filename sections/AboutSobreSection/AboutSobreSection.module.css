@@ -1,0 +1,155 @@
+/*
+ * AboutSobreSection — Binatti UI
+ */
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--breakpoints-section-padding-1);
+  padding-inline: var(--breakpoints-section-padding-2);
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ── Left column ────────────────────────────────────────── */
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-gap);
+  align-items: flex-start;
+  padding-block: var(--space-8);
+  padding-right: var(--space-8);
+}
+
+.badgeLeft {
+  --badge-color: var(--red-600);
+
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-upper-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-mono-upper-lh);
+  letter-spacing: var(--text-mono-upper-tracking);
+  text-transform: var(--text-mono-upper-case);
+  color: var(--badge-color);
+}
+
+.headingLeft {
+  --heading-size: var(--text-5xl-size);
+  --heading-color: var(--red-600);
+
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: var(--heading-size);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-6xl);
+  color: var(--heading-color);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-paragraph-gap);
+  width: 100%;
+}
+
+.paragraph {
+  --paragraph-size: var(--text-md-size);
+
+  font-family: var(--font-family);
+  font-size: var(--paragraph-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
+  color: var(--fg-default);
+}
+
+/* ── Right column ───────────────────────────────────────── */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-gap);
+  align-items: flex-start;
+  padding: var(--space-8);
+  background: var(--action-filled-bg-default);
+}
+
+.badgeRight {
+  --badge-color: var(--fg-offwhite);
+
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-upper-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-mono-upper-lh);
+  letter-spacing: var(--text-mono-upper-tracking);
+  text-transform: var(--text-mono-upper-case);
+  color: var(--badge-color);
+}
+
+.headingRight {
+  --heading-size: var(--text-5xl-size);
+  --heading-color: var(--fg-offwhite);
+
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: var(--heading-size);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-6xl);
+  color: var(--heading-color);
+}
+
+/* ── Responsive: tablet ─────────────────────────────────── */
+
+@media (min-width: 48rem) {
+  .content {
+    flex-direction: row;
+  }
+
+  .left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .right {
+    flex: 1;
+    min-width: 0;
+    align-self: stretch;
+  }
+}
+
+/* ── Responsive: desktop ────────────────────────────────── */
+
+@media (min-width: 80rem) {
+  .left {
+    padding-block: var(--space-16);
+    padding-right: var(--space-16);
+  }
+
+  .right {
+    padding: var(--space-16);
+  }
+
+  .headingLeft {
+    --heading-size: var(--text-6xl-size);
+  }
+
+  .headingRight {
+    --heading-size: var(--text-6xl-size);
+  }
+
+  .paragraph {
+    --paragraph-size: var(--text-xl-size);
+    line-height: var(--text-xl-lh);
+    letter-spacing: var(--text-xl-tracking);
+  }
+}

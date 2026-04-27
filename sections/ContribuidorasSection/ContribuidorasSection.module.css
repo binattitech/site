@@ -1,0 +1,57 @@
+/*
+ * ContribuidorasSection — Binatti UI
+ */
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--breakpoints-section-padding-1);
+  padding-inline: var(--breakpoints-section-padding-2);
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-layout-gap);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.heading {
+  --heading-size: var(--text-5xl-size);
+
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: var(--heading-size);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-6xl);
+  color: var(--fg-emphasis);
+}
+
+.grid {
+  --grid-gap: var(--breakpoints-section-content-gap);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 80rem) {
+  .heading {
+    --heading-size: var(--text-6xl-size);
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

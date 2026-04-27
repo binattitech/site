@@ -1,5 +1,5 @@
 import React from "react";
-import AvatarWithText from "@/components/AvatarWithText";
+import Avatar from "@/components/Avatar";
 import Badge from "@/components/Badge";
 import styles from "./ArticleHeroSection.module.css";
 
@@ -33,7 +33,7 @@ export default function ArticleHeroSection({
         <div className={styles.textArea}>
           <p className={styles.title}>{title}</p>
           <div className={styles.meta}>
-            <AvatarWithText
+            <Avatar
               name={authorName}
               role={authorRole}
               avatarSrc={avatarSrc}

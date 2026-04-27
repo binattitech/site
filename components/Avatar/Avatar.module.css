@@ -1,0 +1,160 @@
+/*
+ * AvatarWithText — Binatti UI
+ */
+
+/* ============================================
+   VARIANT: withText — horizontal: circle + name + role
+   ============================================ */
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.avatar {
+  --avatar-size: 3rem;
+
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--action-outline-bg-hover);
+  color: var(--fg-emphasis);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--text-sm-size);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--text-sm-tracking);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+  white-space: nowrap;
+}
+
+.name {
+  font-family: var(--font-family);
+  font-size: var(--text-sm-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--fg-emphasis);
+}
+
+.role {
+  font-family: var(--font-family);
+  font-size: var(--text-xs-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-xs-lh);
+  letter-spacing: var(--text-xs-tracking);
+  color: var(--fg-default);
+}
+
+/* ============================================
+   VARIANT: card — vertical: square photo + footer row
+   ============================================ */
+
+.card {
+  --card-gap: var(--space-2);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.cardPhoto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardPlaceholder {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--fg-muted);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--text-sm-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--fg-muted);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.cardName {
+  font-family: var(--font-family);
+  font-size: var(--text-sm-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--fg-emphasis);
+  width: 100%;
+}
+
+.cardRole {
+  font-family: var(--font-family);
+  font-size: var(--text-xs-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-xs-lh);
+  letter-spacing: var(--text-xs-tracking);
+  color: var(--fg-default);
+  width: 100%;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-emphasis);
+}

@@ -20,10 +20,6 @@
 html,
 body {
   background-color: var(--bg-default);
-  background-image:
-    linear-gradient(to right,  color-mix(in srgb, var(--blue-400) 15%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--blue-400) 15%, transparent) 1px, transparent 1px);
-  background-size: 102px 102px;
   color: var(--fg-emphasis);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
