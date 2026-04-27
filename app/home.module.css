@@ -10,6 +10,10 @@
   justify-content: center;
   min-height: 100dvh;
   background-color: #ffffff;
+  background-image:
+    linear-gradient(to right,  color-mix(in srgb, #60a5fa 15%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, #60a5fa 15%, transparent) 1px, transparent 1px);
+  background-size: 102px 102px;
 }
 
 .manutencaoTexto {
