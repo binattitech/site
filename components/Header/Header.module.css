@@ -7,10 +7,13 @@
 .header {
   --header-bg: var(--bg-default);
 
-
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--header-bg);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
 
   /* desktop default */
@@ -19,11 +22,44 @@
 
 /* ── Barra interna ────────────────────────────────────────── */
 .nav {
-  flex: 1;
   position: relative;
   height: var(--space-11); /* 44px */
   display: flex;
   align-items: center;
+}
+
+/* ── Dropdown wrapper (mobile) ────────────────────────────── */
+/* overflow: hidden é o que cria o efeito de "sair de trás do header" */
+.dropdownWrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.dropdownWrapper > * {
+  animation: slideDown 220ms ease-out both;
+}
+
+.closing > * {
+  animation: slideUp 200ms ease-in both;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-100%); }
+}
+
+/* Força largura total dentro do wrapper */
+.dropdownFull {
+  --dropdown-w: 100%;
 }
 
 /* ── Logo ─────────────────────────────────────────────────── */

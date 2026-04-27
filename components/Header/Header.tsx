@@ -1,7 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { X } from "@phosphor-icons/react";
 import Button from "@/components/Button";
+import NavMenuDropdown from "@/components/NavMenuDropdown";
 import ToggleNavMenu from "@/components/ToggleNavMenu";
 import styles from "./Header.module.css";
 
@@ -36,8 +38,35 @@ export default function Header({
   onMenuOpen,
   className,
 }: HeaderProps) {
+  const [isOpen, setIsOpen] = useState(false);    // controla ícone e aria
+  const [isVisible, setIsVisible] = useState(false); // controla montagem (mantém durante close)
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const CLOSE_DURATION = 200; // ms — deve bater com slideUp
+
+  const openMenu = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setIsOpen(true);
+    setIsVisible(true);
+    onMenuOpen?.();
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    closeTimerRef.current = setTimeout(() => setIsVisible(false), CLOSE_DURATION);
+  };
+
+  const handleMenuToggle = () => isOpen ? closeMenu() : openMenu();
+
+  useEffect(() => () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+  }, []);
+
   return (
-    <header className={[styles.header, className ?? ""].filter(Boolean).join(" ")}>
+    <header
+      className={[styles.header, className ?? ""].filter(Boolean).join(" ")}
+      data-menu-open={isOpen}
+    >
       <div className={styles.nav}>
 
         {/* ── Logo ── */}
@@ -66,10 +95,30 @@ export default function Header({
 
         {/* ── Hamburger (md + sm) ── */}
         <div className={styles.hamburger}>
-          <Button variant="outline" kind="icon" content="Abrir menu" onClick={onMenuOpen} />
+          <Button
+            variant="outline"
+            kind="icon"
+            content={isOpen ? "Fechar menu" : "Abrir menu"}
+            icon={isOpen ? <X size={24} color="var(--fg-emphasis)" /> : undefined}
+            onClick={handleMenuToggle}
+            aria-expanded={isOpen}
+          />
         </div>
 
       </div>
+
+      {/* ── Dropdown mobile ── */}
+      {isVisible && (
+        <div className={[styles.dropdownWrapper, !isOpen ? styles.closing : ""].filter(Boolean).join(" ")}>
+          <NavMenuDropdown
+            variant="complete"
+            navItems={navItems}
+            onVolunteer={onVolunteer}
+            onStudy={onStudy}
+            className={styles.dropdownFull}
+          />
+        </div>
+      )}
     </header>
   );
 }

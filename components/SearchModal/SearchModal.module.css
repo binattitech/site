@@ -1,0 +1,77 @@
+/*
+ * SearchModal — Binatti UI
+ * Overlay + modal centralizado, max 600px
+ */
+
+/* ── Overlay ─────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--black-alpha-30);
+  z-index: 200;
+  padding: var(--space-4);       /* 16px em todos os lados */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 150ms ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Caixa do modal ──────────────────────────────────────── */
+.modal {
+  --modal-bg:     var(--bg-default);
+  --modal-border: var(--action-outline-border);
+
+  background: var(--modal-bg);
+  box-shadow: inset 0 0 0 1px var(--modal-border);
+  width: 100%;
+  max-width: 37.5rem;            /* 600px */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  animation: slideDown 180ms ease-out both;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-8px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Força o SearchBar a ocupar largura total */
+.modal > :first-child {
+  width: 100%;
+}
+
+/* ── Corpo (resultados / vazio) ──────────────────────────── */
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--space-3) 0;    /* 12px topo/base, sem padding lateral — cada item tem o seu */
+}
+
+/* ── Estado vazio ────────────────────────────────────────── */
+.empty {
+  font-family: var(--font-family);
+  font-size: var(--text-md-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
+  color: var(--fg-muted);
+  text-align: center;
+  padding: var(--space-6);
+  width: 100%;
+}
+
+.empty strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--fg-muted);
+}

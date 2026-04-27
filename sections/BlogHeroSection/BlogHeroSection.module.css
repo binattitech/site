@@ -38,7 +38,7 @@
   font-family: var(--font-heading);
   font-weight: var(--font-weight-extrabold);
   font-variation-settings: var(--font-variation-heading);
-  font-size: var(--text-4xl-size); /* mobile: 36px */
+  font-size: var(--text-7xl-size); /* mobile: 4rem | desktop: 6rem — via design.css override */
   line-height: var(--text-grotesque-lh);
   letter-spacing: var(--text-grotesque-tracking-7xl);
   color: var(--heading-color);
@@ -94,10 +94,6 @@
     width: 1px;
     height: auto;
     align-self: stretch;
-  }
-
-  .heading {
-    font-size: var(--text-7xl-size); /* desktop: 96px */
   }
 
   .body {
