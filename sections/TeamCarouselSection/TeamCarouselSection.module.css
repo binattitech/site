@@ -25,6 +25,12 @@
   animation-play-state: paused;
 }
 
+@media (max-width: 47.938rem) {
+  .section {
+    --carousel-speed: 10s;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
