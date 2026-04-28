@@ -1,0 +1,45 @@
+/*
+ * GridLines — grid animado da home (verticais + horizontais)
+ */
+
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ── Linhas verticais — descem de cima para baixo ──────── */
+.vline {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: color-mix(in srgb, var(--blue-400) 15%, transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: vline-grow var(--dur, 3.5s) ease-in-out var(--delay, 0s) forwards;
+}
+
+@keyframes vline-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* ── Linhas horizontais — varrem da esquerda para direita ─ */
+.hline {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: color-mix(in srgb, var(--blue-400) 15%, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: hline-grow var(--dur, 3.5s) ease-in-out var(--delay, 0s) forwards;
+}
+
+@keyframes hline-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}

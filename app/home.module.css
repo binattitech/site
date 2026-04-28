@@ -41,17 +41,15 @@
 /* ── Página ──────────────────────────────────────────────── */
 .page {
   background-color: var(--bg-default);
-  background-image:
-    linear-gradient(to right,  color-mix(in srgb, var(--blue-400) 15%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--blue-400) 15%, transparent) 1px, transparent 1px);
-  background-size: 102px 102px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  isolation: isolate;
 }
+
 
 /* ── Decoração flutuante sobre o hero ── */
 .heroDecorGroup5 {

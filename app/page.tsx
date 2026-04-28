@@ -6,12 +6,14 @@ import TutoriaisSection from "@/sections/TutoriaisSection";
 import TrilhasSection from "@/sections/TrilhasSection";
 import ArtigosSection from "@/sections/ArtigosSection";
 import CTASection from "@/sections/CTASection";
+import GridLines from "@/components/GridLines";
 import s from "./home.module.css";
 import TeamCarouselSection from "@/sections/TeamCarouselSection/TeamCarouselSection";
 
 export default function Home() {
   return (
     <div className={s.page}>
+      <GridLines />
       <Header />
       <main>
         <HeroSection />
