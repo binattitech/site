@@ -1,6 +1,6 @@
 .section {
   --carousel-gap: var(--space-6);
-  --carousel-speed: 30s;
+  --carousel-speed: 20s;
 
   width: 100%;
   padding-block: var(--space-6);
