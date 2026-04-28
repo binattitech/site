@@ -18,6 +18,7 @@
     linear-gradient(to right,  var(--hero-grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--hero-grid-color) 1px, transparent 1px);
   background-size: var(--hero-grid-size) var(--hero-grid-size);
+  background-position: 0 var(--grid-offset-y, 0);
   width: 100%;
 }
 
