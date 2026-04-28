@@ -25,7 +25,7 @@ export default function ValoresSection() {
         <h2 className={styles.heading}>Nossos Valores</h2>
         <div className={styles.cards}>
           {VALORES.map((valor, i) => (
-            <div key={valor.id} className={styles.cqueard} data-index={i}>
+            <div key={valor.id} className={styles.card} data-index={i}>
               <div className={styles.cardTxt}>
                 <p className={styles.cardTitle}>{valor.title}</p>
                 <p className={styles.cardBody}>{valor.body}</p>
