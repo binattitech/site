@@ -4,7 +4,7 @@ export default function AboutHeroSection() {
   return (
     <section className={styles.section}>
       <div className={styles.content}>
-        <span className={styles.badge}>Binatti Community</span>
+        <span className={styles.badge}>BINATTI COMMUNITY</span>
         <h1 className={styles.heading}>
           Não é sobre tecnologia.
           <br />

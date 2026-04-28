@@ -4,11 +4,10 @@ export default function AboutSobreSection() {
   return (
     <section className={styles.section}>
       <div className={styles.content}>
-
         <div className={styles.left}>
           <span className={styles.badgeLeft}>Como tudo começou</span>
           <h2 className={styles.headingLeft}>
-            Mais que Códigos:{" "}
+            Mais que Códigos: <br />
             uma comunidade
           </h2>
           <div className={styles.body}>
@@ -31,7 +30,6 @@ export default function AboutSobreSection() {
             Educação gratuita, open source e em comunidade.
           </h2>
         </div>
-
       </div>
     </section>
   );
