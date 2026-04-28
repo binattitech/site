@@ -1,0 +1,36 @@
+.section {
+  --carousel-gap: var(--space-6);
+  --carousel-speed: 30s;
+
+  width: 100%;
+  padding-block: var(--space-6);
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  /* fallback */
+  max-width: 100vw;
+  position: relative;
+}
+.track {
+  display: flex;
+  gap: var(--carousel-gap);
+  /* Não usa width: max-content — deixa o flex calcular */
+  animation: marquee var(--carousel-speed) linear infinite;
+  will-change: transform;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
