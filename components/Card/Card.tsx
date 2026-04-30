@@ -7,7 +7,7 @@ import TagArea from "@/components/TagArea";
 import styles from "./Card.module.css";
 
 export type CardVariant = "tutorial" | "articles";
-export type CardSize = "md" | "sm";
+export type CardSize = "md" | "sm" | "xs";
 export type CardStates = "default" | "hover";
 
 export interface CardProps {
@@ -39,6 +39,8 @@ export default function Card({
 }: CardProps) {
   const isTutorial = variant === "tutorial";
   const isMd = size === "md";
+  const isSm = size === "sm";
+  const isXs = size === "xs";
   const isHover = states === "hover";
 
   /* ── Tutorial ──────────────────────────────────────────── */
@@ -74,7 +76,10 @@ export default function Card({
           className={[
             styles.textArea,
             isMd ? styles.textAreaMd : styles.textAreaSm,
-          ].join(" ")}
+            isHover ? styles.textAreaHover : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
         >
           <p className={styles.category}>{category}</p>
           <p className={isMd ? styles.titleMd : styles.titleSm}>{title}</p>
@@ -88,11 +93,17 @@ export default function Card({
   }
 
   /* ── Articles ──────────────────────────────────────────── */
+  const listSizeClass = isMd
+    ? styles.articlesMd
+    : isSm
+      ? styles.articlesSm
+      : styles.articlesXs;
+
   const cardClass = [
     styles.card,
     styles.articles,
-    styles.articlesMd,
-    isHover ? styles.articlesMdHover : "",
+    listSizeClass,
+    isMd && isHover ? styles.articlesMdHover : "",
     className ?? "",
   ]
     .filter(Boolean)
@@ -106,37 +117,52 @@ export default function Card({
       data-states={states}
       onClick={onClick}
     >
-      {/* Bloco de texto — flex: 1 */}
-      <div className={[styles.articleHeader, styles.articleHeaderMd].join(" ")}>
-        {/* Categoria standalone — desktop only */}
-        <p className={[styles.category, styles.categoryDesktop].join(" ")}>
-          {category}
-        </p>
+      {/* ── md: bloco texto + actions ── */}
+      {isMd && (
+        <>
+          <div className={[styles.articleHeader, styles.articleHeaderMd].join(" ")}>
+            {/* Categoria standalone — desktop only */}
+            <p className={[styles.category, styles.categoryDesktop].join(" ")}>
+              {category}
+            </p>
+            {/* Linha categoria + tag — mobile only */}
+            <div className={styles.articleCategoryRow}>
+              <p className={[styles.category, styles.categoryMobile].join(" ")}>
+                {category}
+              </p>
+              <TagArea content={tag} />
+            </div>
+            <p className={styles.articleTitleMd}>{title}</p>
+            <span className={styles.author}>{author}</span>
+          </div>
 
-        {/* Linha categoria + tag — mobile only */}
-        <div className={styles.articleCategoryRow}>
-          <p className={[styles.category, styles.categoryMobile].join(" ")}>
-            {category}
+          <div className={styles.articleActions}>
+            <TagArea content={tag} />
+            <div
+              className={[
+                styles.arrow,
+                isHover ? styles.arrowHover : styles.arrowDefault,
+              ].join(" ")}
+            >
+              <ArrowRight size={isHover ? 24 : 20} />
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ── sm / xs: layout vertical ── */}
+      {(isSm || isXs) && (
+        <div className={[styles.articleHeader, styles.articleHeaderSmXs].join(" ")}>
+          <div className={styles.articleCategoryRowSmXs}>
+            <p className={styles.category}>{category}</p>
+            <TagArea content={tag} />
+          </div>
+          <p className={isXs ? styles.articleTitleXs : styles.articleTitleSm}>
+            {title}
           </p>
-          <TagArea content={tag} />
+          <span className={styles.author}>{author}</span>
         </div>
-
-        <p className={styles.articleTitleMd}>{title}</p>
-        <span className={styles.author}>{author}</span>
-      </div>
-
-      {/* Tag + seta — desktop only, centralizados verticalmente no meio do card */}
-      <div className={styles.articleActions}>
-        <TagArea content={tag} />
-        <div
-          className={[
-            styles.arrow,
-            isHover ? styles.arrowHover : styles.arrowDefault,
-          ].join(" ")}
-        >
-          <ArrowRight size={isHover ? 24 : 20} />
-        </div>
-      </div>
+      )}
     </article>
   );
 }

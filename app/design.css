@@ -22,395 +22,532 @@
 
 :root {
 
-  /* ============================================================
+   /* ============================================================
      GLOBAL COLORS — FOUNDATION
      ============================================================ */
 
-  --black:                       #000000;
-  --white:                       #ffffff;
-  --off-white:                   #fffbed;   /* Off White.50 — same value as --off-white-scale-50 */
+   --black: #000000;
+   --white: #ffffff;
+   --off-white: #fffbed;
+   /* Off White.50 — same value as --off-white-scale-50 */
 
-  /* Black with opacity — suffix = % value (e.g. --black-alpha-5 = 5% opacity) */
-  --black-alpha-5:               #0000000d;
-  --black-alpha-10:              #0000001a;
-  --black-alpha-20:              #00000033;
-  --black-alpha-30:              #0000004d;
-  --black-alpha-40:              #00000066;
-  --black-alpha-50:              #00000080;
-  --black-alpha-60:              #00000099;
-  --black-alpha-70:              #000000b3;
-  --black-alpha-80:              #000000cc;
-  --black-alpha-90:              #000000e6;
+   /* Black with opacity — suffix = % value (e.g. --black-alpha-5 = 5% opacity) */
+   --black-alpha-5: #0000000d;
+   --black-alpha-10: #0000001a;
+   --black-alpha-20: #00000033;
+   --black-alpha-30: #0000004d;
+   --black-alpha-40: #00000066;
+   --black-alpha-50: #00000080;
+   --black-alpha-60: #00000099;
+   --black-alpha-70: #000000b3;
+   --black-alpha-80: #000000cc;
+   --black-alpha-90: #000000e6;
 
-  /* White with opacity */
-  --white-alpha-5:               #ffffff0d;
-  --white-alpha-10:              #ffffff1a;
-  --white-alpha-20:              #ffffff33;
-  --white-alpha-30:              #ffffff4d;
-  --white-alpha-40:              #ffffff66;
-  --white-alpha-50:              #ffffff80;
-  --white-alpha-60:              #ffffff99;
-  --white-alpha-70:              #ffffffb3;
-  --white-alpha-80:              #ffffffcc;
-  --white-alpha-90:              #ffffffe6;
+   /* White with opacity */
+   --white-alpha-5: #ffffff0d;
+   --white-alpha-10: #ffffff1a;
+   --white-alpha-20: #ffffff33;
+   --white-alpha-30: #ffffff4d;
+   --white-alpha-40: #ffffff66;
+   --white-alpha-50: #ffffff80;
+   --white-alpha-60: #ffffff99;
+   --white-alpha-70: #ffffffb3;
+   --white-alpha-80: #ffffffcc;
+   --white-alpha-90: #ffffffe6;
 
-  /* Off-white with opacity */
-  --off-white-alpha-5:           #fffbed0d;
-  --off-white-alpha-10:          #fffbed1a;
-  --off-white-alpha-20:          #fffbed33;
-  --off-white-alpha-30:          #fffbed4d;
-  --off-white-alpha-40:          #fffbed66;
-  --off-white-alpha-50:          #fffbed80;
-  --off-white-alpha-60:          #fffbed99;
-  --off-white-alpha-70:          #fffbedb3;
-  --off-white-alpha-80:          #fffbedcc;
-  --off-white-alpha-90:          #fffbede6;
+   /* Off-white with opacity */
+   --off-white-alpha-5: #fffbed0d;
+   --off-white-alpha-10: #fffbed1a;
+   --off-white-alpha-20: #fffbed33;
+   --off-white-alpha-30: #fffbed4d;
+   --off-white-alpha-40: #fffbed66;
+   --off-white-alpha-50: #fffbed80;
+   --off-white-alpha-60: #fffbed99;
+   --off-white-alpha-70: #fffbedb3;
+   --off-white-alpha-80: #fffbedcc;
+   --off-white-alpha-90: #fffbede6;
 
 
-  /* ============================================================
+   /* ============================================================
      GLOBAL COLORS — OFF WHITE SCALE
      Suffix = Tailwind step (50–950). No conflict with -alpha-* series.
      ============================================================ */
 
-  --off-white-50:                #fffbed;
-  --off-white-100:               #e8e4d4;
-  --off-white-200:               #d2cdbb;
-  --off-white-300:               #bbb6a4;
-  --off-white-400:               #a49f8d;
-  --off-white-500:               #8e8977;
-  --off-white-600:               #777262;
-  --off-white-700:               #605c4e;
-  --off-white-800:               #4a463a;
-  --off-white-900:               #323028;
-  --off-white-950:               #14130f;
+   --off-white-50: #fffbed;
+   --off-white-100: #e8e4d4;
+   --off-white-200: #d2cdbb;
+   --off-white-300: #bbb6a4;
+   --off-white-400: #a49f8d;
+   --off-white-500: #8e8977;
+   --off-white-600: #777262;
+   --off-white-700: #605c4e;
+   --off-white-800: #4a463a;
+   --off-white-900: #323028;
+   --off-white-950: #14130f;
 
 
-  /* ============================================================
+   /* ============================================================
      GLOBAL COLORS — STONE
      ============================================================ */
 
-  --stone-50:                    #fafaf9;
-  --stone-100:                   #f5f5f4;
-  --stone-200:                   #e7e5e4;
-  --stone-300:                   #d6d3d1;
-  --stone-400:                   #a8a29e;
-  --stone-500:                   #78716c;
-  --stone-600:                   #57534e;
-  --stone-700:                   #44403c;
-  --stone-800:                   #292524;
-  --stone-900:                   #1c1917;
-  --stone-950:                   #0c0a09;
+   --stone-50: #fafaf9;
+   --stone-100: #f5f5f4;
+   --stone-200: #e7e5e4;
+   --stone-300: #d6d3d1;
+   --stone-400: #a8a29e;
+   --stone-500: #78716c;
+   --stone-600: #57534e;
+   --stone-700: #44403c;
+   --stone-800: #292524;
+   --stone-900: #1c1917;
+   --stone-950: #0c0a09;
 
 
-  /* ============================================================
+   /* ============================================================
      GLOBAL COLORS — FULL PALETTE
      ============================================================ */
 
-  /* Rose */
-  --rose-50:   #fff1f2; --rose-100:  #ffe4e6; --rose-200:  #fecdd3;
-  --rose-300:  #fda4af; --rose-400:  #fb7185; --rose-500:  #f43f5e;
-  --rose-600:  #e11d48; --rose-700:  #be123c; --rose-800:  #9f1239;
-  --rose-900:  #881337; --rose-950:  #4c0519;
+   /* Rose */
+   --rose-50: #fff1f2;
+   --rose-100: #ffe4e6;
+   --rose-200: #fecdd3;
+   --rose-300: #fda4af;
+   --rose-400: #fb7185;
+   --rose-500: #f43f5e;
+   --rose-600: #e11d48;
+   --rose-700: #be123c;
+   --rose-800: #9f1239;
+   --rose-900: #881337;
+   --rose-950: #4c0519;
 
-  /* Pink */
-  --pink-50:   #fdf2f8; --pink-100:  #fce7f3; --pink-200:  #fbcfe8;
-  --pink-300:  #f9a8d4; --pink-400:  #f472b6; --pink-500:  #ec4899;
-  --pink-600:  #db2777; --pink-700:  #be185d; --pink-800:  #9d174d;
-  --pink-900:  #831843; --pink-950:  #500724;
+   /* Pink */
+   --pink-50: #fdf2f8;
+   --pink-100: #fce7f3;
+   --pink-200: #fbcfe8;
+   --pink-300: #f9a8d4;
+   --pink-400: #f472b6;
+   --pink-500: #ec4899;
+   --pink-600: #db2777;
+   --pink-700: #be185d;
+   --pink-800: #9d174d;
+   --pink-900: #831843;
+   --pink-950: #500724;
 
-  /* Fuchsia */
-  --fuchsia-50:  #fdf4ff; --fuchsia-100: #fae8ff; --fuchsia-200: #f5d0fe;
-  --fuchsia-300: #f0abfc; --fuchsia-400: #e879f9; --fuchsia-500: #d946ef;
-  --fuchsia-600: #c026d3; --fuchsia-700: #a21caf; --fuchsia-800: #86198f;
-  --fuchsia-900: #701a75; --fuchsia-950: #4a044e;
+   /* Fuchsia */
+   --fuchsia-50: #fdf4ff;
+   --fuchsia-100: #fae8ff;
+   --fuchsia-200: #f5d0fe;
+   --fuchsia-300: #f0abfc;
+   --fuchsia-400: #e879f9;
+   --fuchsia-500: #d946ef;
+   --fuchsia-600: #c026d3;
+   --fuchsia-700: #a21caf;
+   --fuchsia-800: #86198f;
+   --fuchsia-900: #701a75;
+   --fuchsia-950: #4a044e;
 
-  /* Purple */
-  --purple-50:   #faf5ff; --purple-100:  #f3e8ff; --purple-200:  #e9d5ff;
-  --purple-300:  #d8b4fe; --purple-400:  #c084fc; --purple-500:  #a855f7;
-  --purple-600:  #9333ea; --purple-700:  #7e22ce; --purple-800:  #6b21a8;
-  --purple-900:  #581c87; --purple-950:  #3b0764;
+   /* Purple */
+   --purple-50: #faf5ff;
+   --purple-100: #f3e8ff;
+   --purple-200: #e9d5ff;
+   --purple-300: #d8b4fe;
+   --purple-400: #c084fc;
+   --purple-500: #a855f7;
+   --purple-600: #9333ea;
+   --purple-700: #7e22ce;
+   --purple-800: #6b21a8;
+   --purple-900: #581c87;
+   --purple-950: #3b0764;
 
-  /* Violet */
-  --violet-50:   #f5f3ff; --violet-100:  #ede9fe; --violet-200:  #ddd6fe;
-  --violet-300:  #c4b5fd; --violet-400:  #a78bfa; --violet-500:  #8b5cf6;
-  --violet-600:  #7c3aed; --violet-700:  #6d28d9; --violet-800:  #5b21b6;
-  --violet-900:  #4c1d95; --violet-950:  #2e1065;
+   /* Violet */
+   --violet-50: #f5f3ff;
+   --violet-100: #ede9fe;
+   --violet-200: #ddd6fe;
+   --violet-300: #c4b5fd;
+   --violet-400: #a78bfa;
+   --violet-500: #8b5cf6;
+   --violet-600: #7c3aed;
+   --violet-700: #6d28d9;
+   --violet-800: #5b21b6;
+   --violet-900: #4c1d95;
+   --violet-950: #2e1065;
 
-  /* Indigo */
-  --indigo-50:   #eef2ff; --indigo-100:  #e0e7ff; --indigo-200:  #c7d2fe;
-  --indigo-300:  #a5b4fc; --indigo-400:  #818cf8; --indigo-500:  #6366f1;
-  --indigo-600:  #4f46e5; --indigo-700:  #4338ca; --indigo-800:  #3730a3;
-  --indigo-900:  #312e81; --indigo-950:  #1e1b4b;
+   /* Indigo */
+   --indigo-50: #eef2ff;
+   --indigo-100: #e0e7ff;
+   --indigo-200: #c7d2fe;
+   --indigo-300: #a5b4fc;
+   --indigo-400: #818cf8;
+   --indigo-500: #6366f1;
+   --indigo-600: #4f46e5;
+   --indigo-700: #4338ca;
+   --indigo-800: #3730a3;
+   --indigo-900: #312e81;
+   --indigo-950: #1e1b4b;
 
-  /* Blue */
-  --blue-50:   #eff6ff; --blue-100:  #dbeafe; --blue-200:  #bfdbfe;
-  --blue-300:  #93c5fd; --blue-400:  #60a5fa; --blue-500:  #3b82f6;
-  --blue-600:  #2563eb; --blue-700:  #1d4ed8; --blue-800:  #1e40af;
-  --blue-900:  #1e3a8a; --blue-950:  #172554;
+   /* Blue */
+   --blue-50: #eff6ff;
+   --blue-100: #dbeafe;
+   --blue-200: #bfdbfe;
+   --blue-300: #93c5fd;
+   --blue-400: #60a5fa;
+   --blue-500: #3b82f6;
+   --blue-600: #2563eb;
+   --blue-700: #1d4ed8;
+   --blue-800: #1e40af;
+   --blue-900: #1e3a8a;
+   --blue-950: #172554;
 
-  /* Sky */
-  --sky-50:   #f0f9ff; --sky-100:  #e0f2fe; --sky-200:  #bae6fd;
-  --sky-300:  #7dd3fc; --sky-400:  #38bdf8; --sky-500:  #0ea5e9;
-  --sky-600:  #0284c7; --sky-700:  #0369a1; --sky-800:  #075985;
-  --sky-900:  #0c4a6e; --sky-950:  #082f49;
+   /* Sky */
+   --sky-50: #f0f9ff;
+   --sky-100: #e0f2fe;
+   --sky-200: #bae6fd;
+   --sky-300: #7dd3fc;
+   --sky-400: #38bdf8;
+   --sky-500: #0ea5e9;
+   --sky-600: #0284c7;
+   --sky-700: #0369a1;
+   --sky-800: #075985;
+   --sky-900: #0c4a6e;
+   --sky-950: #082f49;
 
-  /* Cyan */
-  --cyan-50:   #ecfeff; --cyan-100:  #cffafe; --cyan-200:  #a5f3fc;
-  --cyan-300:  #67e8f9; --cyan-400:  #22d3ee; --cyan-500:  #06b6d4;
-  --cyan-600:  #0891b2; --cyan-700:  #0e7490; --cyan-800:  #155e75;
-  --cyan-900:  #164e63; --cyan-950:  #083344;
+   /* Cyan */
+   --cyan-50: #ecfeff;
+   --cyan-100: #cffafe;
+   --cyan-200: #a5f3fc;
+   --cyan-300: #67e8f9;
+   --cyan-400: #22d3ee;
+   --cyan-500: #06b6d4;
+   --cyan-600: #0891b2;
+   --cyan-700: #0e7490;
+   --cyan-800: #155e75;
+   --cyan-900: #164e63;
+   --cyan-950: #083344;
 
-  /* Teal */
-  --teal-50:   #f0fdfa; --teal-100:  #ccfbf1; --teal-200:  #99f6e4;
-  --teal-300:  #5eead4; --teal-400:  #2dd4bf; --teal-500:  #14b8a6;
-  --teal-600:  #0d9488; --teal-700:  #0f766e; --teal-800:  #115e59;
-  --teal-900:  #134e4a; --teal-950:  #042f2e;
+   /* Teal */
+   --teal-50: #f0fdfa;
+   --teal-100: #ccfbf1;
+   --teal-200: #99f6e4;
+   --teal-300: #5eead4;
+   --teal-400: #2dd4bf;
+   --teal-500: #14b8a6;
+   --teal-600: #0d9488;
+   --teal-700: #0f766e;
+   --teal-800: #115e59;
+   --teal-900: #134e4a;
+   --teal-950: #042f2e;
 
-  /* Emerald */
-  --emerald-50:  #ecfdf5; --emerald-100: #d1fae5; --emerald-200: #a7f3d0;
-  --emerald-300: #6ee7b7; --emerald-400: #34d399; --emerald-500: #10b981;
-  --emerald-600: #059669; --emerald-700: #047857; --emerald-800: #065f46;
-  --emerald-900: #064e3b; --emerald-950: #022c22;
+   /* Emerald */
+   --emerald-50: #ecfdf5;
+   --emerald-100: #d1fae5;
+   --emerald-200: #a7f3d0;
+   --emerald-300: #6ee7b7;
+   --emerald-400: #34d399;
+   --emerald-500: #10b981;
+   --emerald-600: #059669;
+   --emerald-700: #047857;
+   --emerald-800: #065f46;
+   --emerald-900: #064e3b;
+   --emerald-950: #022c22;
 
-  /* Green */
-  --green-50:   #f0fdf4; --green-100:  #dcfce7; --green-200:  #bbf7d0;
-  --green-300:  #86efac; --green-400:  #4ade80; --green-500:  #22c55e;
-  --green-600:  #16a34a; --green-700:  #15803d; --green-800:  #166534;
-  --green-900:  #14532d; --green-950:  #052e16;
+   /* Green */
+   --green-50: #f0fdf4;
+   --green-100: #dcfce7;
+   --green-200: #bbf7d0;
+   --green-300: #86efac;
+   --green-400: #4ade80;
+   --green-500: #22c55e;
+   --green-600: #16a34a;
+   --green-700: #15803d;
+   --green-800: #166534;
+   --green-900: #14532d;
+   --green-950: #052e16;
 
-  /* Lime */
-  --lime-50:   #f7fee7; --lime-100:  #ecfccb; --lime-200:  #d9f99d;
-  --lime-300:  #bef264; --lime-400:  #a3e635; --lime-500:  #84cc16;
-  --lime-600:  #65a30d; --lime-700:  #4d7c0f; --lime-800:  #3f6212;
-  --lime-900:  #365314; --lime-950:  #1a2e05;
+   /* Lime */
+   --lime-50: #f7fee7;
+   --lime-100: #ecfccb;
+   --lime-200: #d9f99d;
+   --lime-300: #bef264;
+   --lime-400: #a3e635;
+   --lime-500: #84cc16;
+   --lime-600: #65a30d;
+   --lime-700: #4d7c0f;
+   --lime-800: #3f6212;
+   --lime-900: #365314;
+   --lime-950: #1a2e05;
 
-  /* Yellow */
-  --yellow-50:   #fefce8; --yellow-100:  #fef9c3; --yellow-200:  #fef08a;
-  --yellow-300:  #fde047; --yellow-400:  #facc15; --yellow-500:  #eab308;
-  --yellow-600:  #ca8a04; --yellow-700:  #a16207; --yellow-800:  #854d0e;
-  --yellow-900:  #713f12; --yellow-950:  #422006;
+   /* Yellow */
+   --yellow-50: #fefce8;
+   --yellow-100: #fef9c3;
+   --yellow-200: #fef08a;
+   --yellow-300: #fde047;
+   --yellow-400: #facc15;
+   --yellow-500: #eab308;
+   --yellow-600: #ca8a04;
+   --yellow-700: #a16207;
+   --yellow-800: #854d0e;
+   --yellow-900: #713f12;
+   --yellow-950: #422006;
 
-  /* Amber */
-  --amber-50:   #fffbeb; --amber-100:  #fef3c7; --amber-200:  #fde68a;
-  --amber-300:  #fcd34d; --amber-400:  #fbbf24; --amber-500:  #f59e0b;
-  --amber-600:  #d97706; --amber-700:  #b45309; --amber-800:  #92400e;
-  --amber-900:  #78350f; --amber-950:  #451a03;
+   /* Amber */
+   --amber-50: #fffbeb;
+   --amber-100: #fef3c7;
+   --amber-200: #fde68a;
+   --amber-300: #fcd34d;
+   --amber-400: #fbbf24;
+   --amber-500: #f59e0b;
+   --amber-600: #d97706;
+   --amber-700: #b45309;
+   --amber-800: #92400e;
+   --amber-900: #78350f;
+   --amber-950: #451a03;
 
-  /* Orange */
-  --orange-50:   #fff7ed; --orange-100:  #ffedd5; --orange-200:  #fed7aa;
-  --orange-300:  #fdba74; --orange-400:  #fb923c; --orange-500:  #f97316;
-  --orange-600:  #ea580c; --orange-700:  #c2410c; --orange-800:  #9a3412;
-  --orange-900:  #7c2d12; --orange-950:  #431407;
+   /* Orange */
+   --orange-50: #fff7ed;
+   --orange-100: #ffedd5;
+   --orange-200: #fed7aa;
+   --orange-300: #fdba74;
+   --orange-400: #fb923c;
+   --orange-500: #f97316;
+   --orange-600: #ea580c;
+   --orange-700: #c2410c;
+   --orange-800: #9a3412;
+   --orange-900: #7c2d12;
+   --orange-950: #431407;
 
-  /* Red */
-  --red-50:   #fef2f2; --red-100:  #fee2e2; --red-200:  #fecaca;
-  --red-300:  #fca5a5; --red-400:  #f87171; --red-500:  #ef4444;
-  --red-600:  #dc2626; --red-700:  #b91c1c; --red-800:  #991b1b;
-  --red-900:  #7f1d1d; --red-950:  #450a0a;
+   /* Red */
+   --red-50: #fef2f2;
+   --red-100: #fee2e2;
+   --red-200: #fecaca;
+   --red-300: #fca5a5;
+   --red-400: #f87171;
+   --red-500: #ef4444;
+   --red-600: #dc2626;
+   --red-700: #b91c1c;
+   --red-800: #991b1b;
+   --red-900: #7f1d1d;
+   --red-950: #450a0a;
 
 
-  /* ============================================================
+   /* ============================================================
      TYPOGRAPHY — FONT FAMILIES
      ============================================================ */
 
-  --font-family:   'DM Sans', sans-serif;
-  --font-mono:     'DM Mono', monospace;
-  --font-heading:  'Bricolage Grotesque', sans-serif;
+   --font-family: 'DM Sans', sans-serif;
+   --font-mono: 'DM Mono', monospace;
+   --font-heading: 'Bricolage Grotesque', sans-serif;
 
 
-  /* ============================================================
+   /* ============================================================
      TYPOGRAPHY — FONT WEIGHTS
      ============================================================ */
 
-  --font-weight-regular:    400;
-  --font-weight-medium:     500;
-  --font-weight-semibold:   600;
-  --font-weight-bold:       700;
-  --font-weight-extrabold:  800; /* Bricolage Grotesque only */
-  --font-weight-heading:    var(--font-weight-extrabold); /* padrão para todos os headings */
-  --font-variation-heading: 'wdth' 88, 'opsz' 96;        /* width 88, optical size 96 — Bricolage Grotesque */
+   --font-weight-regular: 400;
+   --font-weight-medium: 500;
+   --font-weight-semibold: 600;
+   --font-weight-bold: 700;
+   --font-weight-extrabold: 800;
+   /* Bricolage Grotesque only */
+   --font-weight-heading: var(--font-weight-extrabold);
+   /* padrão para todos os headings */
+   --font-variation-heading: 'wdth' 88, 'opsz' 96;
+   /* width 88, optical size 96 — Bricolage Grotesque */
 
 
-  /* ============================================================
+   /* ============================================================
      TYPOGRAPHY — SCALE
      Each size exposes: font-size, line-height, letter-spacing
      Weights (regular/medium/semibold/bold) are applied via
      --font-weight-* variables — not duplicated per size.
      ============================================================ */
 
-  /* xxs — 10px */
-  --text-xxs-size:     0.625rem;
-  --text-xxs-lh:       104%;
-  --text-xxs-tracking: -0.02em;
+   /* xxs — 10px */
+   --text-xxs-size: 0.625rem;
+   --text-xxs-lh: 104%;
+   --text-xxs-tracking: -0.02em;
 
-  /* xs — 12px */
-  --text-xs-size:      0.75rem;
-  --text-xs-lh:        136%;
-  --text-xs-tracking:  0em;
+   /* xs — 12px */
+   --text-xs-size: 0.75rem;
+   --text-xs-lh: 136%;
+   --text-xs-tracking: 0em;
 
-  /* sm — 14px */
-  --text-sm-size:      0.875rem;
-  --text-sm-lh:        128%;
-  --text-sm-tracking:  -0.02em;
+   /* sm — 14px */
+   --text-sm-size: 0.875rem;
+   --text-sm-lh: 128%;
+   --text-sm-tracking: -0.02em;
 
-  /* md — 16px */
-  --text-md-size:      1rem;
-  --text-md-lh:        156%;
-  --text-md-tracking:  -0.02em;
+   /* md — 16px */
+   --text-md-size: 1rem;
+   --text-md-lh: 156%;
+   --text-md-tracking: -0.02em;
 
-  /* lg — 18px */
-  --text-lg-size:      1.125rem;
-  --text-lg-lh:        140%;
-  --text-lg-tracking:  0em;
+   /* lg — 18px */
+   --text-lg-size: 1.125rem;
+   --text-lg-lh: 140%;
+   --text-lg-tracking: 0em;
 
-  /* xl — 20px */
-  --text-xl-size:      1.25rem;
-  --text-xl-lh:        144%;
-  --text-xl-tracking:  -0.02em;
+   /* xl — 20px */
+   --text-xl-size: 1.25rem;
+   --text-xl-lh: 144%;
+   --text-xl-tracking: -0.02em;
 
-  /* 2xl — 22px */
-  --text-2xl-size:     1.375rem;
-  --text-2xl-lh:       120%;
-  --text-2xl-tracking: -0.01em;
+   /* 2xl — 22px */
+   --text-2xl-size: 1.375rem;
+   --text-2xl-lh: 120%;
+   --text-2xl-tracking: -0.01em;
 
-  /* 3xl — 28px */
-  --text-3xl-size:     1.75rem;
-  --text-3xl-lh:       128%;
-  --text-3xl-tracking: -0.01em;
+   /* 3xl — 28px */
+   --text-3xl-size: 1.75rem;
+   --text-3xl-lh: 128%;
+   --text-3xl-tracking: -0.01em;
 
-  /* 4xl — 36px */
-  --text-4xl-size:     2.25rem;
-  --text-4xl-lh:       120%;
-  --text-4xl-tracking: -0.01em;
+   /* 4xl — 36px */
+   --text-4xl-size: 2.25rem;
+   --text-4xl-lh: 120%;
+   --text-4xl-tracking: -0.01em;
 
-  /* 5xl — 48px */
-  --text-5xl-size:     3rem;
-  --text-5xl-lh:       120%;
-  --text-5xl-tracking: -0.01em;
+   /* 5xl — 48px */
+   --text-5xl-size: 3rem;
+   --text-5xl-lh: 120%;
+   --text-5xl-tracking: -0.01em;
 
-  /* 6xl — 64px */
-  --text-6xl-size:     4rem;
-  --text-6xl-lh:       112.5%;
-  --text-6xl-tracking: -0.03em;
+   /* 6xl — 64px */
+   --text-6xl-size: 4rem;
+   --text-6xl-lh: 112.5%;
+   --text-6xl-tracking: -0.03em;
 
-  /* 7xl — 96px */
-  --text-7xl-size:     6rem;
-  --text-7xl-lh:       112.5%;
-  --text-7xl-tracking: -0.03em;
+   /* 7xl — 96px */
+   --text-7xl-size: 6rem;
+   --text-7xl-lh: 112.5%;
+   --text-7xl-tracking: -0.03em;
 
-  /* Grotesque heading variant (Bricolage Grotesque ExtraBold)
+   /* Grotesque heading variant (Bricolage Grotesque ExtraBold)
      Line-height is always 96% for display headings */
-  --text-grotesque-lh: 96%;
-  --text-grotesque-tracking-xl:  0.04em;   /* xl grotesque */
-  --text-grotesque-tracking-2xl: 0.04em;   /* 2xl grotesque */
-  --text-grotesque-tracking-3xl: 0.02em;   /* 3xl grotesque */
-  --text-grotesque-tracking-4xl: 0.01em;   /* 4xl grotesque */
-  --text-grotesque-tracking-5xl: -0.01em;  /* 5xl grotesque */
-  --text-grotesque-tracking-6xl: -0.01em;  /* 6xl grotesque */
-  --text-grotesque-tracking-7xl: -0.01em;  /* 7xl grotesque */
+   --text-grotesque-lh: 96%;
+   --text-grotesque-tracking-xl: 0.04em;
+   /* xl grotesque */
+   --text-grotesque-tracking-2xl: 0.04em;
+   /* 2xl grotesque */
+   --text-grotesque-tracking-3xl: 0.02em;
+   /* 3xl grotesque */
+   --text-grotesque-tracking-4xl: 0.01em;
+   /* 4xl grotesque */
+   --text-grotesque-tracking-5xl: -0.01em;
+   /* 5xl grotesque */
+   --text-grotesque-tracking-6xl: -0.01em;
+   /* 6xl grotesque */
+   --text-grotesque-tracking-7xl: -0.01em;
+   /* 7xl grotesque */
 
-  /* Mono uppercase variant */
-  --text-mono-upper-size:     0.75rem;      /* 12px */
-  --text-mono-upper-lh:       144%;
-  --text-mono-upper-tracking: 0.02em;
-  --text-mono-upper-case:     uppercase;
+   /* Mono uppercase variant */
+   --text-mono-upper-size: 0.75rem;
+   /* 12px */
+   --text-mono-upper-lh: 144%;
+   --text-mono-upper-tracking: 0.02em;
+   --text-mono-upper-case: uppercase;
 
 
-  /* ============================================================
+   /* ============================================================
      SPACING
      ============================================================ */
 
-  --space-0:    0rem;
-  --space-px:   0.063rem;
-  --space-0-5:  0.125rem;
-  --space-1:    0.25rem;
-  --space-1-5:  0.375rem;
-  --space-2:    0.5rem;
-  --space-2-5:  0.625rem;
-  --space-3:    0.75rem;
-  --space-3-5:  0.875rem;
-  --space-4:    1rem;
-  --space-5:    1.25rem;
-  --space-6:    1.5rem;
-  --space-7:    1.75rem;
-  --space-8:    2rem;
-  --space-9:    2.25rem;
-  --space-10:   2.5rem;
-  --space-11:   2.75rem;
-  --space-12:   3rem;
-  --space-14:   3.5rem;
-  --space-16:   4rem;
-  --space-20:   5rem;
-  --space-24:   6rem;
-  --space-28:   7rem;
-  --space-32:   8rem;
-  --space-36:   9rem;
-  --space-40:   10rem;
-  --space-44:   11rem;
-  --space-48:   12rem;
-  --space-52:   13rem;
-  --space-56:   14rem;
-  --space-60:   15rem;
-  --space-64:   16rem;
-  --space-72:   18rem;
-  --space-80:   20rem;
-  --space-96:   24rem;
+   --space-0: 0rem;
+   --space-px: 0.063rem;
+   --space-0-5: 0.125rem;
+   --space-1: 0.25rem;
+   --space-1-5: 0.375rem;
+   --space-2: 0.5rem;
+   --space-2-5: 0.625rem;
+   --space-3: 0.75rem;
+   --space-3-5: 0.875rem;
+   --space-4: 1rem;
+   --space-5: 1.25rem;
+   --space-6: 1.5rem;
+   --space-7: 1.75rem;
+   --space-8: 2rem;
+   --space-9: 2.25rem;
+   --space-10: 2.5rem;
+   --space-11: 2.75rem;
+   --space-12: 3rem;
+   --space-14: 3.5rem;
+   --space-16: 4rem;
+   --space-20: 5rem;
+   --space-24: 6rem;
+   --space-28: 7rem;
+   --space-32: 8rem;
+   --space-36: 9rem;
+   --space-40: 10rem;
+   --space-44: 11rem;
+   --space-48: 12rem;
+   --space-52: 13rem;
+   --space-56: 14rem;
+   --space-60: 15rem;
+   --space-64: 16rem;
+   --space-72: 18rem;
+   --space-80: 20rem;
+   --space-96: 24rem;
 
 
-  /* ============================================================
+   /* ============================================================
      BORDER RADIUS
      ============================================================ */
 
-  --radius-none:    0rem;
-  --radius-7xs:     0.063rem;
-  --radius-6xs:     0.125rem;
-  --radius-5xs:     0.25rem;
-  --radius-4-5xs:   0.375rem;
-  --radius-4xs:     0.5rem;
-  --radius-3-5xs:   0.625rem;
-  --radius-3xs:     0.75rem;
-  --radius-2-5xs:   0.875rem;
-  --radius-2xs:     1rem;
-  --radius-xs:      1.25rem;
-  --radius-sm:      1.5rem;
-  --radius-md:      1.75rem;
-  --radius-lg:      2rem;
-  --radius-xl:      2.25rem;
-  --radius-2xl:     2.5rem;
-  --radius-3xl:     2.75rem;
-  --radius-4xl:     3rem;
-  --radius-5xl:     3.5rem;
-  --radius-6xl:     4rem;
-  --radius-full:    624.938rem;
+   --radius-none: 0rem;
+   --radius-7xs: 0.063rem;
+   --radius-6xs: 0.125rem;
+   --radius-5xs: 0.25rem;
+   --radius-4-5xs: 0.375rem;
+   --radius-4xs: 0.5rem;
+   --radius-3-5xs: 0.625rem;
+   --radius-3xs: 0.75rem;
+   --radius-2-5xs: 0.875rem;
+   --radius-2xs: 1rem;
+   --radius-xs: 1.25rem;
+   --radius-sm: 1.5rem;
+   --radius-md: 1.75rem;
+   --radius-lg: 2rem;
+   --radius-xl: 2.25rem;
+   --radius-2xl: 2.5rem;
+   --radius-3xl: 2.75rem;
+   --radius-4xl: 3rem;
+   --radius-5xl: 3.5rem;
+   --radius-6xl: 4rem;
+   --radius-full: 624.938rem;
 
 
-  /* ============================================================
+   /* ============================================================
      SHADOWS
      Referencing opacity vars — no hardcoded alpha hex.
      ============================================================ */
 
-  --shadow-button-black:
-    0px 1px 3px 0px var(--black-alpha-5),
-    0px 2px 1px -1px var(--black-alpha-5);
+   --shadow-button-black:
+      0px 1px 3px 0px var(--black-alpha-5),
+      0px 2px 1px -1px var(--black-alpha-5);
 
-  --shadow-button-white:
-    0px 1px 3px 0px var(--white-alpha-5),
-    0px 2px 1px -1px var(--white-alpha-5);
+   --shadow-button-white:
+      0px 1px 3px 0px var(--white-alpha-5),
+      0px 2px 1px -1px var(--white-alpha-5);
 
 
-  /* ============================================================
+   /* ============================================================
      BREAKPOINTS
      ============================================================ */
 
-  --breakpoints-sm-min: 20rem;     /* 320px */
-  --breakpoints-sm-max: 47.938rem; /* 767px */
-  --breakpoints-md-min: 48rem;     /* 768px */
-  --breakpoints-md-max: 79.938rem; /* 1279px */
-  --breakpoints-lg-min: 80rem;     /* 1280px */
-  --breakpoints-lg-max: 120rem;    /* 1920px */
+   --breakpoints-sm-min: 20rem;
+   /* 320px */
+   --breakpoints-sm-max: 47.938rem;
+   /* 767px */
+   --breakpoints-md-min: 48rem;
+   /* 768px */
+   --breakpoints-md-max: 79.938rem;
+   /* 1279px */
+   --breakpoints-lg-min: 80rem;
+   /* 1280px */
+   --breakpoints-lg-max: 120rem;
+   /* 1920px */
 
 
-  /* ============================================================
+   /* ============================================================
      SECTION LAYOUT — RESPONSIVE SPACING
      Names mirror Figma token structure exactly:
        breakpoints.[bp].section.padding.1   → horizontal padding
@@ -420,37 +557,52 @@
        breakpoints.[bp].section.content.paragraph.gap
      ============================================================ */
 
-  /* sm — Figma: Semantic Dimension / sm */
-  --breakpoints-sm-section-padding-1:             var(--space-16);  /* 64px */
-  --breakpoints-sm-section-padding-2:             var(--space-4);   /* 16px */
-  --breakpoints-sm-section-layout-gap:            var(--space-6);   /* 24px */
-  --breakpoints-sm-section-content-gap:           var(--space-4);   /* 16px */
-  --breakpoints-sm-section-content-paragraph-gap: var(--space-2);   /* 8px  */
+   /* sm — Figma: Semantic Dimension / sm */
+   --breakpoints-sm-section-padding-1: var(--space-16);
+   /* 64px */
+   --breakpoints-sm-section-padding-2: var(--space-4);
+   /* 16px */
+   --breakpoints-sm-section-layout-gap: var(--space-6);
+   /* 24px */
+   --breakpoints-sm-section-content-gap: var(--space-4);
+   /* 16px */
+   --breakpoints-sm-section-content-paragraph-gap: var(--space-2);
+   /* 8px  */
 
-  /* md — Figma: Semantic Dimension / md */
-  --breakpoints-md-section-padding-1:             var(--space-24);  /* 96px  */
-  --breakpoints-md-section-padding-2:             var(--space-12);  /* 48px  */
-  --breakpoints-md-section-layout-gap:            var(--space-12);  /* 48px  */
-  --breakpoints-md-section-content-gap:           var(--space-6);   /* 24px  */
-  --breakpoints-md-section-content-paragraph-gap: var(--space-3);   /* 12px  */
+   /* md — Figma: Semantic Dimension / md */
+   --breakpoints-md-section-padding-1: var(--space-24);
+   /* 96px  */
+   --breakpoints-md-section-padding-2: var(--space-12);
+   /* 48px  */
+   --breakpoints-md-section-layout-gap: var(--space-12);
+   /* 48px  */
+   --breakpoints-md-section-content-gap: var(--space-6);
+   /* 24px  */
+   --breakpoints-md-section-content-paragraph-gap: var(--space-3);
+   /* 12px  */
 
-  /* lg — Figma: Semantic Dimension / lg */
-  --breakpoints-lg-section-padding-1:             var(--space-32);  /* 128px */
-  --breakpoints-lg-section-padding-2:             var(--space-16);  /* 64px  */
-  --breakpoints-lg-section-layout-gap:            var(--space-16);  /* 64px  */
-  --breakpoints-lg-section-content-gap:           var(--space-8);   /* 32px  */
-  --breakpoints-lg-section-content-paragraph-gap: var(--space-4);   /* 16px  */
+   /* lg — Figma: Semantic Dimension / lg */
+   --breakpoints-lg-section-padding-1: var(--space-32);
+   /* 128px */
+   --breakpoints-lg-section-padding-2: var(--space-16);
+   /* 64px  */
+   --breakpoints-lg-section-layout-gap: var(--space-16);
+   /* 64px  */
+   --breakpoints-lg-section-content-gap: var(--space-8);
+   /* 32px  */
+   --breakpoints-lg-section-content-paragraph-gap: var(--space-4);
+   /* 16px  */
 
-  /* Responsive aliases — override per breakpoint in media queries below.
+   /* Responsive aliases — override per breakpoint in media queries below.
      Default = lg values. Use these in all components. */
-  --breakpoints-section-padding-1:             var(--breakpoints-lg-section-padding-1);
-  --breakpoints-section-padding-2:             var(--breakpoints-lg-section-padding-2);
-  --breakpoints-section-layout-gap:            var(--breakpoints-lg-section-layout-gap);
-  --breakpoints-section-content-gap:           var(--breakpoints-lg-section-content-gap);
-  --breakpoints-section-content-paragraph-gap: var(--breakpoints-lg-section-content-paragraph-gap);
+   --breakpoints-section-padding-1: var(--breakpoints-lg-section-padding-1);
+   --breakpoints-section-padding-2: var(--breakpoints-lg-section-padding-2);
+   --breakpoints-section-layout-gap: var(--breakpoints-lg-section-layout-gap);
+   --breakpoints-section-content-gap: var(--breakpoints-lg-section-content-gap);
+   --breakpoints-section-content-paragraph-gap: var(--breakpoints-lg-section-content-paragraph-gap);
 
 
-  /* ============================================================
+   /* ============================================================
      SEMANTIC COLORS — LIGHT THEME (default)
      Declared last so all global vars above are already in scope.
 
@@ -466,78 +618,102 @@
        fg.offWhite               → off-white         → var(--off-white)
        fg.white                  → white             → var(--white)
        bg.default                → off-white         → var(--off-white)
+       bg.emphasis               → black             → var(--black)
+       bg.muted                  → Off White/200     → var(--off-white-200)
+       bg.white                  → white             → var(--white)
+       border.emphasis           → black             → var(--black)
+       border.default            → Off White/400     → var(--off-white-400)
+       border.muted              → Off White/200     → var(--off-white-200)
      ============================================================ */
 
-  /* Actions — filled button */
-  --action-filled-bg-default:    var(--black);
-  --action-filled-bg-hover:      var(--stone-800);
-  --action-filled-shadow:        var(--black-alpha-5);
+   /* Actions — filled button */
+   --action-filled-bg-default: var(--black);
+   --action-filled-bg-hover: var(--stone-800);
+   --action-filled-shadow: var(--black-alpha-5);
 
-  /* Actions — outline button */
-  --action-outline-border:       var(--black);
-  --action-outline-bg-hover:     var(--black-alpha-10);
+   /* Actions — outline button */
+   --action-outline-border: var(--black);
+   --action-outline-bg-hover: var(--black-alpha-10);
 
-  /* Foreground — text and icons */
-  --fg-emphasis:                 var(--black);
-  --fg-default:                  var(--off-white-600);
-  --fg-muted:                    var(--off-white-400);
-  --fg-offwhite:                 var(--off-white);
-  --fg-white:                    var(--white);
+   /* Foreground — text and icons */
+   --fg-emphasis: var(--black);
+   --fg-default: var(--off-white-600);
+   --fg-muted: var(--off-white-400);
+   --fg-offwhite: var(--off-white);
+   --fg-white: var(--white);
 
-  /* Background */
-  --bg-default:                  var(--off-white);
+   /* Background */
+   --bg-default: var(--off-white);
+   --bg-emphasis: var(--black);
+   --bg-muted: var(--off-white-200);
+   --bg-white: var(--white);
+
+   /* Border */
+   --border-emphasis: var(--black);
+   --border-default: var(--off-white-400);
+   --border-muted: var(--off-white-200);
 
 }
 
 @media (max-width: 79.938rem) {
-  :root {
-    --breakpoints-section-padding-1:             var(--breakpoints-md-section-padding-1);
-    --breakpoints-section-padding-2:             var(--breakpoints-md-section-padding-2);
-    --breakpoints-section-layout-gap:            var(--breakpoints-md-section-layout-gap);
-    --breakpoints-section-content-gap:           var(--breakpoints-md-section-content-gap);
-    --breakpoints-section-content-paragraph-gap: var(--breakpoints-md-section-content-paragraph-gap);
-  }
+   :root {
+      --breakpoints-section-padding-1: var(--breakpoints-md-section-padding-1);
+      --breakpoints-section-padding-2: var(--breakpoints-md-section-padding-2);
+      --breakpoints-section-layout-gap: var(--breakpoints-md-section-layout-gap);
+      --breakpoints-section-content-gap: var(--breakpoints-md-section-content-gap);
+      --breakpoints-section-content-paragraph-gap: var(--breakpoints-md-section-content-paragraph-gap);
+   }
 }
 
 @media (max-width: 47.938rem) {
-  :root {
-    --breakpoints-section-padding-1:             var(--breakpoints-sm-section-padding-1);
-    --breakpoints-section-padding-2:             var(--breakpoints-sm-section-padding-2);
-    --breakpoints-section-layout-gap:            var(--breakpoints-sm-section-layout-gap);
-    --breakpoints-section-content-gap:           var(--breakpoints-sm-section-content-gap);
-    --breakpoints-section-content-paragraph-gap: var(--breakpoints-sm-section-content-paragraph-gap);
+   :root {
+      --breakpoints-section-padding-1: var(--breakpoints-sm-section-padding-1);
+      --breakpoints-section-padding-2: var(--breakpoints-sm-section-padding-2);
+      --breakpoints-section-layout-gap: var(--breakpoints-sm-section-layout-gap);
+      --breakpoints-section-content-gap: var(--breakpoints-sm-section-content-gap);
+      --breakpoints-section-content-paragraph-gap: var(--breakpoints-sm-section-content-paragraph-gap);
 
-    /* Typography — display sizes only shift 1 step down at sm.
+      /* Typography — display sizes only shift 1 step down at sm.
        Body text (xxs–2xl) stays unchanged.
        Hardcoded values required: var() chains would cascade incorrectly. */
 
-    --text-3xl-size:     1.375rem;   /* 2xl — was 1.75rem */
-    --text-3xl-lh:       120%;
-    --text-3xl-tracking: -0.01em;
+      --text-3xl-size: 1.375rem;
+      /* 2xl — was 1.75rem */
+      --text-3xl-lh: 120%;
+      --text-3xl-tracking: -0.01em;
 
-    --text-4xl-size:     1.75rem;    /* 3xl — was 2.25rem */
-    --text-4xl-lh:       128%;
-    --text-4xl-tracking: -0.01em;
+      --text-4xl-size: 1.75rem;
+      /* 3xl — was 2.25rem */
+      --text-4xl-lh: 128%;
+      --text-4xl-tracking: -0.01em;
 
-    --text-5xl-size:     2.25rem;    /* 4xl — was 3rem */
-    --text-5xl-lh:       120%;
-    --text-5xl-tracking: -0.01em;
+      --text-5xl-size: 2.25rem;
+      /* 4xl — was 3rem */
+      --text-5xl-lh: 120%;
+      --text-5xl-tracking: -0.01em;
 
-    --text-6xl-size:     3rem;       /* 5xl — was 4rem */
-    --text-6xl-lh:       120%;
-    --text-6xl-tracking: -0.01em;
+      --text-6xl-size: 3rem;
+      /* 5xl — was 4rem */
+      --text-6xl-lh: 120%;
+      --text-6xl-tracking: -0.01em;
 
-    --text-7xl-size:     4rem;       /* 6xl — was 6rem */
-    --text-7xl-lh:       112.5%;
-    --text-7xl-tracking: -0.03em;
+      --text-7xl-size: 4rem;
+      /* 6xl — was 6rem */
+      --text-7xl-lh: 112.5%;
+      --text-7xl-tracking: -0.03em;
 
-    /* Grotesque tracking follows the same 1-step-down shift */
-    --text-grotesque-tracking-3xl: 0.04em;   /* ← was xl */
-    --text-grotesque-tracking-4xl: 0.02em;   /* ← was 3xl */
-    --text-grotesque-tracking-5xl: 0.01em;   /* ← was 4xl */
-    --text-grotesque-tracking-6xl: -0.01em;  /* ← was 5xl */
-    --text-grotesque-tracking-7xl: -0.01em;  /* ← was 6xl */
-  }
+      /* Grotesque tracking follows the same 1-step-down shift */
+      --text-grotesque-tracking-3xl: 0.04em;
+      /* ← was xl */
+      --text-grotesque-tracking-4xl: 0.02em;
+      /* ← was 3xl */
+      --text-grotesque-tracking-5xl: 0.01em;
+      /* ← was 4xl */
+      --text-grotesque-tracking-6xl: -0.01em;
+      /* ← was 5xl */
+      --text-grotesque-tracking-7xl: -0.01em;
+      /* ← was 6xl */
+   }
 }
 
 
@@ -561,35 +737,52 @@
      fg.offWhite               → black                       → var(--black)
      fg.white                  → white                       → var(--white)
      bg.default                → black                       → var(--black)
+     bg.emphasis               → off-white                   → var(--off-white)
+     bg.muted                  → Off White/800               → var(--off-white-800)
+     bg.white                  → white                       → var(--white)
+     border.emphasis           → off-white                   → var(--off-white)
+     border.default            → Off White/700               → var(--off-white-700)
+     border.muted              → Off White/800               → var(--off-white-800)
 */
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --action-filled-bg-default:  var(--off-white);
-    --action-filled-bg-hover:    var(--off-white-200);
-    --action-filled-shadow:      var(--off-white-alpha-5);
-    --action-outline-border:     var(--off-white);
-    --action-outline-bg-hover:   var(--off-white-alpha-10);
-    --fg-emphasis:               var(--off-white);
-    --fg-default:                var(--off-white-400);
-    --fg-muted:                  var(--off-white-600);
-    --fg-offwhite:               var(--black);
-    --fg-white:                  var(--white);
-    --bg-default:                var(--black);
-  }
+   :root:not([data-theme="light"]) {
+      --action-filled-bg-default: var(--off-white);
+      --action-filled-bg-hover: var(--off-white-200);
+      --action-filled-shadow: var(--off-white-alpha-5);
+      --action-outline-border: var(--off-white);
+      --action-outline-bg-hover: var(--off-white-alpha-10);
+      --fg-emphasis: var(--off-white);
+      --fg-default: var(--off-white-400);
+      --fg-muted: var(--off-white-600);
+      --fg-offwhite: var(--black);
+      --fg-white: var(--white);
+      --bg-default: var(--black);
+      --bg-emphasis: var(--off-white);
+      --bg-muted: var(--off-white-800);
+      --bg-white: var(--white);
+      --border-emphasis: var(--off-white);
+      --border-default: var(--off-white-700);
+      --border-muted: var(--off-white-800);
+   }
 }
 
 [data-theme="dark"] {
-  --action-filled-bg-default:  var(--off-white);
-  --action-filled-bg-hover:    var(--off-white-200);
-  --action-filled-shadow:      var(--off-white-alpha-5);
-  --action-outline-border:     var(--off-white);
-  --action-outline-bg-hover:   var(--off-white-alpha-10);
-  --fg-emphasis:               var(--off-white);
-  --fg-default:                var(--off-white-400);
-  --fg-muted:                  var(--off-white-600);
-  --fg-offwhite:               var(--black);
-  --fg-white:                  var(--white);
-  --bg-default:                var(--black);
-
+   --action-filled-bg-default: var(--off-white);
+   --action-filled-bg-hover: var(--off-white-200);
+   --action-filled-shadow: var(--off-white-alpha-5);
+   --action-outline-border: var(--off-white);
+   --action-outline-bg-hover: var(--off-white-alpha-10);
+   --fg-emphasis: var(--off-white);
+   --fg-default: var(--off-white-400);
+   --fg-muted: var(--off-white-600);
+   --fg-offwhite: var(--black);
+   --fg-white: var(--white);
+   --bg-default: var(--black);
+   --bg-emphasis: var(--off-white);
+   --bg-muted: var(--off-white-800);
+   --bg-white: var(--white);
+   --border-emphasis: var(--off-white);
+   --border-default: var(--off-white-700);
+   --border-muted: var(--off-white-800);
 }

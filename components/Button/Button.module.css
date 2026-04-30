@@ -1,6 +1,6 @@
 /*
  * Button — Binatti UI
- * variant (filled | outline) × kind (text | icon) × state (default | hover | disabled)
+ * variant (filled | outline | ghost) × kind (text | icon) × size (xs | sm | md | lg)
  */
 
 .button {
@@ -11,7 +11,7 @@
   --button-radius:    var(--radius-6xs);
   --button-shadow:    var(--shadow-button-black);
   --button-px:        var(--space-6);
-  --button-height:    2.75rem;
+  --button-height:    2.75rem; /* 44px — md */
   --button-gap:       var(--space-3);
 
   display: inline-flex;
@@ -38,18 +38,30 @@
   box-shadow: var(--button-shadow);
 }
 
+/* ── kind=text ────────────────────────────────────────────── */
 .sizeText {
   padding: 0 var(--button-px);
 }
 
+/* ── kind=icon ────────────────────────────────────────────── */
 .sizeIcon {
-  --button-gap:   0px;
-  --button-px:    0px;
+  --button-gap: 0px;
+  --button-px:  0px;
   width:  var(--button-height);
   padding: 0;
 }
 
-/* ── filled states ─────────────────────────────────────────── */
+/* icon button — sm (36px) */
+.button[data-kind="icon"][data-size="sm"] {
+  --button-height: 2.25rem;
+}
+
+/* icon button — xs (28px) */
+.button[data-kind="icon"][data-size="xs"] {
+  --button-height: 1.75rem;
+}
+
+/* ── filled states ────────────────────────────────────────── */
 .button[data-variant="filled"]:hover:not(:disabled),
 .button[data-variant="filled"].stateHover:not(.disabled) {
   --button-bg: var(--action-filled-bg-hover);
@@ -69,6 +81,20 @@
   --button-bg: var(--action-outline-bg-hover);
 }
 
+/* ── ghost variant ────────────────────────────────────────── */
+.button[data-variant="ghost"] {
+  --button-bg:     transparent;
+  --button-border: transparent;
+  --button-color:  var(--fg-emphasis);
+  --button-shadow: none;
+  box-shadow: none;
+}
+
+.button[data-variant="ghost"]:hover:not(:disabled),
+.button[data-variant="ghost"].stateHover:not(.disabled) {
+  --button-bg: var(--action-outline-bg-hover);
+}
+
 /* ── disabled ─────────────────────────────────────────────── */
 .button:disabled,
 .button.disabled {
@@ -81,8 +107,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
   flex-shrink: 0;
 }
 
@@ -91,7 +115,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
   flex-shrink: 0;
 }

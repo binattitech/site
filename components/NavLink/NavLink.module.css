@@ -1,17 +1,20 @@
 /*
  * NavLink — Binatti UI
+ * size (md | sm)
  * state (default | hover)
  */
 
 .link {
   --link-bg: transparent;
+  --link-border: transparent;
+  --link-gap: var(--space-3);
 
   display: flex;
   align-items: flex-start;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-6);
-  border: none;
+  gap: var(--link-gap);
   background: var(--link-bg);
+  border: 1px solid var(--link-border);
+  border-radius: 0;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
@@ -19,10 +22,34 @@
   transition: background-color 150ms ease;
 }
 
-.link:hover,
-.link[data-state="hover"] {
+/* ── md size ───────────────────────────── */
+
+.link[data-size="md"] {
+  padding: var(--space-3) var(--space-6);
+}
+
+.link[data-size="md"]:hover,
+.link[data-size="md"][data-state="hover"] {
   --link-bg: var(--action-outline-bg-hover);
 }
+
+/* ── sm size ───────────────────────────── */
+
+.link[data-size="sm"] {
+  --link-border: var(--fg-muted);
+  --link-gap: var(--space-2);
+
+  align-items: center;
+  padding: var(--space-1-5) var(--space-3);
+  border-radius: var(--radius-6xs);
+}
+
+.link[data-size="sm"]:hover,
+.link[data-size="sm"][data-state="hover"] {
+  --link-bg: var(--action-outline-bg-hover);
+}
+
+/* ── md internals ──────────────────────── */
 
 .content {
   flex: 1;
@@ -53,4 +80,37 @@
 .badge {
   flex-shrink: 0;
   margin-top: var(--space-1-5);
+}
+
+/* ── sm internals ──────────────────────── */
+
+.icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.smTitle {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family);
+  font-size: var(--text-sm-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--fg-emphasis);
+  white-space: nowrap;
+}
+
+.linkIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.link[data-size="sm"]:hover .linkIcon,
+.link[data-size="sm"][data-state="hover"] .linkIcon {
+  opacity: 1;
 }

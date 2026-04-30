@@ -4,10 +4,10 @@ import React from "react";
 import { ArrowRight, List } from "@phosphor-icons/react";
 import styles from "./Button.module.css";
 
-export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonSize = "xs" | "sm" | "md" | "lg";
 export type ButtonState = "default" | "hover";
 export type ButtonKind = "text" | "icon";
-export type ButtonVariant = "filled" | "outline";
+export type ButtonVariant = "filled" | "outline" | "ghost";
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
@@ -38,6 +38,7 @@ export default function Button({
 }: ButtonProps) {
   const isFilled = variant === "filled";
   const isIcon = kind === "icon";
+  const isSmallIcon = isIcon && (size === "sm" || size === "xs");
 
   const classNames = [
     styles.button,
@@ -50,6 +51,7 @@ export default function Button({
     .join(" ");
 
   const iconColor = isFilled ? "var(--fg-offwhite)" : "var(--fg-emphasis)";
+  const iconSize = isSmallIcon ? 16 : 24;
 
   return (
     <button
@@ -64,7 +66,7 @@ export default function Button({
     >
       {isIcon ? (
         <span className={styles.icon} aria-label={content}>
-          {icon ?? <List size={24} color={iconColor} />}
+          {icon ?? <List size={iconSize} color={iconColor} />}
         </span>
       ) : (
         <>

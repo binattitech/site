@@ -1,7 +1,7 @@
 /*
  * Card — Binatti UI
  * variant: tutorial | articles
- * size:    md | sm
+ * size:    md | sm | xs
  * states:  default | hover
  */
 
@@ -25,8 +25,8 @@
   background-color: var(--card-bg);
   flex-direction: column;
   align-items: flex-start;
-    border: none;
-      outline: 1px solid var(--card-border);
+  border: none;
+  outline: 1px solid var(--card-border);
 }
 
 .tutorialMd {
@@ -59,7 +59,7 @@
   border-top: 1px solid var(--card-border);
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
   align-items: flex-start;
   width: 100%;
   flex-shrink: 0;
@@ -71,7 +71,12 @@
 }
 
 .textAreaSm {
-  padding: var(--space-5);
+  padding: var(--space-4);
+}
+
+.tutorial:hover .textArea,
+.textAreaHover {
+  background: var(--action-outline-bg-hover);
 }
 
 /* ── Etiqueta categoria ── */
@@ -148,7 +153,7 @@
 }
 
 /* ════════════════════════════════════════════════════════════
-   ARTICLES
+   ARTICLES — base
    ════════════════════════════════════════════════════════════ */
 .articles {
   border-top: none;
@@ -158,12 +163,12 @@
   background: transparent;
 }
 
-/* Row externo: texto à esquerda, tag+seta à direita, centralizados verticalmente */
+/* ── md ── */
 .articlesMd {
   flex-direction: row;
   align-items: center;
-  gap: var(--breakpoints-section-content-paragraph-gap);
-  padding: var(--breakpoints-section-content-gap) 0;
+  gap: var(--space-4);
+  padding: var(--space-8) 0;
   width: 100%;
 }
 
@@ -171,25 +176,58 @@
   padding-left: var(--space-8);
 }
 
+.articlesMd:hover {
+  padding-left: var(--space-8);
+}
+
+.articles:hover .arrow {
+  transform: scale(1.2);
+  transition: transform 150ms ease;
+}
+
+/* ── sm ── */
+.articlesSm {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-4) var(--space-4) 0;
+  width: 100%;
+}
+
+/* ── xs ── */
+.articlesXs {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  width: 100%;
+}
+
 /* ── Bloco de texto ── */
 .articleHeader {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
   align-items: flex-start;
 }
 
 .articleHeaderMd {
   flex: 1;
   min-width: 0;
+  gap: var(--space-2);
 }
 
-/* Categoria standalone — desktop only */
+.articleHeaderSmXs {
+  width: 100%;
+  flex-shrink: 0;
+  gap: var(--space-2);
+}
+
+/* ── Categoria standalone — desktop only (md) ── */
 .categoryDesktop {
   display: block;
 }
 
-/* Linha categoria + tag — mobile only (escondida por padrão) */
+/* ── Linha categoria + tag — mobile only (md) ── */
 .articleCategoryRow {
   display: none;
   align-items: center;
@@ -198,13 +236,25 @@
   gap: var(--space-2);
 }
 
-/* Categoria dentro da linha mobile — estica para empurrar a tag à direita */
 .categoryMobile {
   flex: 1;
   min-width: 0;
 }
 
-/* ── Título article ── */
+/* ── Linha categoria + tag — sempre visível (sm / xs) ── */
+.articleCategoryRowSmXs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--space-2);
+}
+
+.articleCategoryRowSmXs .category {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Título list md ── */
 .articleTitleMd {
   --title-color: var(--fg-emphasis);
 
@@ -220,7 +270,39 @@
   width: 100%;
 }
 
-/* ── Tag + seta — desktop only, centralizados no meio do card ── */
+/* ── Título list sm ── */
+.articleTitleSm {
+  --title-color: var(--fg-emphasis);
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
+  color: var(--title-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* ── Título list xs ── */
+.articleTitleXs {
+  --title-color: var(--fg-emphasis);
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
+  color: var(--title-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* ── Tag + seta — md only, alinhados verticalmente ── */
 .articleActions {
   display: flex;
   align-items: center;
@@ -265,7 +347,7 @@
     letter-spacing: var(--text-xl-tracking);
   }
 
-  /* Articles: layout vertical */
+  /* Articles md: layout vertical */
   .articlesMd {
     align-items: flex-start;
   }
@@ -291,19 +373,4 @@
     letter-spacing: var(--text-xl-tracking);
     white-space: normal;
   }
-
-
-}
-
-.tutorial:hover .textArea {
-  background: var(--action-outline-bg-hover);
-}
-
-.articlesMd:hover {
-  padding-left: var(--space-8);
-}
-
-.articles:hover .arrow {
-  transform: scale(1.2);
-  transition: transform 150ms ease;
 }
