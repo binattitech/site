@@ -40,6 +40,15 @@
   width: 100%;
 }
 
+.cardBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
 @media (min-width: 48rem) {
   .grid {
     grid-template-columns: repeat(3, 1fr);

@@ -1,0 +1,375 @@
+/*
+ * WindowProfile — Binatti UI
+ * Janela de perfil de membro com banner, avatar, bio, links sociais e contribuições.
+ */
+
+/* ── Animações macOS ─────────────────────────────────────── */
+
+@keyframes windowAppear {
+  0%   { opacity: 0; transform: scale(0.78); }
+  55%  { opacity: 1; transform: scale(1.025); }
+  75%  { transform: scale(0.988); }
+  90%  { transform: scale(1.006); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes windowDismiss {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.88); }
+}
+
+@keyframes overlayAppear {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes overlayDismiss {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ── Overlay (backdrop) ──────────────────────────────────── */
+
+.overlay {
+  --overlay-bg: var(--black-alpha-50);
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: var(--overlay-bg);
+  animation: overlayAppear 280ms ease forwards;
+}
+
+.overlay[data-closing="true"] {
+  animation: overlayDismiss 200ms ease forwards;
+}
+
+/* ── Modal wrapper (recebe a animação de escala) ─────────── */
+
+.windowModal {
+  display: flex;
+  align-items: stretch;
+  height: 85dvh;
+  animation: windowAppear 380ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.windowModal[data-closing="true"] {
+  animation: windowDismiss 200ms ease-in forwards;
+}
+
+/* ── Window ─────────────────────────────────────────────── */
+
+.window {
+  --window-bg:             var(--bg-default);
+  --window-bg-muted:       var(--bg-muted);
+  --window-border:         var(--border-emphasis);
+  --window-border-default: var(--border-default);
+  --window-radius:         var(--radius-6xs);
+  --window-shadow:         0px 25px 50px -12px var(--black-alpha-20);
+  --window-fg-emphasis:    var(--fg-emphasis);
+  --window-fg-default:     var(--fg-default);
+  --window-fg-muted:       var(--fg-muted);
+
+  background: var(--window-bg);
+  border: 1px solid var(--window-border);
+  border-radius: var(--window-radius);
+  box-shadow: var(--window-shadow);
+  width: 960px;
+  padding: var(--space-px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* ── Titlebar ────────────────────────────────────────────── */
+
+.titlebar {
+  --titlebar-bg:     var(--window-bg-muted);
+  --titlebar-border: var(--window-border-default);
+
+  background: var(--titlebar-bg);
+  border-bottom: 1px solid var(--titlebar-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-0-5) var(--space-0-5) var(--space-0-5) var(--space-5);
+  flex-shrink: 0;
+}
+
+.titlebarUsername {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--window-fg-emphasis);
+}
+
+.closeBtn {
+  --close-btn-radius: var(--window-radius);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-7);
+  height: var(--space-7);
+  padding: var(--space-2);
+  background: transparent;
+  border: none;
+  border-radius: var(--close-btn-radius);
+  cursor: pointer;
+  color: var(--window-fg-emphasis);
+}
+
+.closeBtn:hover {
+  background: var(--action-outline-bg-hover);
+}
+
+/* ── Main ────────────────────────────────────────────────── */
+
+.main {
+  background: var(--window-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* ── Banner ──────────────────────────────────────────────── */
+
+.banner {
+  width: 100%;
+  aspect-ratio: 958 / 168;
+  background: var(--window-bg-muted);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Content row ─────────────────────────────────────────── */
+
+.content {
+  display: flex;
+  gap: var(--space-8);
+  align-items: flex-start;
+  padding: var(--space-8);
+  width: 100%;
+}
+
+/* ── Avatar ──────────────────────────────────────────────── */
+
+.avatar {
+  position: absolute;
+  left: var(--space-8);
+  top: 112px;
+  width: 111px;
+  height: 111px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--window-border);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--window-bg-muted);
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 280px;
+  max-width: 280px;
+  flex-shrink: 0;
+  padding-top: var(--space-8);
+}
+
+.name {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-2xl-size);
+  line-height: var(--text-2xl-lh);
+  letter-spacing: var(--text-2xl-tracking);
+  color: var(--window-fg-emphasis);
+}
+
+/* ── Section label (SOBRE MIM / SOCIAL) ──────────────────── */
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-upper-size);
+  line-height: var(--text-mono-upper-lh);
+  letter-spacing: var(--text-mono-upper-tracking);
+  text-transform: var(--text-mono-upper-case);
+  font-style: normal;
+  color: var(--window-fg-default);
+}
+
+/* ── Bio ─────────────────────────────────────────────────── */
+
+.bioSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.bio {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--window-fg-emphasis);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.bio[data-expanded="true"] {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.verMais {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--window-fg-default);
+}
+
+.caretIcon {
+  display: flex;
+  align-items: center;
+  transition: transform 200ms ease;
+}
+
+.verMais[data-expanded="true"] .caretIcon {
+  transform: rotate(180deg);
+}
+
+/* ── Social ──────────────────────────────────────────────── */
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.socialLink {
+  --social-link-border:  var(--window-fg-muted);
+  --social-link-radius:  var(--window-radius);
+  --social-link-bg:      transparent;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1-5) var(--space-3);
+  border: 1px solid var(--social-link-border);
+  border-radius: var(--social-link-radius);
+  background: var(--social-link-bg);
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 150ms ease;
+}
+
+.socialLink:hover {
+  --social-link-bg: var(--action-outline-bg-hover);
+}
+
+.socialLinkIcon {
+  flex-shrink: 0;
+  color: var(--window-fg-emphasis);
+}
+
+.socialLinkLabel {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--window-fg-emphasis);
+  white-space: nowrap;
+}
+
+/* ── Contributions ───────────────────────────────────────── */
+
+.contributions {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Responsive — sm (mobile) ────────────────────────────── */
+
+@media (max-width: 47.938rem) {
+  .window {
+    width: 100%;
+  }
+
+  .avatar {
+    left: var(--space-4);
+    top: 34px;
+    width: 68px;
+    height: 68px;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: var(--space-4);
+    gap: var(--space-8);
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    gap: var(--space-5);
+    padding-top: var(--space-8);
+  }
+
+  .contributions {
+    flex: none;
+    width: 100%;
+  }
+}

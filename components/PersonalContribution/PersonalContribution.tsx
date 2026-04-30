@@ -25,8 +25,8 @@ export interface PersonalContributionProps {
   defaultTab?: ActiveTab;
 }
 
-const TABS: { key: ActiveTab; label: string }[] = [
-  { key: "trilhas", label: "Trilhas" },
+const TABS: { key: ActiveTab; label: string; disabled?: boolean }[] = [
+  { key: "trilhas", label: "Trilhas", disabled: true },
   { key: "artigos", label: "Artigos" },
   { key: "videos", label: "Vídeos" },
 ];
@@ -42,12 +42,12 @@ export default function PersonalContribution({
     <div className={styles.container}>
       {/* Tabs */}
       <div className={styles.tabs}>
-        {TABS.map(({ key, label }) => (
+        {TABS.map(({ key, label, disabled }) => (
           <Tab
             key={key}
             label={label}
-            state={active === key ? "active" : "default"}
-            onClick={() => setActive(key)}
+            state={disabled ? "disable" : active === key ? "active" : "default"}
+            onClick={disabled ? undefined : () => setActive(key)}
           />
         ))}
       </div>
