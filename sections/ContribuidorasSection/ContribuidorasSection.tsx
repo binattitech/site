@@ -48,6 +48,7 @@ export default function ContribuidorasSection() {
         bio={displayMember?.bio}
         avatarSrc={displayMember ? `/team/${displayMember.photo}.png` : undefined}
         socialLinks={displayMember?.socialLinks}
+        videos={displayMember?.videos}
       />
     </>
   );

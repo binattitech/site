@@ -15,7 +15,10 @@ export interface ContributionArticle {
 }
 
 export interface ContributionVideo {
-  src: string;
+  /** URL da publicação no Instagram */
+  url: string;
+  /** Caminho da thumbnail (ex: "/team/milena-reel1.jpg"). Mostra placeholder se ausente. */
+  src?: string;
   alt?: string;
 }
 
@@ -73,9 +76,19 @@ export default function PersonalContribution({
       {active === "videos" && (
         <div className={styles.videosGrid}>
           {videos.map((video, i) => (
-            <div key={i} className={styles.videoThumb}>
-              <img src={video.src} alt={video.alt ?? ""} />
-            </div>
+            <a
+              key={i}
+              href={video.url}
+              className={styles.videoThumb}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={video.alt ?? `Reel ${i + 1}`}
+            >
+              {video.src
+                ? <img src={video.src} alt={video.alt ?? ""} className={styles.videoImg} />
+                : <div className={styles.videoPlaceholder} />
+              }
+            </a>
           ))}
           {videos.length === 0 && (
             <div className={styles.empty} />

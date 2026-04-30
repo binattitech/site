@@ -16,6 +16,14 @@ export interface SocialLink {
   url: string;
 }
 
+export interface TeamVideo {
+  /** URL da publicação no Instagram */
+  url: string;
+  /** Caminho para a thumbnail (ex: "/team/milena-reel1.jpg"). Opcional — exibe placeholder se ausente. */
+  src?: string;
+  alt?: string;
+}
+
 export interface TeamMember {
   /** Nome completo exibido no card e no perfil */
   name: string;
@@ -29,6 +37,8 @@ export interface TeamMember {
   bio?: string;
   /** Links de redes sociais exibidos no perfil */
   socialLinks?: SocialLink[];
+  /** Reels/vídeos do Instagram exibidos na aba Vídeos do perfil */
+  videos?: TeamVideo[];
 }
 
 export const TEAM: TeamMember[] = [
@@ -42,6 +52,11 @@ export const TEAM: TeamMember[] = [
       { platform: "linkedin",  url: "https://www.linkedin.com/in/miluarte/" },
       { platform: "behance",   url: "https://www.behance.net/miluarte" },
       { platform: "portfolio", url: "https://miluarte.figma.site" },
+    ],
+    videos: [
+      { url: "https://www.instagram.com/reel/DWCQBfQEWWo/" },
+      { url: "https://www.instagram.com/reel/DI43VsRSVrb/" },
+      { url: "https://www.instagram.com/reel/DIz6RBvOtWU/" },
     ],
   },
   {
