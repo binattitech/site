@@ -64,9 +64,9 @@ export const TEAM: TeamMember[] = [
     username: "marinadelima",
     role: "Contribuidora",
     photo: "marina",
-    bio: "Designer UX/UI com formação em Engenharia de Software e experiência sólida na criação de produtos digitais centrados no usuário — de sistemas institucionais complexos a design systems do zero. Tenho vivência em todas as etapas do processo de design, desde pesquisa e arquitetura da informação até prototipagem de alta fidelidade e handoff técnico. Atuo também na interface entre design e produto, com experiência em levantamento de requisitos e facilitação de times ágeis.",
+    bio: "Me chamo Marina, uma paraibana meio perdida pelo Piauí. Em transição da arquitetura para a engenharia de software, divido meu tempo entre inteligência cibernética, arte e gastronomia. Levo a vida de forma espontânea, sempre guiada pela escolha que promete a melhor história pra contar.",
     socialLinks: [
-      { platform: "linkedin", url: "https://linkedin.com/in/marinadelima" },
+      { platform: "github", url: "https://github.com/limademarina" },
     ],
   },
   {
