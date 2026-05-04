@@ -57,3 +57,16 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (max-width: 47.938rem) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading {
+    font-size: var(--text-5xl-size);
+    line-height: var(--text-grotesque-lh);
+    letter-spacing: var(--text-grotesque-tracking-5xl);
+  }
+}

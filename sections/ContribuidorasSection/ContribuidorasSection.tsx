@@ -4,9 +4,14 @@ import { useState, useRef } from "react";
 import AvatarWithText from "@/components/Avatar";
 import WindowProfile from "@/components/WindowProfile";
 import { TEAM } from "@/data/team";
+import type { ContributionArticle } from "@/components/PersonalContribution";
 import styles from "./ContribuidorasSection.module.css";
 
-export default function ContribuidorasSection() {
+interface ContribuidorasSectionProps {
+  artigosPorMembro: Record<string, ContributionArticle[]>;
+}
+
+export default function ContribuidorasSection({ artigosPorMembro }: ContribuidorasSectionProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const selected = selectedIndex !== null ? TEAM[selectedIndex] : null;
 
@@ -14,6 +19,10 @@ export default function ContribuidorasSection() {
   const lastSelected = useRef(selected);
   if (selected !== null) lastSelected.current = selected;
   const displayMember = selected ?? lastSelected.current;
+
+  const displayArticles = displayMember
+    ? (artigosPorMembro[displayMember.photo] ?? [])
+    : [];
 
   return (
     <>
@@ -48,6 +57,7 @@ export default function ContribuidorasSection() {
         bio={displayMember?.bio}
         avatarSrc={displayMember ? `/team/${displayMember.photo}.png` : undefined}
         socialLinks={displayMember?.socialLinks}
+        articles={displayArticles}
         videos={displayMember?.videos}
       />
     </>

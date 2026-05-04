@@ -5,6 +5,13 @@
  * states:  default | hover
  */
 
+/* ── Link wrapper ─────────────────────────────────────────── */
+.cardLink {
+  display: contents;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ── Base ─────────────────────────────────────────────────── */
 .card {
   --card-border: var(--action-outline-border);
@@ -144,9 +151,9 @@
 
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-xs-size);
-  line-height: var(--text-xs-lh);
-  letter-spacing: var(--text-xs-tracking);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
   color: var(--author-color);
   flex: 1;
   min-width: 0;
@@ -178,6 +185,14 @@
 
 .articlesMd:hover {
   padding-left: var(--space-8);
+}
+
+.articlesSm:hover {
+  padding-left: var(--space-4);
+}
+
+.articlesXs:hover {
+  padding-left: var(--space-4);
 }
 
 .articles:hover .arrow {
@@ -371,6 +386,5 @@
     font-size: var(--text-xl-size);
     line-height: var(--text-xl-lh);
     letter-spacing: var(--text-xl-tracking);
-    white-space: normal;
   }
 }

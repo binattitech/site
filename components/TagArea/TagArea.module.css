@@ -26,4 +26,5 @@
   color: var(--tag-color);
   text-align: center;
   white-space: nowrap;
+  text-transform: uppercase;
 }

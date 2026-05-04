@@ -5,23 +5,37 @@ import SearchBar from "@/components/SearchBar";
 import SearchModal from "@/components/SearchModal";
 import Chip from "@/components/Chip";
 import Card from "@/components/Card";
+import type { ArtigoMeta } from "@/lib/artigos";
 import styles from "./BlogHeroSection.module.css";
 
 const CHIPS = ["Design com IA", "Dados", "Dev", "UX Research"];
 
-// Resultados mock — substituir por dados reais futuramente
-const MOCK_RESULTS = [
-  { title: "Como criar um Design System com Claude", author: "por Milena Oliveira", tag: "Design com IA" },
-  { title: "Git para quem nunca usou terminal", author: "por Laura Lima", tag: "Dev" },
-  { title: "Acessibilidade na prática: checklist real", author: "por Kayele Santos", tag: "UX Research" },
-  { title: "CSS Grid em 10 minutos", author: "por Milena Oliveira", tag: "Dev" },
-  { title: "Como documentar uma API do zero", author: "por Laura Lima", tag: "Dev" },
-  { title: "Pesquisa com usuário: do recrutamento à análise", author: "por Kayele Santos", tag: "UX Research" },
-  { title: "Deploy no Vercel sem drama", author: "por Milena Oliveira", tag: "Dev" },
-];
+interface BlogHeroSectionProps {
+  artigos: ArtigoMeta[];
+}
 
-export default function BlogHeroSection() {
+export default function BlogHeroSection({ artigos }: BlogHeroSectionProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+
+  const featured = artigos[0];
+
+  const filteredResults = (
+    query.trim()
+      ? artigos.filter(
+          (a) =>
+            a.title.toLowerCase().includes(query.toLowerCase()) ||
+            a.tag.toLowerCase().includes(query.toLowerCase()) ||
+            a.author.toLowerCase().includes(query.toLowerCase()) ||
+            a.category.toLowerCase().includes(query.toLowerCase())
+        )
+      : artigos
+  ).map((a) => ({
+    title: a.title,
+    author: a.author,
+    tag: a.tag,
+    href: `/blog/${a.slug}`,
+  }));
 
   return (
     <section className={styles.section}>
@@ -48,8 +62,12 @@ export default function BlogHeroSection() {
 
           <SearchModal
             isOpen={isSearchOpen}
-            results={MOCK_RESULTS}
-            onClose={() => setIsSearchOpen(false)}
+            results={filteredResults}
+            onClose={() => {
+              setIsSearchOpen(false);
+              setQuery("");
+            }}
+            onQueryChange={setQuery}
           />
 
           <div className={styles.chips}>
@@ -63,17 +81,20 @@ export default function BlogHeroSection() {
         <div className={styles.divider} aria-hidden="true" />
 
         {/* Right — featured card */}
-        <div className={styles.right}>
-          <Card
-            variant="tutorial"
-            size="md"
-            title="Como criar um Design System com Claude"
-            author="por Milena Oliveira"
-            category="NA PRÁTICA COM IA"
-            tag="design"
-            imageSrc="/tutorial-1.png"
-          />
-        </div>
+        {featured && (
+          <div className={styles.right}>
+            <Card
+              variant="tutorial"
+              size="md"
+              title={featured.title}
+              author={featured.author}
+              category={featured.category}
+              tag={featured.tag}
+              imageSrc={featured.imageSrc}
+              href={`/blog/${featured.slug}`}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

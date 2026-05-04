@@ -12,6 +12,7 @@ export interface ContributionArticle {
   category?: string;
   tag?: string;
   author?: string;
+  href?: string;
 }
 
 export interface ContributionVideo {
@@ -67,6 +68,7 @@ export default function PersonalContribution({
               category={article.category}
               tag={article.tag}
               author={article.author}
+              href={article.href}
             />
           ))}
         </div>

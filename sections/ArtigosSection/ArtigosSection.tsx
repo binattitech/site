@@ -1,40 +1,12 @@
 import Card from "@/components/Card";
+import type { ArtigoMeta } from "@/lib/artigos";
 import styles from "./ArtigosSection.module.css";
 
-const ARTIGOS = [
-  {
-    title: "Como criar um Design System com Claude",
-    author: "por Milena Oliveira",
-    category: "NA PRÁTICA COM IA",
-    tag: "design",
-  },
-  {
-    title: "Por que toda dev deveria aprender sobre UX",
-    author: "por Kayele Santos",
-    category: "UX DESIGN",
-    tag: "carreira",
-  },
-  {
-    title: "Acessibilidade não é opcional: um argumento técnico",
-    author: "por Laura Costa",
-    category: "DEV",
-    tag: "a11y",
-  },
-  {
-    title: "Gestão de projetos para quem é dev, não gerente",
-    author: "por Milena Oliveira",
-    category: "PRODUTO",
-    tag: "gestão",
-  },
-  {
-    title: "Como apresentar seu trabalho técnico de forma clara",
-    author: "por Kayele Santos",
-    category: "COMUNIDADE",
-    tag: "soft skills",
-  },
-];
+interface ArtigosSectionProps {
+  artigos: ArtigoMeta[];
+}
 
-export default function ArtigosSection() {
+export default function ArtigosSection({ artigos }: ArtigosSectionProps) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -49,14 +21,15 @@ export default function ArtigosSection() {
         </div>
 
         <div className={styles.list}>
-          {ARTIGOS.map((a) => (
+          {artigos.map((a) => (
             <Card
-              key={a.title}
+              key={a.slug}
               variant="articles"
               title={a.title}
               author={a.author}
               category={a.category}
               tag={a.tag}
+              href={`/blog/${a.slug}`}
             />
           ))}
         </div>

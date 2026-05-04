@@ -79,8 +79,31 @@
   top: var(--space-16); /* offset for sticky header (~64px) */
 }
 
+/* Tablet */
 @media (max-width: 79.938rem) {
   .sidebar {
     display: none;
+  }
+
+  .sectionHeading {
+    font-size: var(--text-3xl-size);
+    line-height: var(--text-3xl-lh);
+    letter-spacing: var(--text-3xl-tracking);
+  }
+}
+
+/* Mobile */
+@media (max-width: 47.938rem) {
+  .body {
+    flex-direction: column;
+  }
+
+  /* design.css shifts --text-3xl-size → 1.375rem at mobile */
+  /* sectionHeading: desktop 2.25rem → tablet 1.75rem → mobile 1.375rem */
+
+  .paragraph {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-lh);
+    letter-spacing: var(--text-md-tracking);
   }
 }

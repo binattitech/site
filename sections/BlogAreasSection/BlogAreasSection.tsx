@@ -3,127 +3,21 @@
 import React, { useState } from "react";
 import Card from "@/components/Card";
 import Pagination from "@/components/Pagination";
+import type { ArtigoMeta } from "@/lib/artigos";
 import styles from "./BlogAreasSection.module.css";
 
 const ITEMS_PER_PAGE = 9;
 
-const ARTIGOS = [
-  {
-    title: "Como criar um Design System com Claude",
-    author: "por Milena Oliveira",
-    category: "NA PRÁTICA COM IA",
-    tag: "design",
-  },
-  {
-    title: "Componentes acessíveis do zero com React",
-    author: "por Laura Costa",
-    category: "DEV",
-    tag: "a11y",
-  },
-  {
-    title: "Analisando dados sem ser cientista de dados",
-    author: "por Kayele Santos",
-    category: "DADOS",
-    tag: "análise",
-  },
-  {
-    title: "IA generativa na sua stack de produto",
-    author: "por Milena Oliveira",
-    category: "NA PRÁTICA COM IA",
-    tag: "ia",
-  },
-  {
-    title: "UX para devs: o que você precisa saber",
-    author: "por Laura Costa",
-    category: "UX",
-    tag: "design",
-  },
-  {
-    title: "Sua primeira contribuição open source",
-    author: "por Kayele Santos",
-    category: "DEV",
-    tag: "open source",
-  },
-  {
-    title: "Como apresentar seu trabalho técnico",
-    author: "por Milena Oliveira",
-    category: "COMUNIDADE",
-    tag: "soft skills",
-  },
-  {
-    title: "Gestão de projetos para quem é dev",
-    author: "por Laura Costa",
-    category: "PRODUTO",
-    tag: "gestão",
-  },
-  {
-    title: "Introdução a bancos de dados relacionais",
-    author: "por Kayele Santos",
-    category: "DADOS",
-    tag: "sql",
-  },
-  {
-    title: "Design tokens: da teoria à prática",
-    author: "por Milena Oliveira",
-    category: "DESIGN",
-    tag: "tokens",
-  },
-  {
-    title: "Testes automatizados para quem tem medo",
-    author: "por Laura Costa",
-    category: "DEV",
-    tag: "testes",
-  },
-  {
-    title: "Pesquisa com usuário sem orçamento",
-    author: "por Kayele Santos",
-    category: "UX",
-    tag: "pesquisa",
-  },
-  {
-    title: "Como usar o GitHub Actions no dia a dia",
-    author: "por Milena Oliveira",
-    category: "DEV",
-    tag: "devops",
-  },
-  {
-    title: "Métricas que realmente importam para produto",
-    author: "por Laura Costa",
-    category: "PRODUTO",
-    tag: "métricas",
-  },
-  {
-    title: "Prompts que funcionam para gerar código",
-    author: "por Kayele Santos",
-    category: "NA PRÁTICA COM IA",
-    tag: "prompts",
-  },
-  {
-    title: "Por que acessibilidade é um argumento técnico",
-    author: "por Milena Oliveira",
-    category: "DEV",
-    tag: "a11y",
-  },
-  {
-    title: "Visualizações de dados com Python e Pandas",
-    author: "por Laura Costa",
-    category: "DADOS",
-    tag: "python",
-  },
-  {
-    title: "Como construir portfólio sendo júnior",
-    author: "por Kayele Santos",
-    category: "COMUNIDADE",
-    tag: "carreira",
-  },
-];
+interface BlogAreasSectionProps {
+  artigos: ArtigoMeta[];
+}
 
-export default function BlogAreasSection() {
+export default function BlogAreasSection({ artigos }: BlogAreasSectionProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(ARTIGOS.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(artigos.length / ITEMS_PER_PAGE);
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
-  const artigos = ARTIGOS.slice(start, start + ITEMS_PER_PAGE);
+  const pageArtigos = artigos.slice(start, start + ITEMS_PER_PAGE);
 
   return (
     <section className={styles.section}>
@@ -131,25 +25,28 @@ export default function BlogAreasSection() {
 
         <div className={styles.gridWrapper}>
           <div className={styles.grid}>
-            {artigos.map((a) => (
+            {pageArtigos.map((a) => (
               <Card
-                key={a.title}
+                key={a.slug}
                 variant="tutorial"
                 size="md"
                 title={a.title}
                 author={a.author}
                 category={a.category}
                 tag={a.tag}
-                imageSrc="/placeholder-card.png"
+                imageSrc={a.imageSrc}
+                href={`/blog/${a.slug}`}
               />
             ))}
           </div>
 
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
-          />
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
+          )}
         </div>
 
       </div>

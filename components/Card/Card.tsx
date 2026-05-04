@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
 import TagArea from "@/components/TagArea";
 import styles from "./Card.module.css";
@@ -21,6 +22,7 @@ export interface CardProps {
   imageSrc?: string;
   imageAlt?: string;
   className?: string;
+  href?: string;
   onClick?: () => void;
 }
 
@@ -35,6 +37,7 @@ export default function Card({
   imageSrc = "/placeholder-card.png",
   imageAlt = "",
   className,
+  href,
   onClick,
 }: CardProps) {
   const isTutorial = variant === "tutorial";
@@ -55,7 +58,7 @@ export default function Card({
       .filter(Boolean)
       .join(" ");
 
-    return (
+    const content = (
       <article
         className={cardClass}
         data-variant="tutorial"
@@ -90,6 +93,10 @@ export default function Card({
         </div>
       </article>
     );
+
+    return href ? (
+      <Link href={href} className={styles.cardLink}>{content}</Link>
+    ) : content;
   }
 
   /* ── Articles ──────────────────────────────────────────── */
@@ -109,7 +116,7 @@ export default function Card({
     .filter(Boolean)
     .join(" ");
 
-  return (
+  const articlesContent = (
     <article
       className={cardClass}
       data-variant="articles"
@@ -165,4 +172,8 @@ export default function Card({
       )}
     </article>
   );
+
+  return href ? (
+    <Link href={href} className={styles.cardLink}>{articlesContent}</Link>
+  ) : articlesContent;
 }

@@ -18,6 +18,7 @@ export interface SearchModalProps {
   results?: SearchResult[];
   onClose: () => void;
   onSearch?: (value: string) => void;
+  onQueryChange?: (query: string) => void;
 }
 
 export default function SearchModal({
@@ -25,6 +26,7 @@ export default function SearchModal({
   results = [],
   onClose,
   onSearch,
+  onQueryChange,
 }: SearchModalProps) {
   const [mounted, setMounted] = useState(false);
   const [value, setValue] = useState("");
@@ -72,8 +74,14 @@ export default function SearchModal({
         <SearchBar
           state="typing"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
-          onClear={() => setValue("")}
+          onChange={(e) => {
+            setValue(e.target.value);
+            onQueryChange?.(e.target.value);
+          }}
+          onClear={() => {
+            setValue("");
+            onQueryChange?.("");
+          }}
           onSearch={() => onSearch?.(value)}
         />
 

@@ -95,10 +95,24 @@
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 79.938rem) {
+  .title {
+    font-size: var(--text-4xl-size);
+    line-height: var(--text-4xl-lh);
+    letter-spacing: var(--text-4xl-tracking);
+  }
+}
+
+/* Mobile */
 @media (max-width: 47.938rem) {
   .textArea {
     padding: var(--space-5);
   }
+
+  /* design.css shifts --text-4xl-size → 1.75rem at mobile */
+  /* title goes desktop 3rem → tablet 2.25rem → mobile 1.75rem */
 
   .metaRight {
     flex-wrap: wrap;
