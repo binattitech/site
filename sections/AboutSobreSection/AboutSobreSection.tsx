@@ -27,7 +27,9 @@ export default function AboutSobreSection() {
         <div className={styles.right}>
           <span className={styles.badgeRight}>Nossa Missão</span>
           <h2 className={styles.headingRight}>
-            Educação gratuita, open source e em comunidade.
+            Educação gratuita, <br />
+            open source e <br />
+            em comunidade.
           </h2>
         </div>
       </div>

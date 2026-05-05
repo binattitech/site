@@ -23,4 +23,9 @@ body {
   color: var(--fg-emphasis);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
 }

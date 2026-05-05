@@ -1,4 +1,4 @@
-]# Cibersegurança: O Básico que Você Deve Saber
+# Cibersegurança: O Básico que Você Deve Saber
 
 Se você está começando a entrar no mundo da tecnologia, ou se já é veterano e quer reforçar seus conhecimentos, a cibersegurança é uma área valiosa para se aprender e explorar seus conceitos.
 
