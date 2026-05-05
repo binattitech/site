@@ -1,8 +1,8 @@
 ---
 title: Introdução à Cibersegurança
-author: por Kayele Santos
-authorRole: Desenvolvedora Backend
-avatarSrc: /photos/kayele.jpg
+author: por Rafaela Costa (Cassy)
+authorRole: Contribuidora
+avatarSrc: /team/cassy.png
 category: DEV
 tag: segurança
 date: 2025-08-10

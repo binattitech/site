@@ -153,7 +153,7 @@ function buildMeta(entry: FileEntry): ArtigoMeta {
     ? (meta.category ?? folderToCategory(entry.folder))
     : folderToCategory(entry.folder);
 
-  const author = meta.author || "por Rafela Costa (Cassy)";
+  const author = meta.author || "por Rafaela Costa (Cassy)";
   const teamMember = findTeamMember(author);
 
   return {
@@ -196,7 +196,7 @@ export function getArtigoBySlug(slug: string): Artigo | null {
     ? (meta.category ?? folderToCategory(entry.folder))
     : folderToCategory(entry.folder);
 
-  const author = meta.author || "por Rafela Costa (Cassy)";
+  const author = meta.author || "por Rafaela Costa (Cassy)";
   const teamMember = findTeamMember(author);
 
   return {
