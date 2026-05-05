@@ -20,7 +20,6 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <TrilhasSection />
         <TutoriaisSection />
         <TeamCarouselSection />
         <ArtigosSection artigos={artigos} />

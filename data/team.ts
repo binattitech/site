@@ -60,6 +60,30 @@ export const TEAM: TeamMember[] = [
     ],
   },
   {
+    name: "Aline Ramos",
+    username: "alineramos",
+    role: "Contribuidora",
+    photo: "aline",
+  },
+    {
+    name: "Kaielly Sousa",
+    username: "kaielly",
+    role: "Contribuidora",
+    photo: "kaielly",
+  },
+  {
+    name: "Beatriz Barreto",
+    username: "beatrizbarreto",
+    role: "Contribuidora",
+    photo: "bea",
+  },
+  {
+    name: "Rafaela Costa (Cassy)",
+    username: "cassy",
+    role: "Contribuidora",
+    photo: "cassy",
+  },
+    {
     name: "Marina de Lima",
     username: "marinadelima",
     role: "Contribuidora",
@@ -70,51 +94,15 @@ export const TEAM: TeamMember[] = [
     ],
   },
   {
-    name: "Aline Ramos",
-    username: "alineramos",
-    role: "Contribuidora",
-    photo: "aline",
-  },
-  {
-    name: "Ana Vitória Mendes",
-    username: "anavitoria",
-    role: "Contribuidora",
-    photo: "ana",
-  },
-  {
-    name: "Beatriz Barreto",
-    username: "beatrizbarreto",
-    role: "Contribuidora",
-    photo: "bea",
-  },
-  {
-    name: "Rafela Costa (Cassy)",
-    username: "cassy",
-    role: "Contribuidora",
-    photo: "cassy",
-  },
-  {
     name: "Ingrid Ribeiro",
     username: "ingridribeiro",
     role: "Contribuidora",
     photo: "ingrid",
   },
   {
-    name: "Kaielly Sousa",
-    username: "kaielly",
-    role: "Contribuidora",
-    photo: "kaielly",
-  },
-  {
     name: "Kévilla Aguiar",
     username: "kevillaaguiar",
     role: "Contribuidora",
     photo: "kevilla",
-  },
-  {
-    name: "Laura Madeira",
-    username: "lauramadeira",
-    role: "Contribuidora",
-    photo: "laura",
   },
 ];
