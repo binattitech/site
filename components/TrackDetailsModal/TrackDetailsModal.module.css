@@ -1,0 +1,201 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--black-alpha-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-4);
+  animation: fadeIn 150ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal {
+  --primary-50:  var(--rose-50);
+  --primary-100: var(--rose-100);
+  --primary-200: var(--rose-200);
+  --primary-300: var(--rose-300);
+  --primary-400: var(--rose-400);
+  --primary-500: var(--rose-500);
+  --primary-600: var(--rose-600);
+  --primary-900: var(--rose-900);
+
+  display: flex;
+  width: 56.25rem;  /* 900px */
+  height: 37.5rem;  /* 600px */
+  max-width: 100%;
+  max-height: 100%;
+  background: var(--bg-default);
+  border: 1px solid var(--primary-300);
+  border-radius: var(--radius-6xs);
+  overflow: hidden;
+  position: relative;
+  font-family: var(--font-family);
+}
+
+/* ── Sidebar (left) ──────────────────────────────────────── */
+.sidebar {
+  --avatar-name-color: var(--primary-50);
+  --avatar-role-color: var(--primary-50);
+
+  width: 20rem; /* 320px */
+  max-width: 20rem;
+  flex-shrink: 0;
+  background: var(--primary-600);
+  border-right: 1px solid var(--primary-300);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  overflow-y: auto;
+}
+
+.sidebarHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.trackName {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-4xl-size);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-4xl-tracking);
+  color: var(--primary-50);
+  margin: 0;
+}
+
+.description {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-lh);
+  color: var(--primary-200);
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--primary-500);
+  margin: 0;
+  width: 100%;
+}
+
+.contributors {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ── Content (right) ─────────────────────────────────────── */
+.content {
+  flex: 1;
+  min-width: 0;
+  background: var(--primary-50);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow-y: auto;
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1);
+  width: 100%;
+  border-bottom: 1px solid var(--primary-400);
+  flex-shrink: 0;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1-5) var(--space-3);
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--primary-400);
+  white-space: nowrap;
+}
+
+.tab[data-active="true"] {
+  color: var(--primary-900);
+  border-bottom-color: var(--primary-900);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--primary-200);
+  width: 100%;
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.itemTitle {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
+  color: var(--fg-emphasis);
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Close button ────────────────────────────────────────── */
+.closeBtn {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  width: var(--space-7);
+  height: var(--space-7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: var(--radius-6xs);
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: var(--action-outline-bg-hover);
+}

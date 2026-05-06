@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Badge.module.css";
 
-export type BadgeVariant = "outline" | "filled" | "mono";
+export type BadgeVariant = "outline" | "filled" | "light" | "mono";
 export type BadgeRadius = "rounded" | "none";
 export type BadgeSize = "sm" | "md";
 
@@ -33,7 +33,7 @@ export default function Badge({
     .join(" ");
 
   const style =
-    variant === "filled" && radius === "rounded" && size === "sm" && color
+    variant === "light" && color
       ? ({
           "--badge-bg": `var(--${color}-200)`,
           "--badge-color": `var(--${color}-600)`,

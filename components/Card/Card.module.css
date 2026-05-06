@@ -357,6 +357,14 @@
   width: 100%;
 }
 
+/* ── Author sm / xs — xs/regular (12px) em vez de sm/regular (14px) ── */
+.articlesSm .author,
+.articlesXs .author {
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-lh);
+  letter-spacing: var(--text-xs-tracking);
+}
+
 /* ── Tag + seta — md only, alinhados verticalmente ── */
 .articleActions {
   display: flex;

@@ -60,7 +60,7 @@
   font-weight: var(--font-weight-semibold);
   line-height: var(--text-sm-lh);
   letter-spacing: var(--text-sm-tracking);
-  color: var(--fg-emphasis);
+  color: var(--avatar-name-color, var(--fg-emphasis));
 }
 
 .role {
@@ -69,7 +69,7 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--text-xs-lh);
   letter-spacing: var(--text-xs-tracking);
-  color: var(--fg-default);
+  color: var(--avatar-role-color, var(--fg-default));
 }
 
 /* ============================================

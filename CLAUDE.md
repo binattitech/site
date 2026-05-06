@@ -416,6 +416,38 @@ import HeroSection from "@/sections/HeroSection";
 
 ---
 
+## Dynamic Subject Theming
+
+Some components (currently `PaginationCard`, `TrackDetailsModal`) accept a `color` prop that maps a Tailwind-family palette name (`"rose"`, `"teal"`, `"amber"`, `"violet"`, etc.) to a set of internal CSS variables `--primary-50` through `--primary-900`. All visuals inside the component reference `--primary-XXX`, never the hardcoded color family.
+
+**How it works**:
+- Component sets `style={{ "--primary-50": "var(--rose-50)", ..., "--primary-900": "var(--rose-900)" }}` based on the `color` prop
+- CSS uses only `var(--primary-XXX)` — switching the color family is just a different `color` prop
+- Default color is `"rose"` for both components
+
+**Tone mapping rules** (use these whenever building a new themed component):
+
+| Slot | Tone |
+|---|---|
+| Sidebar / strong background | `--primary-600` |
+| Title text on sidebar | `--primary-50` |
+| Description text on sidebar | `--primary-200` |
+| Sidebar divider | `--primary-500` |
+| Contributor name/role on sidebar | `--primary-50` |
+| Main content area background | `--primary-50` |
+| Active tab text + indicator | `--primary-900` |
+| Inactive tab text | `--primary-400` |
+| Tabs bottom border | `--primary-400` |
+| Item dividers inside content | `--primary-200` |
+| PaginationCard background | `--primary-100` |
+| PaginationCard border | `--primary-300` |
+| PaginationCard icon + label | `--primary-400` |
+| PaginationCard title | `--primary-900` |
+
+**Constraint**: any color passed via `color` must exist in `app/design.css` with the full 50→900 scale (Tailwind palette families do). For levels/categories that need their own color independent of the subject theme (e.g. difficulty badges), use `<Badge variant="light" color="..." />` directly — those aren't part of the dynamic theme.
+
+---
+
 ## Component Reference
 
 Rules for every existing component. Always reuse these — never recreate them.
@@ -795,6 +827,51 @@ Rules for every existing component. Always reuse these — never recreate them.
 - CSS variables `--delay` and `--dur` are set per-line via inline style
 - Used as a full-bleed background inside AboutHeroSection
 - **Never** use for layout — purely decorative, `aria-hidden`
+
+---
+
+### PaginationCard
+```tsx
+<PaginationCard
+  direction="prev"        // "prev" | "next"
+  label="Anterior"        // optional — defaults to "Anterior"/"Próximo" by direction
+  title="Como criar um Design System com Claude"
+  color="rose"            // any palette family in design.css (rose, teal, amber, ...)
+  href="/trilhas/anterior"
+/>
+```
+- 120×184 px card with three borders (no border on the entry side) and rounded corners on the exit side
+- `direction="prev"`: ArrowLeft + label aligned left, rounded corners on the right, no left border
+- `direction="next"`: ArrowRight + label aligned right (row-reverse), rounded corners on the left, no right border
+- Fully theme-aware via the `color` prop — see **Dynamic Subject Theming** for tone slots
+- Always pass `href` (or `onClick`) — it's a navigation card
+
+---
+
+### TrackDetailsModal
+```tsx
+<TrackDetailsModal
+  isOpen={open}
+  onClose={() => setOpen(false)}
+  color="rose"                      // theme color family
+  trackName="UX UI Design"
+  description="Se você está começando..."
+  contributors={[{ name: "Milena Duarte", role: "UX UI Designer", avatarSrc: "/photos/milena.jpg" }]}
+  trilhaItems={[
+    { id: "1", title: "Como criar...", level: "iniciante", format: "VÍDEO", href: "/..." },
+  ]}
+  projetoItems={[]}
+/>
+```
+- Portal-based modal (renders into `document.body`); blocks body scroll, closes on Escape or overlay click
+- 900×600 px (max-width 100% / max-height 100%); `--radius-6xs` rounded; bordered with `--primary-300`
+- **Sidebar (320px, left)**: background `--primary-600`, contains track name (5xl heading in `--primary-50`), description (`--primary-200`), divider (`--primary-500`), and contributor list
+  - Contributors render as `<Avatar variant="withText" size="sm" />` — sidebar overrides `--avatar-name-color` and `--avatar-role-color` to `--primary-50`
+- **Content (right)**: background `--primary-50`, contains tabs (Trilha / Projetos) and the active tab's items list
+  - Tabs: active = `--primary-900` text + bottom border; inactive = `--primary-400`; tab strip border = `--primary-400`
+  - Items: each one shows `<Badge variant="light" color={LEVEL.color} />` (Iniciante=red, Intermediário=yellow, Avançado=lime) + `<Badge variant="outline" />` for format, then a 16px medium title; bottom border `--primary-200`
+- Level → color map is internal and **not** themable — difficulty colors stay independent of subject theme
+- Close button: top-right, 28×28, X icon
 
 ---
 

@@ -28,4 +28,6 @@ body {
 
 main {
   width: 100%;
+  /* Compensa a altura do Header fixo: nav 44px + padding 12px×2 = 68px */
+  padding-top: calc(var(--space-11) + var(--space-3) * 2);
 }

@@ -127,7 +127,7 @@ export default function Card({
         onClick={onClick}
       >
         <div className={styles.projectHeader}>
-          <Badge variant="filled" radius="rounded" size="sm" color="lime" label={level} />
+          <Badge variant="light" color="lime" label={level} />
           <Badge variant="outline" radius="rounded" size="sm" label={tag} />
         </div>
         <p className={styles.articleTitleXs}>{title}</p>

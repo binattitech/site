@@ -63,15 +63,17 @@
 }
 
 /* ── variant filled ──────────────────────────────────────── */
-.variant-filled.size-sm {
-  --badge-bg:        var(--lime-200);
-  --badge-color:     var(--lime-600);
+.variant-filled {
+  --badge-bg:        var(--violet-600);
+  --badge-color:     var(--fg-white);
   --badge-transform: none;
 }
 
-.variant-filled.size-md {
-  --badge-bg:    var(--violet-600);
-  --badge-color: var(--fg-white);
+/* ── variant light ───────────────────────────────────────── */
+.variant-light {
+  --badge-bg:        var(--lime-200);
+  --badge-color:     var(--lime-600);
+  --badge-transform: none;
 }
 
 /* ── variant mono ─────────────────────────────────────────── */
