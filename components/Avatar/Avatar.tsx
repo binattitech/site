@@ -6,6 +6,7 @@ import styles from "./Avatar.module.css";
 
 export interface AvatarProps {
   variant?: "withText" | "card";
+  size?: "md" | "sm";
   name?: string;
   role?: string;
   avatarSrc?: string;
@@ -21,6 +22,7 @@ export interface AvatarProps {
 
 export default function Avatar({
   variant = "withText",
+  size = "md",
   name = "Milena Duarte",
   role = "UX UI Designer",
   avatarSrc,
@@ -42,7 +44,7 @@ export default function Avatar({
 
   if (variant === "card") {
     return (
-      <div className={[styles.card, className ?? ""].filter(Boolean).join(" ")}>
+      <div className={[styles.card, className ?? ""].filter(Boolean).join(" ")} data-size={size}>
         <div className={styles.cardPhoto}>
           {avatarSrc ? (
             <img src={avatarSrc} alt={avatarAlt ?? name} className={styles.cardImg} />
@@ -82,7 +84,7 @@ export default function Avatar({
   }
 
   return (
-    <div className={[styles.container, className ?? ""].filter(Boolean).join(" ")}>
+    <div className={[styles.container, className ?? ""].filter(Boolean).join(" ")} data-size={size}>
       {showAvatar && (
         <div className={styles.avatar}>
           {avatarSrc ? (

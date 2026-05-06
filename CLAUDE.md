@@ -447,13 +447,13 @@ Rules for every existing component. Always reuse these — never recreate them.
 <Badge
   label="Categoria"
   variant="outline"   // "outline" | "filled" | "mono"
-  radius="rounded"    // "rounded" | "square" | "none"
+  radius="rounded"    // "rounded" | "none"
   size="md"           // "sm" | "md"
   color="lime"        // only for variant="filled" radius="rounded" size="sm"
 />
 ```
 - `variant="mono"` uses `--font-mono` and uppercase text — use for code/tag labels
-- `radius="rounded"` = `--radius-full`; `"square"` = `--radius-4xs`; `"none"` = 0
+- `radius="rounded"` = `--radius-full`; `"none"` = 0
 - For inline article/blog category labels use `variant="outline"`
 - **Never** use TagArea and Badge interchangeably — TagArea is always pill-shaped and uppercase
 - All `size="sm"` variants use `xs` font size and uppercase text — **except** `variant="filled" radius="rounded" size="sm"`
@@ -505,7 +505,7 @@ Rules for every existing component. Always reuse these — never recreate them.
 // Tutorial card (image + metadata)
 <Card
   variant="tutorial"
-  size="md"           // "md" | "sm" | "xs"
+  size="md"           // "md" | "sm"
   title="Título"
   author="Autora"
   category="Design"
@@ -517,18 +517,32 @@ Rules for every existing component. Always reuse these — never recreate them.
 // Article list card (horizontal layout)
 <Card
   variant="articles"
-  size="xs"
+  size="xs"           // "md" | "sm" | "xs"
   title="Título do artigo"
   author="Autora"
   category="UX"
   tag="Avançado"
   href="/artigos/slug"
 />
+
+// Project card (xs only) — courses / projects with level + format badges + description
+<Card
+  variant="project"
+  size="xs"
+  title="Introdução à Cibersegurança"
+  level="Iniciante"            // filled lime badge (uses Badge color="lime")
+  tag="CURSO"                  // outline badge
+  description="A cibersegurança é uma área valiosa..."
+  showDescription={true}
+  href="/cursos/slug"
+/>
 ```
 - `variant="tutorial"`: vertical card with image on top — use in grids (BlogAreasSection, TutoriaisSection)
 - `variant="articles"`: horizontal row with arrow icon — use in article lists (ArtigosSection, PersonalContribution)
+- `variant="project"`: xs-only — header row with two badges (filled lime `level` + outline `tag`), title, optional description; border-bottom uses `--rose-200`; **no author** shown
 - `size` affects padding and font sizes; `"xs"` is the most compact (used inside WindowProfile)
 - `imageSrc` is optional in `"articles"` variant; missing image → dashed placeholder
+- `level` and `description` props are only active for `variant="project"` — ignored on other variants
 - Always pass `href` — Card is a link element
 
 ---
@@ -538,10 +552,10 @@ Rules for every existing component. Always reuse these — never recreate them.
 // Card variant — portrait with footer (name, role, social icons)
 <Avatar
   variant="card"
+  size="md"           // "md" only for card
   name="Milena Duarte"
   role="Product Designer"
   avatarSrc="/photos/milena.jpg"
-  showAvatar={true}
   showRole={true}
   showSocialIcons={true}
   githubUrl="https://github.com/..."
@@ -552,6 +566,7 @@ Rules for every existing component. Always reuse these — never recreate them.
 // WithText variant — horizontal with name and role
 <Avatar
   variant="withText"
+  size="md"           // "md" (48px circle) | "sm" (28px circle)
   name="Milena Duarte"
   role="Autora"
   avatarSrc="/photos/milena.jpg"
@@ -559,8 +574,9 @@ Rules for every existing component. Always reuse these — never recreate them.
   showRole={false}
 />
 ```
-- `variant="card"`: use in ContribuidorasSection grid (clickable, opens WindowProfile)
+- `variant="card"`: use in ContribuidorasSection grid (clickable, opens WindowProfile); hover dims photo to `opacity: 0.8` + shows background
 - `variant="withText"`: use inside article cards, author bylines
+- `size` prop only affects `withText`: `"md"` = 48px circle, `"sm"` = 28px circle; name/role typography stays the same between sizes
 - Missing photo → circular placeholder with initials (handled internally)
 - Social icons are Phosphor icons (GithubLogo, InstagramLogo, LinkedinLogo)
 - Do not duplicate avatar logic — always use this component

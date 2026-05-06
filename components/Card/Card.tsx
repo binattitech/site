@@ -4,10 +4,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
+import Badge from "@/components/Badge";
 import TagArea from "@/components/TagArea";
 import styles from "./Card.module.css";
 
-export type CardVariant = "tutorial" | "articles";
+export type CardVariant = "tutorial" | "articles" | "project";
 export type CardSize = "md" | "sm" | "xs";
 export type CardStates = "default" | "hover";
 
@@ -19,6 +20,9 @@ export interface CardProps {
   author?: string;
   category?: string;
   tag?: string;
+  level?: string;
+  description?: string;
+  showDescription?: boolean;
   imageSrc?: string;
   imageAlt?: string;
   className?: string;
@@ -34,6 +38,9 @@ export default function Card({
   author = "por Fulana",
   category = "NA PRÁTICA COM IA",
   tag = "tag content",
+  level = "Iniciante",
+  description = "A cibersegurança é uma área valiosa para se aprender e explorar seus conceitos.",
+  showDescription = true,
   imageSrc = "/placeholder-card.png",
   imageAlt = "",
   className,
@@ -41,6 +48,7 @@ export default function Card({
   onClick,
 }: CardProps) {
   const isTutorial = variant === "tutorial";
+  const isProject = variant === "project";
   const isMd = size === "md";
   const isSm = size === "sm";
   const isXs = size === "xs";
@@ -97,6 +105,39 @@ export default function Card({
     return href ? (
       <Link href={href} className={styles.cardLink}>{content}</Link>
     ) : content;
+  }
+
+  /* ── Project (xs only) ─────────────────────────────────── */
+  if (isProject) {
+    const cardClass = [
+      styles.card,
+      styles.project,
+      styles.projectXs,
+      className ?? "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    const projectContent = (
+      <article
+        className={cardClass}
+        data-variant="project"
+        data-size="xs"
+        data-states={states}
+        onClick={onClick}
+      >
+        <div className={styles.projectHeader}>
+          <Badge variant="filled" radius="rounded" size="sm" color="lime" label={level} />
+          <Badge variant="outline" radius="rounded" size="sm" label={tag} />
+        </div>
+        <p className={styles.articleTitleXs}>{title}</p>
+        {showDescription && <p className={styles.projectDescription}>{description}</p>}
+      </article>
+    );
+
+    return href ? (
+      <Link href={href} className={styles.cardLink}>{projectContent}</Link>
+    ) : projectContent;
   }
 
   /* ── Articles ──────────────────────────────────────────── */

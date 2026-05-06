@@ -8,7 +8,7 @@
   --input-border-color: var(--action-outline-border);
   --input-border-width: 1px;
   --input-color: var(--fg-emphasis);
-  --input-placeholder-color: var(--fg-default);
+  --input-placeholder-color: var(--fg-emphasis);
   --input-px: var(--space-5);
   --input-py: var(--space-3);
   --input-gap: var(--space-3);
@@ -34,7 +34,8 @@
 }
 
 /* ── focus state ──────────────────────────────────────────── */
-.wrapper[data-state="focus"] {
+.wrapper[data-state="focus"],
+.wrapper:focus-within {
   --input-border-width: 2px;
 }
 

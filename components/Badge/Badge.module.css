@@ -90,5 +90,4 @@
 
 /* ── radius ───────────────────────────────────────────────── */
 .radius-rounded { --badge-radius: var(--radius-full); }
-.radius-square  { --badge-radius: var(--radius-6xs); }
 .radius-none    { --badge-radius: var(--radius-none); }

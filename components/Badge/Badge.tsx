@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Badge.module.css";
 
 export type BadgeVariant = "outline" | "filled" | "mono";
-export type BadgeRadius = "rounded" | "square" | "none";
+export type BadgeRadius = "rounded" | "none";
 export type BadgeSize = "sm" | "md";
 
 export interface BadgeProps {

@@ -79,6 +79,7 @@
 
 .textAreaSm {
   padding: var(--space-4);
+  gap: var(--space-2);
 }
 
 .tutorial:hover .textArea,
@@ -157,6 +158,45 @@
   color: var(--author-color);
   flex: 1;
   min-width: 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PROJECT (xs only)
+   ════════════════════════════════════════════════════════════ */
+.project {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--rose-200);
+  background: transparent;
+}
+
+.projectXs {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  width: 100%;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.projectDescription {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--fg-default);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ════════════════════════════════════════════════════════════

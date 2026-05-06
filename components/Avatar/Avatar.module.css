@@ -13,13 +13,17 @@
 }
 
 .avatar {
-  --avatar-size: 3rem;
+  --avatar-size: var(--space-12); /* 48px — md default */
 
   width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: var(--radius-full);
   overflow: hidden;
   flex-shrink: 0;
+}
+
+.container[data-size="sm"] .avatar {
+  --avatar-size: var(--space-7); /* 28px */
 }
 
 .avatarImg {
@@ -104,7 +108,7 @@
 }
 
 .card:hover .cardImg {
-  opacity: 0.95;
+  opacity: 0.8;
 }
 
 .cardPlaceholder {
