@@ -36,9 +36,9 @@
 .size-sm {
   --badge-px:       var(--space-2);
   --badge-py:       var(--space-1);
-  --badge-size:     var(--text-xxs-size);
-  --badge-lh:       var(--text-xxs-lh);
-  --badge-tracking: var(--text-xxs-tracking);
+  --badge-size:     var(--text-xs-size);
+  --badge-lh:       var(--text-xs-lh);
+  --badge-tracking: var(--text-xs-tracking);
 }
 
 /* ── size md ──────────────────────────────────────────────── */
@@ -63,9 +63,15 @@
 }
 
 /* ── variant filled ──────────────────────────────────────── */
-.variant-filled {
-  --badge-bg:     var(--violet-600);
-  --badge-color:  var(--fg-white);
+.variant-filled.size-sm {
+  --badge-bg:        var(--lime-200);
+  --badge-color:     var(--lime-600);
+  --badge-transform: none;
+}
+
+.variant-filled.size-md {
+  --badge-bg:    var(--violet-600);
+  --badge-color: var(--fg-white);
 }
 
 /* ── variant mono ─────────────────────────────────────────── */

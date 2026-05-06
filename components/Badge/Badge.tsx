@@ -10,6 +10,7 @@ export interface BadgeProps {
   variant?: BadgeVariant;
   radius?: BadgeRadius;
   size?: BadgeSize;
+  color?: string;
   className?: string;
 }
 
@@ -18,6 +19,7 @@ export default function Badge({
   variant = "outline",
   radius = "rounded",
   size = "sm",
+  color,
   className,
 }: BadgeProps) {
   const classNames = [
@@ -30,8 +32,16 @@ export default function Badge({
     .filter(Boolean)
     .join(" ");
 
+  const style =
+    variant === "filled" && radius === "rounded" && size === "sm" && color
+      ? ({
+          "--badge-bg": `var(--${color}-200)`,
+          "--badge-color": `var(--${color}-600)`,
+        } as React.CSSProperties)
+      : undefined;
+
   return (
-    <div className={classNames} data-variant={variant} data-radius={radius} data-size={size}>
+    <div className={classNames} data-variant={variant} data-radius={radius} data-size={size} style={style}>
       <span className={styles.label}>{label}</span>
     </div>
   );
