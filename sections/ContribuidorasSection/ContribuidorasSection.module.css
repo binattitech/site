@@ -41,11 +41,8 @@
 }
 
 .cardBtn {
-  background: none;
-  border: none;
-  padding: 0;
-  text-align: left;
-  cursor: pointer;
+  display: block;
+  text-decoration: none;
   width: 100%;
 }
 

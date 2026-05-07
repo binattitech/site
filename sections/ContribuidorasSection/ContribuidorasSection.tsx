@@ -1,65 +1,31 @@
-"use client";
-
-import { useState, useRef } from "react";
+import Link from "next/link";
 import AvatarWithText from "@/components/Avatar";
-import WindowProfile from "@/components/WindowProfile";
 import { TEAM } from "@/data/team";
-import type { ContributionArticle } from "@/components/PersonalContribution";
 import styles from "./ContribuidorasSection.module.css";
 
-interface ContribuidorasSectionProps {
-  artigosPorMembro: Record<string, ContributionArticle[]>;
-}
-
-export default function ContribuidorasSection({ artigosPorMembro }: ContribuidorasSectionProps) {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const selected = selectedIndex !== null ? TEAM[selectedIndex] : null;
-
-  // Keep last valid member so the modal doesn't flash defaults during close animation
-  const lastSelected = useRef(selected);
-  if (selected !== null) lastSelected.current = selected;
-  const displayMember = selected ?? lastSelected.current;
-
-  const displayArticles = displayMember
-    ? (artigosPorMembro[displayMember.photo] ?? [])
-    : [];
-
+export default function ContribuidorasSection() {
   return (
-    <>
-      <section className={styles.section}>
-        <div className={styles.content}>
-          <h2 className={styles.heading}>Contribuidoras</h2>
-          <div className={styles.grid}>
-            {TEAM.map((member, i) => (
-              <button
-                key={member.photo}
-                className={styles.cardBtn}
-                onClick={() => setSelectedIndex(i)}
-                aria-label={`Ver perfil de ${member.name}`}
-              >
-                <AvatarWithText
-                  variant="card"
-                  name={member.name}
-                  role={member.role}
-                  avatarSrc={`/team/${member.photo}.png`}
-                />
-              </button>
-            ))}
-          </div>
+    <section className={styles.section}>
+      <div className={styles.content}>
+        <h2 className={styles.heading}>Contribuidoras</h2>
+        <div className={styles.grid}>
+          {TEAM.map((member) => (
+            <Link
+              key={member.username}
+              href={`/contribuidoras/${member.username}`}
+              className={styles.cardBtn}
+              aria-label={`Ver perfil de ${member.name}`}
+            >
+              <AvatarWithText
+                variant="card"
+                name={member.name}
+                role={member.role}
+                avatarSrc={`/team/${member.photo}.png`}
+              />
+            </Link>
+          ))}
         </div>
-      </section>
-
-      <WindowProfile
-        isOpen={selected !== null}
-        onClose={() => setSelectedIndex(null)}
-        username={displayMember?.username}
-        name={displayMember?.name}
-        bio={displayMember?.bio}
-        avatarSrc={displayMember ? `/team/${displayMember.photo}.png` : undefined}
-        socialLinks={displayMember?.socialLinks}
-        articles={displayArticles}
-        videos={displayMember?.videos}
-      />
-    </>
+      </div>
+    </section>
   );
 }

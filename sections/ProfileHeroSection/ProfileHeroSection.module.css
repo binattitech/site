@@ -1,0 +1,271 @@
+/*
+ * ProfileHeroSection — Binatti UI
+ * Página de perfil de contribuidora: banner + avatar + sidebar + contribuições.
+ */
+
+.section {
+  --profile-bg:           var(--bg-default);
+  --profile-banner-bg:    var(--bg-muted);
+  --profile-border:       var(--border-default);
+  --profile-fg-emphasis:  var(--fg-emphasis);
+  --profile-fg-default:   var(--fg-default);
+  --profile-fg-muted:     var(--fg-muted);
+
+  /* Avatar dimensions */
+  --avatar-size: 6.9375rem; /* 111px */
+
+  background: var(--profile-bg);
+  border-top: 1px solid var(--profile-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Banner ─────────────────────────────────────────────── */
+
+.banner {
+  width: 100%;
+  height: 12rem; /* 192px */
+  background: var(--profile-banner-bg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Container ──────────────────────────────────────────── */
+
+.container {
+  position: relative;
+  display: flex;
+  gap: var(--space-8);
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1280px;
+  padding: var(--space-8) var(--space-16);
+}
+
+/* ── Avatar ─────────────────────────────────────────────── */
+
+.avatar {
+  position: absolute;
+  /* Center avatar vertically on the banner/content boundary */
+  top: calc(var(--avatar-size) / -2);
+  left: var(--space-16);
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--profile-border);
+  background: var(--profile-banner-bg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--profile-banner-bg);
+}
+
+/* ── Sidebar ────────────────────────────────────────────── */
+
+.sidebar {
+  width: 280px;
+  max-width: 280px;
+  flex-shrink: 0;
+  /* Push content below avatar (avatar extends ~55.5px above container,
+     111px total → ~55.5px into container; name sits at ~64px from container top) */
+  padding-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.name {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-2xl-size);
+  line-height: var(--text-2xl-lh);
+  letter-spacing: var(--text-2xl-tracking);
+  color: var(--profile-fg-emphasis);
+}
+
+/* ── Section labels (SOBRE MIM / SOCIAL) ────────────────── */
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-upper-size);
+  line-height: var(--text-mono-upper-lh);
+  letter-spacing: var(--text-mono-upper-tracking);
+  text-transform: var(--text-mono-upper-case);
+  font-style: normal;
+  color: var(--profile-fg-default);
+}
+
+/* ── Bio ────────────────────────────────────────────────── */
+
+.bioSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.bio {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--profile-fg-emphasis);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.bio[data-expanded="true"] {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.verMais {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--profile-fg-default);
+}
+
+.caretIcon {
+  display: flex;
+  align-items: center;
+  transition: transform 200ms ease;
+}
+
+.verMais[data-expanded="true"] .caretIcon {
+  transform: rotate(180deg);
+}
+
+/* ── Social ─────────────────────────────────────────────── */
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.socialLink {
+  --social-link-border: var(--profile-fg-muted);
+  --social-link-radius: var(--radius-6xs);
+  --social-link-bg:     transparent;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1-5) var(--space-3);
+  border: 1px solid var(--social-link-border);
+  border-radius: var(--social-link-radius);
+  background: var(--social-link-bg);
+  text-decoration: none;
+  overflow: hidden;
+  color: var(--profile-fg-emphasis);
+  transition: background 150ms ease;
+}
+
+.socialLink:hover {
+  --social-link-bg: var(--action-outline-bg-hover);
+}
+
+.socialLinkLabel {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
+  color: var(--profile-fg-emphasis);
+  white-space: nowrap;
+}
+
+/* ── Contributions ──────────────────────────────────────── */
+
+.contributions {
+  flex: 1;
+  min-width: 0;
+  padding-top: var(--space-2);
+}
+
+/* ── Responsive — md (tablet) ───────────────────────────── */
+
+@media (max-width: 79.938rem) {
+  .container {
+    padding: var(--space-8) var(--space-12);
+  }
+
+  .avatar {
+    left: var(--space-12);
+  }
+
+  .sidebar {
+    width: 220px;
+    max-width: 220px;
+  }
+}
+
+/* ── Responsive — sm (mobile) ───────────────────────────── */
+
+@media (max-width: 47.938rem) {
+  .banner {
+    height: 3.9375rem; /* 63px */
+  }
+
+  .container {
+    flex-direction: column;
+    padding: var(--space-4) var(--space-4);
+    gap: var(--space-8);
+  }
+
+  .avatar {
+    left: var(--space-4);
+    top: calc(var(--avatar-size) / -2 + 0.5rem);
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    padding-top: var(--space-14);
+    gap: var(--space-5);
+  }
+
+  .contributions {
+    width: 100%;
+    padding-top: 0;
+  }
+}
