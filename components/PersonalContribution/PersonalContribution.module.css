@@ -26,12 +26,24 @@
   width: 100%;
 }
 
-/* ── Vídeos: grid 3 colunas, proporção 274:426 (feed IG) ─── */
+/* ── Vídeos: grid responsivo 3→5 colunas, proporção 274:426 (feed IG) ─── */
 .videosGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .videosGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 80rem) {
+  .videosGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .videoThumb {

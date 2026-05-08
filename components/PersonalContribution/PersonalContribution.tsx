@@ -75,7 +75,7 @@ export default function PersonalContribution({
       )}
 
       {/* Vídeos */}
-      {active === "videos" && (
+      {active === "videos" && videos.length > 0 && (
         <div className={styles.videosGrid}>
           {videos.map((video, i) => (
             <a
@@ -92,9 +92,6 @@ export default function PersonalContribution({
               }
             </a>
           ))}
-          {videos.length === 0 && (
-            <div className={styles.empty} />
-          )}
         </div>
       )}
 

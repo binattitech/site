@@ -46,8 +46,7 @@
   gap: var(--space-8);
   align-items: flex-start;
   width: 100%;
-  max-width: 1280px;
-  padding: var(--space-8) var(--space-16);
+  padding: var(--space-8) var(--breakpoints-section-padding-2);
 }
 
 /* ── Avatar ─────────────────────────────────────────────── */
@@ -56,7 +55,7 @@
   position: absolute;
   /* Center avatar vertically on the banner/content boundary */
   top: calc(var(--avatar-size) / -2);
-  left: var(--space-16);
+  left: var(--breakpoints-section-padding-2);
   width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: var(--radius-full);
@@ -225,14 +224,6 @@
 /* ── Responsive — md (tablet) ───────────────────────────── */
 
 @media (max-width: 79.938rem) {
-  .container {
-    padding: var(--space-8) var(--space-12);
-  }
-
-  .avatar {
-    left: var(--space-12);
-  }
-
   .sidebar {
     width: 220px;
     max-width: 220px;
@@ -248,12 +239,11 @@
 
   .container {
     flex-direction: column;
-    padding: var(--space-4) var(--space-4);
+    padding-top: var(--space-4);
     gap: var(--space-8);
   }
 
   .avatar {
-    left: var(--space-4);
     top: calc(var(--avatar-size) / -2 + 0.5rem);
   }
 

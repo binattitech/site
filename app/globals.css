@@ -17,17 +17,24 @@
   color: #ffffff;
 }
 
-html,
+html {
+  min-height: 100%;
+}
+
 body {
   background-color: var(--bg-default);
   color: var(--fg-emphasis);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   width: 100%;
+  flex: 1;
   /* Compensa a altura do Header fixo: nav 44px + padding 12px×2 = 68px */
   padding-top: calc(var(--space-11) + var(--space-3) * 2);
 }
