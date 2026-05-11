@@ -20,7 +20,7 @@ export interface FooterProps {
 export default function Footer({
   instagramUrl = "https://www.instagram.com/binatti.co/",
   linkedinUrl = "https://www.linkedin.com/company/binatticommunity/",
-  emailUrl = "mailto:oi@binatti.co",
+  emailUrl = "mailto:binatticommunity@gmail.com",
   onSubscribe,
   className,
 }: FooterProps) {
@@ -42,8 +42,9 @@ export default function Footer({
           <p className={styles.brand}>Binatti</p>
           <div className={styles.citacao}>
             <p className={styles.quote}>
-              "Se a educação sozinha não transforma a sociedade, sem ela
-              tampouco a sociedade muda."
+              "Se a educação sozinha não transforma a sociedade,
+              <br />
+              sem ela tampouco a sociedade muda."
             </p>
             <p className={styles.attribution}>Paulo Freire</p>
           </div>
@@ -75,7 +76,7 @@ export default function Footer({
               </button>
             </form>
             <p className={styles.newsletterNote}>
-              Ao se inscrever, você concorda com nossa{" "}
+              Ao se inscrever, você concorda com nossa <br />
               <a href="/privacidade" className={styles.privacyLink}>
                 política de privacidade
               </a>{" "}
@@ -87,21 +88,42 @@ export default function Footer({
           <div className={styles.sitemap}>
             <div className={styles.sitemapGroup}>
               <p className={styles.sitemapTitle}>Trilhas</p>
-              <a href="/trilhas/ux-design" className={styles.sitemapLink}>UX Design</a>
-              <a href="/trilhas/desenvolvimento-web" className={styles.sitemapLink}>Dev Web</a>
-              <a href="/trilhas/ciberseguranca" className={styles.sitemapLink}>Cibersegurança</a>
+              <a href="/trilhas/ux-design" className={styles.sitemapLink}>
+                UX Design
+              </a>
+              <a
+                href="/trilhas/desenvolvimento-web"
+                className={styles.sitemapLink}
+              >
+                Dev Web
+              </a>
+              <a href="/trilhas/ciberseguranca" className={styles.sitemapLink}>
+                Cibersegurança
+              </a>
             </div>
             <div className={styles.sitemapGroup}>
               <p className={styles.sitemapTitle}>Blog</p>
-              <a href="/blog" className={styles.sitemapLink}>Artigos</a>
-              <a href="/blog/tutoriais" className={styles.sitemapLink}>Tutoriais</a>
-              <a href="/blog" className={styles.sitemapLink}>Ver tudo</a>
+              <a href="/blog" className={styles.sitemapLink}>
+                Artigos
+              </a>
+              <a href="/blog/tutoriais" className={styles.sitemapLink}>
+                Tutoriais
+              </a>
+              <a href="/blog" className={styles.sitemapLink}>
+                Ver tudo
+              </a>
             </div>
             <div className={styles.sitemapGroup}>
               <p className={styles.sitemapTitle}>Sobre</p>
-              <a href="/sobre" className={styles.sitemapLink}>Sobre nós</a>
-              <a href="/contribuidoras" className={styles.sitemapLink}>Contribuidoras</a>
-              <a href="mailto:oi@binatti.co" className={styles.sitemapLink}>Contato</a>
+              <a href="/sobre" className={styles.sitemapLink}>
+                Sobre nós
+              </a>
+              <a href="/contribuidoras" className={styles.sitemapLink}>
+                Contribuidoras
+              </a>
+              <a href="mailto:oi@binatti.co" className={styles.sitemapLink}>
+                Contato
+              </a>
             </div>
           </div>
         </div>
@@ -139,7 +161,12 @@ export default function Footer({
               <EnvelopeSimple size={24} />
             </a>
           </div>
-          <p className={styles.credit}>Website by miluarte</p>
+          <p className={styles.credit}>
+            Website by{" "}
+            <a href="/contribuidoras/miluarte" className={styles.creditLink}>
+              miluarte
+            </a>
+          </p>
         </div>
       </div>
     </footer>

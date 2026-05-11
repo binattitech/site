@@ -7,13 +7,14 @@ import { getAllArtigosMeta } from "@/lib/artigos";
 
 export default function BlogPage() {
   const artigos = getAllArtigosMeta();
+  const gridArtigos = artigos.slice(1);
 
   return (
     <>
       <Header />
       <main>
         <BlogHeroSection artigos={artigos} />
-        <BlogAreasSection artigos={artigos} />
+        <BlogAreasSection artigos={gridArtigos} />
         <CTASection />
       </main>
       <Footer />

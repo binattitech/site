@@ -26,6 +26,7 @@ export interface CardProps {
   imageSrc?: string;
   imageAlt?: string;
   className?: string;
+  style?: React.CSSProperties;
   href?: string;
   onClick?: () => void;
 }
@@ -44,6 +45,7 @@ export default function Card({
   imageSrc = "/placeholder-card.png",
   imageAlt = "",
   className,
+  style,
   href,
   onClick,
 }: CardProps) {
@@ -72,6 +74,7 @@ export default function Card({
         data-variant="tutorial"
         data-size={size}
         data-states={states}
+        style={style}
         onClick={onClick}
       >
         <div className={styles.image}>

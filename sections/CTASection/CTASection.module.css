@@ -1,182 +1,179 @@
 /*
  * CTASection — Binatti Community
- * Blue background section with group photo and call-to-action.
+ * Blue background, heading with decorative SVGs, body text, button + group photo.
+ * Desktop: flex row (content left, photo right, aligned to bottom edge).
+ * Tablet / Mobile: flex column (photo below content).
  */
 
 .section {
-  /* Component variables */
   --cta-bg: var(--blue-600);
   --cta-heading-color: var(--white);
   --cta-body-color: var(--white-alpha-80);
-  --cta-content-gap: var(--breakpoints-section-content-gap);
-  --cta-paragraph-gap: var(--breakpoints-section-content-paragraph-gap);
 
-  position: relative;
-  overflow: hidden;
   background: var(--cta-bg);
-  padding: var(--breakpoints-section-padding-1) var(--breakpoints-section-padding-2);
+  background-image:
+    linear-gradient(var(--blue-700) 1px, transparent 1px),
+    linear-gradient(to right, var(--blue-700) 1px, transparent 1px);
+  background-size: 28px 28px;
+  padding-top: var(--space-16);
+  padding-bottom: 0;
+  padding-left: var(--breakpoints-section-padding-2);
+  padding-right: var(--breakpoints-section-padding-2);
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
 }
 
-/* ── Photo — absolute, gap no topo, toca o bottom ────────── */
-.photo {
-  position: absolute;
-  top: var(--space-12);
-  bottom: 0;
-  right: 0;
-  width: auto;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.photo img {
-  height: 100%;
-  width: auto;
-  display: block;
-}
-
-/* ── Content wrapper ──────────────────────────────────────── */
-.content {
-  position: relative;
-  z-index: 1;
+/* ── Inner container ─────────────────────────────────────── */
+.container {
   display: flex;
   flex-direction: column;
-  gap: var(--cta-content-gap);
+  align-items: flex-start;
+  gap: var(--breakpoints-section-layout-gap);
   width: 100%;
-  padding-right: var(--breakpoints-section-layout-gap);
+  max-width: 80rem;
 }
 
-/* ── Heading wrapper — relative to contain inline decorations ─ */
+/* ── Content ─────────────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-content-gap);
+  width: 100%;
+}
+
+/* ── Heading wrapper — contains absolutely-positioned SVGs ─ */
 .headingWrapper {
   position: relative;
-  max-width: 600px;
 }
 
 .heading {
   --heading-color: var(--cta-heading-color);
-  --heading-size: var(--text-6xl-size);
-  --heading-lh: var(--text-grotesque-lh);
-  --heading-tracking: var(--text-grotesque-tracking-6xl);
 
   font-family: var(--font-heading);
   font-variation-settings: 'opsz' 96, 'wdth' 88;
   font-weight: var(--font-weight-heading);
-  font-size: var(--heading-size);
-  line-height: var(--heading-lh);
-  letter-spacing: var(--heading-tracking);
+  font-size: var(--text-5xl-size);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-5xl);
   color: var(--heading-color);
   margin: 0;
 }
 
-/* Wrapper do "v" em "você" — ancora a coroa */
+/* "v" in "você" — anchors the crown */
 .vWrapper {
   position: relative;
   display: inline-block;
 }
 
-/* @svg9: coroa acima do "v" */
+/* @svg9: crown above the "v" */
 .decorCrown {
-  position:       absolute;
-  bottom:         calc(100% - 0.05em);
-  left:           50%;
-  transform:      translateX(-50%);
-  width:          0.75em;
-  height:         auto;
+  position: absolute;
+  bottom: calc(100% - 0.35em);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.75em;
+  height: auto;
   pointer-events: none;
-  user-select:    none;
+  user-select: none;
 }
 
-/* Wrapper de "você cria" — ancora o sublinhado */
+/* "você cria" wrapper — anchors the underline */
 .voceCriaWrapper {
-  position:    relative;
-  display:     inline-block;
+  position: relative;
+  display: inline-block;
   white-space: nowrap;
 }
 
-/* @svg8: sublinhado sob "você cria" */
+/* @svg8: underline beneath "você cria" */
 .decorUnderline {
-  position:       absolute;
-  top:            calc(100% - 0.1em);
-  left:           0;
-  width:          100%;
-  height:         auto;
+  position: absolute;
+  top: calc(100% - 0.1em);
+  left: 0;
+  width: 100%;
+  height: auto;
   pointer-events: none;
-  user-select:    none;
+  user-select: none;
 }
 
-/* ── Body text ─────────────────────────────────────────────── */
+/* ── Body ────────────────────────────────────────────────── */
 .body {
   display: flex;
   flex-direction: column;
-  gap: var(--cta-paragraph-gap);
+  gap: var(--breakpoints-section-content-paragraph-gap);
   max-width: 500px;
 }
 
 .paragraph {
   --p-color: var(--cta-body-color);
-  --p-size: var(--text-md-size);
-  --p-lh: var(--text-md-lh);
-  --p-tracking: var(--text-md-tracking);
 
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
-  font-size: var(--p-size);
-  line-height: var(--p-lh);
-  letter-spacing: var(--p-tracking);
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
   color: var(--p-color);
   margin: 0;
 }
 
 .paragraph strong {
   font-weight: var(--font-weight-bold);
-  color: var(--cta-body-color);
+  color: var(--p-color);
 }
 
-/* ── Button wrapper — evita stretch no flex column ─────────── */
+/* ── Button ──────────────────────────────────────────────── */
 .buttonWrapper {
   display: flex;
   align-self: flex-start;
 }
 
-/* ── Responsive — Tablet ───────────────────────────────────── */
-@media (max-width: 79.938rem) {
-  .section {
-    --cta-padding-y: var(--space-20);
-  }
+/* ── Photo ───────────────────────────────────────────────── */
+.photo {
+  flex-shrink: 0;
+  pointer-events: none;
+  line-height: 0;
 }
 
-/* ── Responsive — Mobile ───────────────────────────────────── */
-@media (max-width: 47.938rem) {
-  .section {
-    padding-bottom: 0;
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── Desktop (≥ 80rem) — row layout ─────────────────────── */
+@media (min-width: 80rem) {
+  .container {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .content {
+    flex-shrink: 0;
+    width: auto;
+    padding-bottom: var(--space-16);
   }
 
   .heading {
-    --heading-size: var(--text-5xl-size);
+    font-size: var(--text-6xl-size);
+    letter-spacing: var(--text-grotesque-tracking-6xl);
   }
 
-  /* Sai do position:absolute e entra no fluxo normal, abaixo do content */
-  .photo {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    right: auto;
-    left: auto;
-    width: 100%;
-    height: auto;
-  }
-
-  .photo img {
-    width: 100%;
-    height: auto;
-  }
-
-}
-
-/* ── Responsive — Desktop ──────────────────────────────────── */
-@media (min-width: 80rem) {
   .paragraph {
     --p-size: var(--text-xl-size);
     --p-lh: var(--text-xl-lh);
     --p-tracking: var(--text-xl-tracking);
+
+    font-size: var(--p-size);
+    line-height: var(--p-lh);
+    letter-spacing: var(--p-tracking);
+  }
+
+  .photo {
+    flex: 1;
+    min-width: 0;
+    width: auto;
   }
 }

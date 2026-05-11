@@ -20,6 +20,8 @@
   align-items: center;
   gap: var(--space-6);
   width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -28,6 +30,17 @@
   display: flex;
   align-items: center;
   padding-right: var(--space-2);
+}
+
+@keyframes avatarDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .avatar {
@@ -39,6 +52,10 @@
   margin-right: -8px;
   position: relative;
   flex-shrink: 0;
+
+  opacity: 0;
+  animation: avatarDrop 0.6s ease forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .avatar img {
@@ -121,21 +138,12 @@
   user-select:    none;
 }
 
-/* "e open source" — ancora o coração (@svg3) */
-.lastLine {
-  position: relative;
-  display:  inline-block;
-}
-
-/* @svg3: coração à direita de "source"
-   53px × 57px @ 96px → ~0.55em × auto                */
-.decorSvg3 {
-  position:       absolute;
-  left:           calc(100% + 0.1em);
-  top:            50%;
-  transform:      translateY(-50%);
-  width:          0.55em;
-  height:         auto;
+/* @svg3: coração inline substituindo o "o" de "source" */
+.heartO {
+  display:        inline;
+  height:         0.72em;
+  width:          auto;
+  vertical-align: -0.08em;
   pointer-events: none;
   user-select:    none;
 }

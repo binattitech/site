@@ -1,3 +1,4 @@
+import { TEAM } from "@/data/team";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
@@ -7,9 +8,13 @@ export default function HeroSection() {
 
         {/* Avatar group */}
         <div className={styles.avatarGroup}>
-          {[1, 2, 3, 4].map((n) => (
-            <div key={n} className={styles.avatar}>
-              <img src={`/avatar-${n}.png`} alt="" />
+          {TEAM.slice(0, 4).map((member, i) => (
+            <div
+              key={member.username}
+              className={styles.avatar}
+              style={{ "--delay": `${i * 0.2}s` } as React.CSSProperties}
+            >
+              <img src={`/team/${member.photo}.png`} alt={member.name} />
             </div>
           ))}
         </div>
@@ -40,16 +45,13 @@ export default function HeroSection() {
           </span>
           a, gratuita
           <br />
-          {/* Linha 3 — coração após "source" */}
-          <span className={styles.lastLine}>
-            e open source
-            <img
-              className={styles.decorSvg3}
-              src="/illustrations/@svg3.svg"
-              alt=""
-              aria-hidden="true"
-            />
-          </span>
+          {/* Linha 3 — "o" de "source" substituído pelo coração */}
+          e open s<img
+            className={styles.heartO}
+            src="/illustrations/@svg3.svg"
+            alt="o"
+            aria-hidden="true"
+          />urce
         </h1>
 
         {/* Subtitle */}

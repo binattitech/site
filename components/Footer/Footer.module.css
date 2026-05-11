@@ -9,7 +9,7 @@
   --footer-brand-color: var(--fg-emphasis);
   --footer-quote-color: var(--fg-emphasis);
   --footer-attribution-color: var(--off-white-alpha-60);
-  --footer-divider-color: var(--off-white-700);
+  --footer-divider-color: var(--white-alpha-20);
   --footer-label-color: var(--fg-emphasis);
   --footer-link-color: var(--fg-default);
   --footer-category-color: var(--off-white-700);
@@ -18,8 +18,8 @@
   --footer-input-color: var(--black);
   --footer-input-border: var(--off-white);
   --footer-btn-border: var(--off-white);
-  --footer-social-bg: var(--action-filled-bg-default);
-  --footer-social-color: var(--fg-offwhite);
+  --footer-social-bg: var(--black);
+  --footer-social-color: var(--off-white);
   --footer-social-shadow: var(--shadow-button-black);
 
   position: relative;
@@ -41,6 +41,7 @@
   align-items: flex-end;
   width: 100%;
   max-width: 80rem;
+  margin: 0 auto;
 }
 
 /* ── Frase ──────────────────────────────────────────────── */
@@ -132,6 +133,7 @@
 .inputRow {
   display: flex;
   align-items: center;
+  max-width: 440px;
   gap: var(--space-2);
 }
 
@@ -274,7 +276,18 @@
 }
 
 .socialBtn:hover {
-  opacity: 0.8;
+  background: var(--stone-800);
+}
+
+.creditLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 150ms ease;
+}
+
+.creditLink:hover {
+  opacity: 0.7;
 }
 
 .credit {

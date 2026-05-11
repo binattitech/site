@@ -70,11 +70,6 @@ export default function BlogHeroSection({ artigos }: BlogHeroSectionProps) {
             onQueryChange={setQuery}
           />
 
-          <div className={styles.chips}>
-            {CHIPS.map((chip) => (
-              <Chip key={chip} label={chip} showIcon={false} />
-            ))}
-          </div>
         </div>
 
         {/* Divider */}
@@ -92,6 +87,7 @@ export default function BlogHeroSection({ artigos }: BlogHeroSectionProps) {
               tag={featured.tag}
               imageSrc={featured.imageSrc}
               href={`/blog/${featured.slug}`}
+              style={{ "--card-border": "transparent" } as React.CSSProperties}
             />
           </div>
         )}

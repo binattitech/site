@@ -34,6 +34,8 @@
   align-items: flex-start;
   gap: 0;
   width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
   /* Recuo apenas à esquerda — conteúdo fixo no container, fundo vai até a borda */
   padding-left: var(--hero-px);
 }

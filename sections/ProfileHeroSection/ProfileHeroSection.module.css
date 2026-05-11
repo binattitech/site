@@ -46,6 +46,8 @@
   gap: var(--space-8);
   align-items: flex-start;
   width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
   padding: var(--space-8) var(--breakpoints-section-padding-2);
 }
 
