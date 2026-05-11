@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TrilhasHeroSection from "@/sections/TrilhasHeroSection";
 import styles from "./trilhas.module.css";
 
 export const metadata = {
@@ -13,9 +12,7 @@ export default function TrilhasPage() {
   return (
     <div className={styles.page} data-theme="dark">
       <Header />
-      <main>
-        <TrilhasHeroSection />
-      </main>
+      <main />
       <Footer />
     </div>
   );
