@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   padding-top: var(--breakpoints-section-padding-2);
-  padding-bottom: var(--breakpoints-section-padding-1);
+  padding-bottom: var(--space-64);
   border-top: 1px solid var(--hero-border-color);
   border-bottom: 1px solid var(--hero-border-color);
   background-image:

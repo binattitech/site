@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./TrilhasHeroSection.module.css";
 
-export default function AboutHeroSection() {
+export default function TrilhasHeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

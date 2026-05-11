@@ -74,7 +74,7 @@
 /* shade: dark — filled background, light text */
 .compact[data-shade="dark"] {
   --compact-bg: var(--primary-600);
-  --compact-border: var(--primary-400);
+  --compact-border: transparent;
   --compact-title: var(--primary-50);
   --compact-desc: var(--primary-200);
   --compact-stats: var(--primary-400);
@@ -84,7 +84,7 @@
 /* shade: medium — mid-tone background, dark text */
 .compact[data-shade="medium"] {
   --compact-bg: var(--primary-400);
-  --compact-border: var(--primary-600);
+  --compact-border: transparent;
   --compact-title: var(--primary-900);
   --compact-desc: var(--primary-800);
   --compact-stats: var(--primary-600);
@@ -132,23 +132,6 @@
   width: 100%;
 }
 
-.iconBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid var(--compact-btn);
-  border-radius: var(--radius-6xs);
-  color: var(--compact-btn);
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: opacity 150ms ease;
-}
-
-.iconBtn:hover {
-  opacity: 0.7;
-}
 
 /* ── Module icons ───────────────────────────────────────── */
 

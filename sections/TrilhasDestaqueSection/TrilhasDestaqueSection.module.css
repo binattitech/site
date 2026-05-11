@@ -3,11 +3,14 @@
  */
 
 .section {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-bottom: var(--breakpoints-section-padding-1);
+  margin-top: calc(-1 * var(--space-40));
+  margin-bottom: calc(-1 * var(--space-40));
 }
 
 .container {

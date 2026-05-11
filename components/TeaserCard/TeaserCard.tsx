@@ -1,4 +1,6 @@
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+"use client";
+import { ArrowRight } from "@phosphor-icons/react";
+import Button from "@/components/Button";
 import styles from "./TeaserCard.module.css";
 
 export interface TeaserCardProps {
@@ -56,9 +58,17 @@ export default function TeaserCard({
         {stats && <p className={styles.stats}>{stats}</p>}
         <div className={styles.compactFooter}>
           <ModuleIconsRow icons={moduleIcons} extra={extraModules} />
-          <a href={href} className={styles.iconBtn} aria-label="Ver trilha">
-            <ArrowRight size={24} />
-          </a>
+          <Button
+            kind="icon"
+            variant="outline"
+            icon={<ArrowRight size={24} color="var(--compact-btn)" />}
+            style={{
+              "--button-border": "var(--compact-btn)",
+              "--button-shadow": "none",
+            } as React.CSSProperties}
+            aria-label="Ver trilha"
+            onClick={() => { window.location.href = href; }}
+          />
         </div>
       </div>
     );
