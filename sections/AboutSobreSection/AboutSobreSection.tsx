@@ -5,7 +5,7 @@ export default function AboutSobreSection() {
     <section className={styles.section}>
       <div className={styles.content}>
         <div className={styles.left}>
-          <span className={styles.badgeLeft}>Como tudo começou</span>
+          <span className={styles.badgeLeft}>Quem somos nós</span>
           <h2 className={styles.headingLeft}>
             Mais que Códigos: <br />
             uma comunidade
