@@ -3,7 +3,8 @@
   --carousel-speed: 20s;
 
   width: 100%;
-  padding-block: var(--breakpoints-section-padding-1);
+  padding-top: var(--breakpoints-section-padding-1);
+  padding-bottom: calc(var(--breakpoints-section-padding-1) * 2);
 }
 
 /* ── Header ─────────────────────────────────────────────── */

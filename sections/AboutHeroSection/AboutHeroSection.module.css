@@ -11,7 +11,6 @@
   align-items: center;
   justify-content: center;
   padding-block: var(--breakpoints-section-padding-2);
-  padding-inline: var(--breakpoints-section-padding-2);
   border-top: 1px solid var(--hero-border-color);
   border-bottom: 1px solid var(--hero-border-color);
   background-image:
@@ -28,8 +27,8 @@
   align-items: center;
   gap: var(--breakpoints-section-content-gap);
   width: 100%;
-  max-width: 80rem;
-  margin: 0 auto;
+  max-width: 88rem;
+  padding-inline: var(--breakpoints-section-padding-2);
 }
 
 .badge {

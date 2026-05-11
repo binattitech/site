@@ -12,6 +12,9 @@
   --content-gap: var(--space-6);  /* 24px */
 
   /* Fundo full-bleed — sem padding horizontal na section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   padding-top: var(--hero-pt);
   padding-bottom: var(--hero-pb);
@@ -34,8 +37,7 @@
   align-items: flex-start;
   gap: 0;
   width: 100%;
-  max-width: 80rem;
-  margin: 0 auto;
+  max-width: 88rem;
   /* Recuo apenas à esquerda — conteúdo fixo no container, fundo vai até a borda */
   padding-left: var(--hero-px);
 }

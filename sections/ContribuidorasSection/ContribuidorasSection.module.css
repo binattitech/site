@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: center;
   padding-block: var(--breakpoints-section-padding-1);
-  padding-inline: var(--breakpoints-section-padding-2);
   width: 100%;
 }
 
@@ -17,8 +16,8 @@
   gap: var(--breakpoints-section-layout-gap);
   align-items: flex-start;
   width: 100%;
-  max-width: 80rem;
-  margin: 0 auto;
+  max-width: 88rem;
+  padding-inline: var(--breakpoints-section-padding-2);
 }
 
 .heading {

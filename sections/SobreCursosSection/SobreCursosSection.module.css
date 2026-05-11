@@ -1,0 +1,165 @@
+/* ═══════════════════════════════════════════════════════════
+   SobreCursosSection
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Outer section — vertical padding only ──────────────── */
+.section {
+  padding: var(--breakpoints-section-padding-1) 0;
+  width: 100%;
+}
+
+/* ── Bordered container with cross grid ─────────────────── */
+.bordered {
+  --grid-color: color-mix(in srgb, var(--border-muted) 40%, transparent);
+
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-6xs);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px);
+  background-size: 120px 120px;
+  background-position: 0 var(--grid-offset-y, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--space-64);
+  padding-bottom: var(--breakpoints-section-padding-1);
+  width: 100%;
+}
+
+/* ── Content row ────────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--breakpoints-section-layout-gap);
+  width: 100%;
+  max-width: 88rem;
+  padding-inline: var(--breakpoints-section-padding-2);
+}
+
+/* ── Col 1 — heading + image, fills up to 400px ─────────── */
+.col1 {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--breakpoints-section-layout-gap);
+  align-items: flex-start;
+  align-self: flex-start;
+  max-width: 400px;
+  min-width: 0;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-6xl-size);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-6xl);
+  color: var(--fg-emphasis);
+  margin: 0;
+  white-space: pre-line;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 2px dashed var(--border-muted);
+  border-radius: var(--radius-4xs);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+/* ── Col 2 — 2-column feature grid ─────────────────────── */
+.col2 {
+  flex: 1 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, fit-content(100%));
+  column-gap: var(--space-16);
+  row-gap: var(--space-16);
+  min-width: 0;
+  align-self: flex-end;
+}
+
+/* ── Feature item ───────────────────────────────────────── */
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-self: flex-start;
+  width: 100%;
+}
+
+.featureTitle {
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-4xl-size);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-4xl);
+  color: var(--fg-emphasis);
+  margin: 0;
+  width: 100%;
+}
+
+.featureDescription {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
+  color: var(--fg-default);
+  margin: 0;
+  width: 100%;
+}
+
+/* ── Mobile (sm: < 48rem) ───────────────────────────────── */
+@media (max-width: 47.938rem) {
+  .bordered {
+    padding-top: var(--space-32);
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .col1 {
+    height: auto;
+    max-width: 100%;
+    flex: none;
+    width: 100%;
+  }
+
+  .heading {
+    font-size: var(--text-5xl-size);
+  }
+
+  .col2 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    flex: none;
+    align-self: auto;
+  }
+
+  .feature {
+    gap: var(--space-2);
+  }
+
+  .featureTitle {
+    font-size: var(--text-2xl-size);
+    letter-spacing: var(--text-grotesque-tracking-2xl);
+  }
+
+  .featureDescription {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-lh);
+    letter-spacing: var(--text-md-tracking);
+  }
+}

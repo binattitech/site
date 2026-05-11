@@ -3,6 +3,9 @@
    ═══════════════════════════════════════════════════════════ */
 
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: var(--breakpoints-section-padding-2) var(--breakpoints-section-padding-2) 0;
   width: 100%;
 }
@@ -12,7 +15,6 @@
   --hero-border: var(--action-outline-border);
 
   max-width: 80rem;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--hero-border);

@@ -17,8 +17,6 @@
   background-size: 28px 28px;
   padding-top: var(--space-16);
   padding-bottom: 0;
-  padding-left: var(--breakpoints-section-padding-2);
-  padding-right: var(--breakpoints-section-padding-2);
   overflow: hidden;
 
   display: flex;
@@ -32,7 +30,8 @@
   align-items: flex-start;
   gap: var(--breakpoints-section-layout-gap);
   width: 100%;
-  max-width: 80rem;
+  max-width: 88rem;
+  padding-inline: var(--breakpoints-section-padding-2);
 }
 
 /* ── Content ─────────────────────────────────────────────── */
