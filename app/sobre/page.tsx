@@ -7,7 +7,7 @@ import ValoresSection from "@/sections/ValoresSection";
 
 export default function SobrePage() {
   return (
-    <>
+    <div data-theme="dark" style={{ background: "var(--bg-default)", minHeight: "100dvh" }}>
       <Header />
       <main>
         <AboutHeroSection />
@@ -16,6 +16,6 @@ export default function SobrePage() {
         <ValoresSection />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

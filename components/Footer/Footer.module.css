@@ -334,6 +334,10 @@
 
 /* ── Mobile (sm: < 48rem) ───────────────────────────────── */
 @media (max-width: 47.938rem) {
+  .container {
+    align-items: flex-start;
+  }
+
   .frase {
     flex-direction: column;
     align-items: flex-start;
@@ -341,14 +345,18 @@
   }
 
   .brand {
-    /* sm: 48px, right-aligned */
     font-size: 3rem;
-    text-align: right;
+    text-align: left;
     width: 100%;
   }
 
   .citacao {
     text-align: left;
+    width: 100%;
+  }
+
+  .inputRow {
+    max-width: none;
     width: 100%;
   }
 
