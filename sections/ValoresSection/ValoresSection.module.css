@@ -6,7 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: var(--breakpoints-section-padding-1);
+  padding-top: var(--breakpoints-section-padding-1);
+  padding-bottom: calc(var(--breakpoints-section-padding-1) * 2);
   width: 100%;
 }
 
