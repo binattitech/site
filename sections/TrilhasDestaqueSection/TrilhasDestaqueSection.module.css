@@ -1,0 +1,17 @@
+/*
+ * TrilhasDestaqueSection — Binatti UI
+ */
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: var(--breakpoints-section-padding-1);
+}
+
+.container {
+  max-width: 88rem;
+  width: 100%;
+  padding-inline: var(--breakpoints-section-padding-2);
+}

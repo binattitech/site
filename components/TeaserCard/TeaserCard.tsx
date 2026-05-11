@@ -3,6 +3,7 @@ import styles from "./TeaserCard.module.css";
 
 export interface TeaserCardProps {
   variant?: "minimal" | "compact" | "expanded";
+  shade?: "light" | "medium" | "dark";
   title: string;
   category?: string;
   moduleInfo?: string;
@@ -17,6 +18,7 @@ export interface TeaserCardProps {
 
 export default function TeaserCard({
   variant = "minimal",
+  shade = "light",
   title,
   category = "Trilha de aprendizagem",
   moduleInfo,
@@ -48,7 +50,7 @@ export default function TeaserCard({
 
   if (variant === "compact") {
     return (
-      <div className={styles.compact} style={colorVars}>
+      <div className={styles.compact} data-shade={shade} style={colorVars}>
         <p className={styles.compactTitle}>{title}</p>
         {description && <p className={styles.compactDesc}>{description}</p>}
         {stats && <p className={styles.stats}>{stats}</p>}

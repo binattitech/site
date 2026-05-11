@@ -4,9 +4,9 @@
 
 .section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: var(--breakpoints-section-padding-2) var(--breakpoints-section-padding-2) 0;
+  justify-content: center;
+  padding: var(--space-9) 0 0;
   width: 100%;
 }
 

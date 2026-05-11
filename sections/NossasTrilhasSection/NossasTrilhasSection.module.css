@@ -1,0 +1,111 @@
+/*
+ * NossasTrilhasSection — Binatti UI
+ */
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--breakpoints-section-padding-1);
+  padding-bottom: var(--breakpoints-section-padding-1);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--breakpoints-section-padding-2);
+  max-width: 88rem;
+  width: 100%;
+  padding-inline: var(--breakpoints-section-padding-2);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-5xl-size);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-5xl);
+  color: var(--fg-emphasis);
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-tracking);
+  color: var(--fg-default);
+  max-width: 43.75rem;
+}
+
+/* ── Cards ──────────────────────────────────────────────── */
+
+.cardsOuter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.topRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* ── Responsive: tablet ─────────────────────────────────── */
+
+@media (min-width: 48rem) {
+  .topRow {
+    flex-direction: row;
+    gap: var(--space-8);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* ── Responsive: desktop ────────────────────────────────── */
+
+@media (min-width: 80rem) {
+  .cardsOuter {
+    gap: var(--space-8);
+  }
+
+  .heading {
+    font-size: var(--text-6xl-size);
+    letter-spacing: var(--text-grotesque-tracking-6xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-lh);
+    letter-spacing: var(--text-xl-tracking);
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
