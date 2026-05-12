@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Badge from "@/components/Badge";
 import styles from "./AboutHeroSection.module.css";
 
 export default function AboutHeroSection() {
@@ -21,7 +22,7 @@ export default function AboutHeroSection() {
   return (
     <section className={styles.section} ref={sectionRef}>
       <div className={styles.content}>
-        <span className={styles.badge}>BINATTI COMMUNITY</span>
+        <Badge variant="mono" size="md" label="Sobre Nós" />
         <h1 className={styles.heading}>
           Não é sobre tecnologia.
           <br />

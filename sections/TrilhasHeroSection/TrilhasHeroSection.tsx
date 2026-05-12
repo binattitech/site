@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Badge from "@/components/Badge";
 import styles from "./TrilhasHeroSection.module.css";
 
 export default function TrilhasHeroSection() {
@@ -21,7 +22,7 @@ export default function TrilhasHeroSection() {
   return (
     <section className={styles.section} ref={sectionRef}>
       <div className={styles.content}>
-        <span className={styles.badge}>BINATTI COMMUNITY</span>
+        <Badge variant="filled" size="md" label="BINATTI COMMUNITY" />
         <h1 className={styles.heading}>
           Trilhas de conhecimento
           <br />

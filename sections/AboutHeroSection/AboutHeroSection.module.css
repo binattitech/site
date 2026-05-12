@@ -32,23 +32,6 @@
   padding-inline: var(--breakpoints-section-padding-2);
 }
 
-.badge {
-  --badge-bg: var(--violet-600);
-  --badge-color: var(--fg-white);
-
-  display: inline-flex;
-  align-items: center;
-  padding: var(--space-1-5) var(--space-3);
-  background: var(--badge-bg);
-  border-radius: var(--radius-full);
-  font-family: var(--font-family);
-  font-size: var(--text-xs-size);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--text-xs-lh);
-  color: var(--badge-color);
-  white-space: nowrap;
-}
-
 .heading {
   font-family: var(--font-heading);
   font-variation-settings: var(--font-variation-heading);
