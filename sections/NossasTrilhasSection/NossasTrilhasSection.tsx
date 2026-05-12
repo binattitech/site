@@ -3,7 +3,7 @@ import styles from "./NossasTrilhasSection.module.css";
 
 const TOP_CARDS = [
   {
-    color: "red",
+    color: "rose",
     shade: "dark" as const,
     title: "Blockchain",
     description:
@@ -85,7 +85,9 @@ export default function NossasTrilhasSection() {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.heading}>Nossas Trilhas</h2>
-          <p className={styles.subtitle}>Para você explorar, escolher e começar!</p>
+          <p className={styles.subtitle}>
+            Para você explorar, escolher e começar!
+          </p>
         </div>
 
         <div className={styles.cardsOuter}>

@@ -218,6 +218,18 @@ app/
 
 ---
 
+## Reuse Rule — Never Recreate Existing Components
+
+**If a component already exists in `components/`, you must use it — never recreate its CSS from scratch.**
+
+- Use `Button` — never write a custom `<a>` or `<button>` with hand-written button styles
+- Use `Badge`, `Chip`, `Tab`, `Avatar`, `Card`, etc. — never duplicate their visual logic
+- To adapt colors or sizing: override CSS variables via the `style` prop (see Styling Pattern below)
+- To adapt hover behavior: override the relevant design token variable (e.g. `--action-outline-bg-hover`) via `style`
+- Creating CSS from scratch for something a component already handles is always wrong, regardless of context
+
+---
+
 ## Component Patterns
 
 - Names: **PascalCase** (e.g. `Button`, `HeroSection`, `PricingCard`)

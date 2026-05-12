@@ -33,11 +33,16 @@ export default function TeaserCard({
   ctaLabel = "Start learning",
 }: TeaserCardProps) {
   const colorVars = {
-    "--primary-50":  `var(--${color}-50)`,
+    "--primary-50": `var(--${color}-50)`,
     "--primary-100": `var(--${color}-100)`,
     "--primary-200": `var(--${color}-200)`,
+    "--primary-300": `var(--${color}-300)`,
     "--primary-400": `var(--${color}-400)`,
+    "--primary-500": `var(--${color}-500)`,
     "--primary-600": `var(--${color}-600)`,
+    "--primary-700": `var(--${color}-700)`,
+    "--primary-800": `var(--${color}-800)`,
+    "--primary-950": `var(--${color}-950)`,
   } as React.CSSProperties;
 
   if (variant === "minimal") {
@@ -62,12 +67,16 @@ export default function TeaserCard({
             kind="icon"
             variant="outline"
             icon={<ArrowRight size={24} color="var(--compact-btn)" />}
-            style={{
-              "--button-border": "var(--compact-btn)",
-              "--button-shadow": "none",
-            } as React.CSSProperties}
+            style={
+              {
+                "--button-border": "var(--compact-btn)",
+                "--button-shadow": "none",
+              } as React.CSSProperties
+            }
             aria-label="Ver trilha"
-            onClick={() => { window.location.href = href; }}
+            onClick={() => {
+              window.location.href = href;
+            }}
           />
         </div>
       </div>
@@ -75,7 +84,7 @@ export default function TeaserCard({
   }
 
   return (
-    <div className={styles.expanded} style={colorVars}>
+    <div className={styles.expanded} data-shade={shade} style={colorVars}>
       {stats && (
         <div className={styles.expandedHeader}>
           <p className={styles.statsHeader}>{stats}</p>
@@ -89,10 +98,22 @@ export default function TeaserCard({
         </div>
         <div className={styles.expandedFooter}>
           <ModuleIconsRow icons={moduleIcons} extra={extraModules} />
-          <a href={href} className={styles.ctaBtn}>
-            <span>{ctaLabel}</span>
-            <ArrowRight size={20} />
-          </a>
+          <Button
+            variant="outline"
+            kind="text"
+            content={ctaLabel}
+            showIcon={true}
+            icon={<ArrowRight size={20} color="var(--expanded-btn-color)" />}
+            style={
+              {
+                "--button-border": "var(--expanded-btn-border)",
+                "--button-color": "var(--expanded-btn-color)",
+              } as React.CSSProperties
+            }
+            onClick={() => {
+              window.location.href = href;
+            }}
+          />
         </div>
       </div>
       <div className={styles.depthBar1} aria-hidden="true" />
@@ -101,13 +122,7 @@ export default function TeaserCard({
   );
 }
 
-function ModuleIconsRow({
-  icons,
-  extra,
-}: {
-  icons: string[];
-  extra: number;
-}) {
+function ModuleIconsRow({ icons, extra }: { icons: string[]; extra: number }) {
   if (icons.length === 0 && extra === 0) return null;
   const STEP = 2.25; /* rem — 36px */
   return (
