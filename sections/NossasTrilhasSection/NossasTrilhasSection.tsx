@@ -3,7 +3,7 @@ import styles from "./NossasTrilhasSection.module.css";
 
 const TOP_CARDS = [
   {
-    color: "rose",
+    color: "red",
     shade: "dark" as const,
     title: "Blockchain",
     description:
@@ -33,8 +33,8 @@ const GRID_CARDS = [
     href: "#",
   },
   {
-    color: "purple",
-    shade: "medium" as const,
+    color: "green",
+    shade: "dark" as const,
     title: "UX Design",
     description:
       "Aprenda a criar interfaces intuitivas e experiências que encantam os usuários, tornando a navegação simples e agradável.",
@@ -42,8 +42,8 @@ const GRID_CARDS = [
     href: "#",
   },
   {
-    color: "cyan",
-    shade: "light" as const,
+    color: "rose",
+    shade: "dark" as const,
     title: "Teste de Software",
     description:
       "Aprenda a validar e verificar sistemas, garantindo a qualidade do software com técnicas que detectam falhas e melhoram a performance de aplicações.",
@@ -51,7 +51,7 @@ const GRID_CARDS = [
     href: "#",
   },
   {
-    color: "cyan",
+    color: "blue",
     shade: "light" as const,
     title: "Inteligência Artificial",
     description:
@@ -60,8 +60,8 @@ const GRID_CARDS = [
     href: "#",
   },
   {
-    color: "cyan",
-    shade: "light" as const,
+    color: "blue",
+    shade: "medium" as const,
     title: "Desenvolvimento Mobile",
     description:
       "Crie aplicações para iOS e Android e leve suas ideias para a palma da mão dos usuários com as principais tecnologias do mercado.",
@@ -69,8 +69,8 @@ const GRID_CARDS = [
     href: "#",
   },
   {
-    color: "cyan",
-    shade: "light" as const,
+    color: "blue",
+    shade: "dark" as const,
     title: "Cibersegurança",
     description:
       "Proteja sistemas, redes e dados contra ameaças digitais. Aprenda as práticas e ferramentas essenciais para atuar na área de segurança da informação.",
