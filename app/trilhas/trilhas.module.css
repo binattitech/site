@@ -4,3 +4,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.floatingPlay {
+  position: fixed;
+  /* Ancora no centro do botão em repouso: 48px da borda + metade de 200px */
+  bottom: calc(var(--space-12) + 6.25rem);
+  left: calc(var(--space-12) + 6.25rem);
+  /* Recua 50% do próprio tamanho — o centro fica fixo enquanto cresce */
+  transform: translate(-50%, 50%);
+  z-index: 50;
+}

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import TrilhasHeroSection from "@/sections/TrilhasHeroSection";
 import TrilhasDestaqueSection from "@/sections/TrilhasDestaqueSection";
 import NossasTrilhasSection from "@/sections/NossasTrilhasSection";
+import FloatingPlayButton from "@/components/FloatingPlayButton";
 import styles from "./trilhas.module.css";
 
 export const metadata = {
@@ -21,6 +22,9 @@ export default function TrilhasPage() {
         <NossasTrilhasSection />
       </main>
       <Footer />
+      <div className={styles.floatingPlay}>
+        <FloatingPlayButton />
+      </div>
     </div>
   );
 }

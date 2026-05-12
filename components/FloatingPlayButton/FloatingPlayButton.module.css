@@ -1,0 +1,100 @@
+/*
+ * FloatingPlayButton — Binatti UI
+ */
+
+.button {
+  --fpb-size: 12.5rem; /* 200px */
+  --fpb-bg: var(--green-500);
+  --fpb-border: var(--green-900);
+  --fpb-overlay: var(--green-500);
+  --fpb-overlay-opacity: 0.7;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--fpb-size);
+  height: var(--fpb-size);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--fpb-border);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--fpb-bg);
+  padding: 0;
+  flex-shrink: 0;
+  transition: width 120ms ease, height 120ms ease;
+}
+
+/* Slightly larger on hover when has thumbnail */
+.button:hover {
+  --fpb-size: 13rem; /* 208px */
+}
+
+/* Sem thumbnail: overlay não deve cobrir o fundo sólido */
+.button:not([data-has-thumbnail="true"]) .overlay {
+  display: none;
+}
+
+/* Lighter overlay when playing */
+.button[data-is-playing="true"] {
+  --fpb-overlay-opacity: 0.4;
+}
+
+/* ── Thumbnail ─────────────────────────────────────────── */
+
+.thumbnail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Green overlay ─────────────────────────────────────── */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--fpb-overlay);
+  opacity: var(--fpb-overlay-opacity);
+}
+
+/* Remove overlay on press so thumbnail shows through */
+.button[data-has-thumbnail="true"]:active .overlay {
+  opacity: 0.15;
+}
+
+/* ── Spinning text ring ─────────────────────────────────── */
+
+.textRing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: fpb-spin 18s linear infinite;
+  transform-origin: center;
+}
+
+.textRing text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* 12px */
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.125em;
+  fill: white;
+  text-transform: uppercase;
+}
+
+@keyframes fpb-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Icon ──────────────────────────────────────────────── */
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
