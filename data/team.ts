@@ -79,9 +79,15 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Rafaela Costa (Cassy)",
-    username: "cassy",
+    username: "ca2sy",
     role: "Contribuidora",
     photo: "cassy",
+    bio: "Eu sou Rafaela Sousa Costa, sou Engenheira de Software e tenho como objetivo encontrar soluções criativas através da tecnologia, além de explorar ainda mais essa área vasta, conhecendo cada dia algo novo para aprender.",
+    socialLinks: [
+      { platform: "github", url: "https://github.com/ca2sy" },
+      { platform: "linkedin",  url: "https://www.linkedin.com/in/rafaela-sousa-costa-3920572bb/" },
+      { platform: "portfolio", url: "https://rafaela-sousa.vercel.app/" },
+    ],
   },
     {
     name: "Marina de Lima",
@@ -91,6 +97,7 @@ export const TEAM: TeamMember[] = [
     bio: "Me chamo Marina, uma paraibana meio perdida pelo Piauí. Em transição da arquitetura para a engenharia de software, divido meu tempo entre inteligência cibernética, arte e gastronomia. Levo a vida de forma espontânea, sempre guiada pela escolha que promete a melhor história pra contar.",
     socialLinks: [
       { platform: "github", url: "https://github.com/limademarina" },
+
     ],
   },
   {
