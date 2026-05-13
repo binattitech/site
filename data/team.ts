@@ -73,14 +73,19 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Beatriz Barreto",
-    username: "beatrizbarreto",
-    role: "Contribuidora",
+    username: "whosbea3",
+    role: "Analista de Suporte N2/N3",
     photo: "bea",
+    bio: "Estudante de Engenharia de Software, pesquisadora e Analista de Suporte N2/N3. Atua com suporte técnico e tecnologia, com interesse em IA, Cibersegurança, Computação Forense e Arquitetura de Soluções. Nas horas vagas, ama assistir Hora de Aventura, seu animal preferido são pinguins e é fã do grupo TWICE.",
+    socialLinks: [
+      { platform: "github", url: "https://github.com/whosbea" },
+      { platform: "linkedin",  url: "https://www.linkedin.com/in/beatriz-barreto-8b0076261/" },
+    ],
   },
   {
     name: "Rafaela Costa (Cassy)",
     username: "ca2sy",
-    role: "Contribuidora",
+    role: "Desenvolvedora Full Stack",
     photo: "cassy",
     bio: "Eu sou Rafaela Sousa Costa, sou Engenheira de Software e tenho como objetivo encontrar soluções criativas através da tecnologia, além de explorar ainda mais essa área vasta, conhecendo cada dia algo novo para aprender.",
     socialLinks: [
