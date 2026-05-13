@@ -49,6 +49,7 @@ export interface SocialLink {
 export interface WindowProfileProps {
   username?: string;
   name?: string;
+  role?: string;
   bio?: string;
   bannerSrc?: string;
   avatarSrc?: string;
@@ -62,6 +63,7 @@ export interface WindowProfileProps {
 export default function WindowProfile({
   username = "marinadelima",
   name = "Marina de Lima",
+  role,
   bio = "Designer UX/UI com formação em Engenharia de Software e experiência sólida na criação de produtos digitais centrados no usuário.",
   bannerSrc,
   avatarSrc,
@@ -151,7 +153,10 @@ export default function WindowProfile({
             <div className={styles.content}>
               {/* Sidebar */}
               <aside className={styles.sidebar}>
-                <p className={styles.name}>{name}</p>
+                <div className={styles.nameGroup}>
+                  <p className={styles.name}>{name}</p>
+                  {role && <p className={styles.role}>{role}</p>}
+                </div>
 
                 {/* Bio */}
                 <div className={styles.bioSection}>

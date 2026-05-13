@@ -47,7 +47,7 @@
   align-items: flex-start;
   width: 100%;
   max-width: 88rem;
-  padding: var(--space-8) var(--breakpoints-section-padding-2);
+  padding: var(--space-8) var(--breakpoints-section-padding-2) var(--breakpoints-section-padding-1);
 }
 
 /* ── Avatar ─────────────────────────────────────────────── */
@@ -93,12 +93,27 @@
   gap: var(--space-6);
 }
 
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
 .name {
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
   font-size: var(--text-2xl-size);
   line-height: var(--text-2xl-lh);
   letter-spacing: var(--text-2xl-tracking);
+  color: var(--profile-fg-emphasis);
+}
+
+.role {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
   color: var(--profile-fg-emphasis);
 }
 
@@ -258,5 +273,17 @@
   .contributions {
     width: 100%;
     padding-top: 0;
+  }
+
+  .name {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-lh);
+    letter-spacing: var(--text-lg-tracking);
+  }
+
+  .role {
+    font-size: var(--text-xs-size);
+    line-height: var(--text-xs-lh);
+    letter-spacing: var(--text-xs-tracking);
   }
 }

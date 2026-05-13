@@ -32,6 +32,7 @@ const SOCIAL_LABELS: Record<string, string> = {
 
 interface ProfileHeroSectionProps {
   name: string;
+  role?: string;
   bio?: string;
   bannerSrc?: string;
   avatarSrc?: string;
@@ -42,6 +43,7 @@ interface ProfileHeroSectionProps {
 
 export default function ProfileHeroSection({
   name,
+  role,
   bio,
   bannerSrc,
   avatarSrc,
@@ -77,7 +79,10 @@ export default function ProfileHeroSection({
 
         {/* Sidebar */}
         <aside className={styles.sidebar}>
-          <p className={styles.name}>{name}</p>
+          <div className={styles.nameGroup}>
+            <p className={styles.name}>{name}</p>
+            {role && <p className={styles.role}>{role}</p>}
+          </div>
 
           {bio && (
             <div className={styles.bioSection}>

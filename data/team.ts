@@ -117,4 +117,15 @@ export const TEAM: TeamMember[] = [
     role: "Contribuidora",
     photo: "kevilla",
   },
+  {
+    name: "Sarah Ocy",
+    username: "sarocy",
+    role: "Desenvolvedora Full Stack",
+    photo: "",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "https://github.com/Sarocy" },
+    ],
+  },
+
 ];

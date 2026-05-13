@@ -211,12 +211,27 @@
   padding-top: var(--space-8);
 }
 
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
 .name {
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
   font-size: var(--text-2xl-size);
   line-height: var(--text-2xl-lh);
   letter-spacing: var(--text-2xl-tracking);
+  color: var(--window-fg-emphasis);
+}
+
+.role {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-tracking);
   color: var(--window-fg-emphasis);
 }
 
@@ -382,5 +397,17 @@
   .contributions {
     flex: none;
     width: 100%;
+  }
+
+  .name {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-lh);
+    letter-spacing: var(--text-lg-tracking);
+  }
+
+  .role {
+    font-size: var(--text-xs-size);
+    line-height: var(--text-xs-lh);
+    letter-spacing: var(--text-xs-tracking);
   }
 }

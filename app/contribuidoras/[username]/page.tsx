@@ -39,6 +39,7 @@ export default async function ContribuidoraPage({
       <main>
         <ProfileHeroSection
           name={member.name}
+          role={member.role}
           bio={member.bio}
           avatarSrc={`/team/${member.photo}.png`}
           socialLinks={member.socialLinks}
