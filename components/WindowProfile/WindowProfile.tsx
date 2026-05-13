@@ -10,6 +10,7 @@ import {
   GithubLogo,
   Globe,
   BehanceLogo,
+  GraduationCap,
 } from "@phosphor-icons/react";
 import PersonalContribution from "@/components/PersonalContribution";
 import type {
@@ -23,7 +24,8 @@ export type SocialPlatform =
   | "instagram"
   | "github"
   | "portfolio"
-  | "behance";
+  | "behance"
+  | "google-scholar";
 
 const SOCIAL_ICONS: Record<SocialPlatform, React.ElementType> = {
   linkedin: LinkedinLogo,
@@ -31,6 +33,7 @@ const SOCIAL_ICONS: Record<SocialPlatform, React.ElementType> = {
   github: GithubLogo,
   portfolio: Globe,
   behance: BehanceLogo,
+  "google-scholar": GraduationCap,
 };
 
 const SOCIAL_LABELS: Record<SocialPlatform, string> = {
@@ -39,6 +42,7 @@ const SOCIAL_LABELS: Record<SocialPlatform, string> = {
   github: "GitHub",
   portfolio: "Portfólio",
   behance: "Behance",
+  "google-scholar": "Google Acadêmico",
 };
 
 export interface SocialLink {

@@ -9,7 +9,7 @@
  * Todos os componentes (carrossel, grid, perfil modal) atualizam automaticamente.
  */
 
-export type SocialPlatform = "linkedin" | "instagram" | "github" | "portfolio" | "behance";
+export type SocialPlatform = "linkedin" | "instagram" | "github" | "portfolio" | "behance" | "google-scholar";
 
 export interface SocialLink {
   platform: SocialPlatform;
@@ -80,6 +80,7 @@ export const TEAM: TeamMember[] = [
     socialLinks: [
       { platform: "github", url: "https://github.com/whosbea" },
       { platform: "linkedin",  url: "https://www.linkedin.com/in/beatriz-barreto-8b0076261/" },
+      { platform: "google-scholar",  url: "https://scholar.google.com/citations?view_op=list_works&hl=pt-BR&hl=pt-BR&user=grYhR5AAAAAJ" },
     ],
   },
   {
