@@ -15,8 +15,8 @@
     linear-gradient(var(--blue-700) 1px, transparent 1px),
     linear-gradient(to right, var(--blue-700) 1px, transparent 1px);
   background-size: 28px 28px;
-  padding-top: var(--space-16);
-  padding-bottom: 0;
+  padding-top: var(--breakpoints-section-padding-1);
+  padding-bottom: 0;  
   overflow: hidden;
 
   display: flex;
@@ -142,6 +142,7 @@
 
 /* ── Desktop (≥ 80rem) — row layout ─────────────────────── */
 @media (min-width: 80rem) {
+  
   .container {
     flex-direction: row;
     align-items: flex-end;
@@ -152,7 +153,7 @@
   .content {
     flex-shrink: 0;
     width: auto;
-    padding-bottom: var(--space-16);
+    padding-bottom: var(--breakpoints-section-padding-1);
   }
 
   .heading {

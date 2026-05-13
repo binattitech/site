@@ -12,6 +12,16 @@
   gap: var(--space-3);
 }
 
+.containerLink {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.containerLink:hover .name {
+  text-decoration: underline;
+}
+
 .avatar {
   --avatar-size: var(--space-12); /* 48px — md default */
 

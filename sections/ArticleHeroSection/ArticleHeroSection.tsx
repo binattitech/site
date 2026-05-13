@@ -7,6 +7,7 @@ export interface ArticleHeroSectionProps {
   title?: string;
   authorName?: string;
   authorRole?: string;
+  authorHref?: string;
   avatarSrc?: string;
   date?: string;
   category?: string;
@@ -18,6 +19,7 @@ export default function ArticleHeroSection({
   title = "Como criar um Design System com Claude",
   authorName = "Milena Duarte",
   authorRole = "UX UI Designer",
+  authorHref,
   avatarSrc,
   date = "Publicado em 10 de Agosto, 2025",
   category = "NA PRÁTICA COM IA",
@@ -37,6 +39,7 @@ export default function ArticleHeroSection({
               name={authorName}
               role={authorRole}
               avatarSrc={avatarSrc}
+              href={authorHref}
             />
             <div className={styles.metaRight}>
               <span className={styles.date}>{date}</span>

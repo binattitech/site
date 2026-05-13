@@ -48,6 +48,7 @@ export default async function ArticlePage({
           title={artigo.title}
           authorName={authorName}
           authorRole={artigo.authorRole}
+          authorHref={artigo.authorUsername ? `/contribuidoras/${artigo.authorUsername}` : undefined}
           avatarSrc={artigo.avatarSrc}
           date={formatDate(artigo.date)}
           category={artigo.category}

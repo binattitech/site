@@ -24,6 +24,7 @@ export default function TeamCarouselSection() {
               role={member.role}
               avatarSrc={`/team/${member.photo}.png`}
               showSocialIcons={false}
+              href={`/contribuidoras/${member.username}`}
             />
           ))}
         </div>

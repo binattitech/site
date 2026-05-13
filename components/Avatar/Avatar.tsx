@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import styles from "./Avatar.module.css";
 
@@ -17,6 +18,7 @@ export interface AvatarProps {
   githubUrl?: string;
   instagramUrl?: string;
   linkedinUrl?: string;
+  href?: string;
   className?: string;
 }
 
@@ -33,6 +35,7 @@ export default function Avatar({
   githubUrl,
   instagramUrl,
   linkedinUrl,
+  href,
   className,
 }: AvatarProps) {
   const initials = name
@@ -83,8 +86,12 @@ export default function Avatar({
     );
   }
 
-  return (
-    <div className={[styles.container, className ?? ""].filter(Boolean).join(" ")} data-size={size}>
+  const containerClass = [styles.container, href ? styles.containerLink : "", className ?? ""]
+    .filter(Boolean)
+    .join(" ");
+
+  const withTextContent = (
+    <>
       {showAvatar && (
         <div className={styles.avatar}>
           {avatarSrc ? (
@@ -100,6 +107,20 @@ export default function Avatar({
         <p className={styles.name}>{name}</p>
         {showRole && <p className={styles.role}>{role}</p>}
       </div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={containerClass} data-size={size}>
+        {withTextContent}
+      </Link>
+    );
+  }
+
+  return (
+    <div className={containerClass} data-size={size}>
+      {withTextContent}
     </div>
   );
 }

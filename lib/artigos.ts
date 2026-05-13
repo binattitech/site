@@ -15,6 +15,7 @@ export interface ArtigoMeta {
   title: string;
   author: string;
   authorRole: string;
+  authorUsername?: string;
   avatarSrc?: string;
   category: string;
   tag: string;
@@ -161,6 +162,7 @@ function buildMeta(entry: FileEntry): ArtigoMeta {
     title,
     author,
     authorRole: meta.authorRole ?? teamMember?.role ?? "",
+    authorUsername: teamMember?.username,
     avatarSrc: meta.avatarSrc ?? (teamMember ? `/team/${teamMember.photo}.png` : undefined),
     category,
     tag: meta.tag ?? (entry.folder.toLowerCase() || "artigo"),
@@ -204,6 +206,7 @@ export function getArtigoBySlug(slug: string): Artigo | null {
     title,
     author,
     authorRole: meta.authorRole ?? teamMember?.role ?? "",
+    authorUsername: teamMember?.username,
     avatarSrc: meta.avatarSrc ?? (teamMember ? `/team/${teamMember.photo}.png` : undefined),
     category,
     tag: meta.tag ?? (entry.folder.toLowerCase() || "artigo"),
