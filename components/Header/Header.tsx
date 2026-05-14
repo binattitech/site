@@ -34,7 +34,7 @@ export default function Header({
   logoSrc = "/brand/logo.svg",
   logoAlt = "Binatti",
   onVolunteer,
-  onStudy,
+  onStudy = () => { window.location.href = "/trilhas"; },
   onMenuOpen,
   className,
 }: HeaderProps) {

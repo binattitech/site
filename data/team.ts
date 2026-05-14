@@ -63,14 +63,23 @@ export const TEAM: TeamMember[] = [
     name: "Aline Ramos",
     username: "alineramos",
     role: "Contribuidora",
-    photo: "aline",
+    photo: "alinedmr",
+    bio: "Olá! Me chamo Aline e sou acadêmica de Engenharia de Software, com foco em tecnologia, automação e desenvolvimento de soluções inteligentes. Tenho experiência na criação de automações utilizando a plataforma n8n, integrando APIs, sistemas e serviços para otimizar processos, reduzir tarefas repetitivas e aumentar a eficiência operacional.",
+    socialLinks: [
+      { platform: "github", url: "https://github.com/Alinedmr" },
+      { platform: "linkedin",  url: "https://www.linkedin.com/in/aline-ramos-0617b5276/" },
+    ],
   },
     {
     name: "Kaielly Sousa",
     username: "kaielly",
     role: "Contribuidora",
     photo: "kaielly",
-  },
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  }, 
   {
     name: "Beatriz Barreto",
     username: "whosbea3",
@@ -103,7 +112,6 @@ export const TEAM: TeamMember[] = [
     bio: "Me chamo Marina, uma paraibana meio perdida pelo Piauí. Em transição da arquitetura para a engenharia de software, divido meu tempo entre inteligência cibernética, arte e gastronomia. Levo a vida de forma espontânea, sempre guiada pela escolha que promete a melhor história pra contar.",
     socialLinks: [
       { platform: "github", url: "https://github.com/limademarina" },
-
     ],
   },
   {
@@ -111,12 +119,20 @@ export const TEAM: TeamMember[] = [
     username: "ingridribeiro",
     role: "Contribuidora",
     photo: "ingrid",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
   },
   {
     name: "Kévilla Aguiar",
     username: "kevillaaguiar",
-    role: "Contribuidora",
+    role: "UX/UI Design",
     photo: "kevilla",
+    bio: "Estudante de Engenharia de Software com foco em UI/UX Design.",
+    socialLinks: [
+      { platform: "linkedin", url: "https://www.linkedin.com/in/kevilla-aguiar/" },
+    ],
   },
   {
     name: "Sarah Ocy",
