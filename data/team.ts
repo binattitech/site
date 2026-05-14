@@ -49,8 +49,8 @@ export const TEAM: TeamMember[] = [
     photo: "milena",
     bio: "Designer UX/UI com formação em Engenharia de Software e experiência sólida na criação de produtos digitais centrados no usuário — de sistemas institucionais complexos a design systems do zero. Tenho vivência em todas as etapas do processo de design, desde pesquisa e arquitetura da informação até prototipagem de alta fidelidade e handoff técnico. Atuo também na interface entre design e produto, com experiência em levantamento de requisitos e facilitação de times ágeis, o que me permite comunicar com desenvolvedores e stakeholders com clareza e precisão.",
     socialLinks: [
-      { platform: "linkedin",  url: "https://www.linkedin.com/in/miluarte/" },
       { platform: "behance",   url: "https://www.behance.net/miluarte" },
+      { platform: "linkedin",  url: "https://www.linkedin.com/in/miluarte/" },
       { platform: "portfolio", url: "https://miluarte.figma.site" },
     ],
     videos: [
@@ -61,9 +61,9 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Aline Ramos",
-    username: "alineramos",
-    role: "Contribuidora",
-    photo: "alinedmr",
+    username: "alinedmr",
+    role: "Desenvolvedora de Automações",
+    photo: "aline",
     bio: "Olá! Me chamo Aline e sou acadêmica de Engenharia de Software, com foco em tecnologia, automação e desenvolvimento de soluções inteligentes. Tenho experiência na criação de automações utilizando a plataforma n8n, integrando APIs, sistemas e serviços para otimizar processos, reduzir tarefas repetitivas e aumentar a eficiência operacional.",
     socialLinks: [
       { platform: "github", url: "https://github.com/Alinedmr" },
@@ -88,8 +88,8 @@ export const TEAM: TeamMember[] = [
     bio: "Estudante de Engenharia de Software, pesquisadora e Analista de Suporte N2/N3. Atua com suporte técnico e tecnologia, com interesse em IA, Cibersegurança, Computação Forense e Arquitetura de Soluções. Nas horas vagas, ama assistir Hora de Aventura, seu animal preferido são pinguins e é fã do grupo TWICE.",
     socialLinks: [
       { platform: "github", url: "https://github.com/whosbea" },
-      { platform: "linkedin",  url: "https://www.linkedin.com/in/beatriz-barreto-8b0076261/" },
       { platform: "google-scholar",  url: "https://scholar.google.com/citations?view_op=list_works&hl=pt-BR&hl=pt-BR&user=grYhR5AAAAAJ" },
+      { platform: "linkedin",  url: "https://www.linkedin.com/in/beatriz-barreto-8b0076261/" },
     ],
   },
   {
@@ -142,6 +142,17 @@ export const TEAM: TeamMember[] = [
     bio: "",
     socialLinks: [
       { platform: "github", url: "https://github.com/Sarocy" },
+    ],
+  },
+    {
+    name: "Iana Fonteneles",
+    username: "iana",
+    role: "Product Designer",
+    photo: "",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+      { platform: "linkedin", url: "" },
     ],
   },
 
