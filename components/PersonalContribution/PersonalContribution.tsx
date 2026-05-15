@@ -5,7 +5,7 @@ import Tab from "@/components/Tab";
 import Card from "@/components/Card";
 import styles from "./PersonalContribution.module.css";
 
-type ActiveTab = "trilhas" | "artigos" | "videos";
+type ActiveTab = "trilhas" | "artigos" | "videos" | "eventos";
 
 export interface ContributionArticle {
   title: string;
@@ -33,6 +33,7 @@ const TABS: { key: ActiveTab; label: string; disabled?: boolean }[] = [
   { key: "trilhas", label: "Trilhas", disabled: true },
   { key: "artigos", label: "Artigos" },
   { key: "videos", label: "Vídeos" },
+  { key: "eventos", label: "Eventos" },
 ];
 
 export default function PersonalContribution({
