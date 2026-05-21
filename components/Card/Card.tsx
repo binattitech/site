@@ -38,7 +38,6 @@ export default function Card({
   title = "Como criar um Design System com Claude",
   author = "por Fulana",
   category = "NA PRÁTICA COM IA",
-  tag = "tag content",
   level = "Iniciante",
   description = "A cibersegurança é uma área valiosa para se aprender e explorar seus conceitos.",
   showDescription = true,
@@ -99,7 +98,6 @@ export default function Card({
           <p className={isMd ? styles.titleMd : styles.titleSm}>{title}</p>
           <div className={styles.meta}>
             <span className={styles.author}>{author}</span>
-            <TagArea content={tag} />
           </div>
         </div>
       </article>
@@ -131,7 +129,7 @@ export default function Card({
       >
         <div className={styles.projectHeader}>
           <Badge variant="light" color="lime" label={level} />
-          <Badge variant="outline" radius="rounded" size="sm" label={tag} />
+          <Badge variant="outline" radius="rounded" size="sm" />
         </div>
         <p className={styles.articleTitleXs}>{title}</p>
         {showDescription && <p className={styles.projectDescription}>{description}</p>}
@@ -181,14 +179,12 @@ export default function Card({
               <p className={[styles.category, styles.categoryMobile].join(" ")}>
                 {category}
               </p>
-              <TagArea content={tag} />
             </div>
             <p className={styles.articleTitleMd}>{title}</p>
             <span className={styles.author}>{author}</span>
           </div>
 
           <div className={styles.articleActions}>
-            <TagArea content={tag} />
             <div
               className={[
                 styles.arrow,
@@ -206,7 +202,6 @@ export default function Card({
         <div className={[styles.articleHeader, styles.articleHeaderSmXs].join(" ")}>
           <div className={styles.articleCategoryRowSmXs}>
             <p className={styles.category}>{category}</p>
-            <TagArea content={tag} />
           </div>
           <p className={isXs ? styles.articleTitleXs : styles.articleTitleSm}>
             {title}
