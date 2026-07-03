@@ -9,6 +9,7 @@ import {
   Globe,
   BehanceLogo,
   GraduationCap,
+  Envelope,
 } from "@phosphor-icons/react";
 import PersonalContribution from "@/components/PersonalContribution";
 import type { ContributionArticle, ContributionVideo } from "@/components/PersonalContribution";
@@ -22,6 +23,7 @@ const SOCIAL_ICONS: Record<string, React.ElementType> = {
   portfolio: Globe,
   behance: BehanceLogo,
   "google-scholar": GraduationCap,
+  email: Envelope,
 };
 
 const SOCIAL_LABELS: Record<string, string> = {
@@ -31,6 +33,7 @@ const SOCIAL_LABELS: Record<string, string> = {
   portfolio: "Portfólio",
   behance: "Behance",
   "google-scholar": "Google Acadêmico",
+  email: "E-mail",
 };
 
 interface ProfileHeroSectionProps {

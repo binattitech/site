@@ -9,7 +9,7 @@
  * Todos os componentes (carrossel, grid, perfil modal) atualizam automaticamente.
  */
 
-export type SocialPlatform = "linkedin" | "instagram" | "github" | "portfolio" | "behance" | "google-scholar";
+export type SocialPlatform = "linkedin" | "instagram" | "github" | "portfolio" | "behance" | "google-scholar" | "email";
 
 export interface SocialLink {
   platform: SocialPlatform;
@@ -153,6 +153,17 @@ export const TEAM: TeamMember[] = [
     socialLinks: [
       { platform: "github", url: "" },
       { platform: "linkedin", url: "" },
+    ],
+  },
+  {
+    name: "Paloma Reis",
+    username: "palomamartinsr",
+    role: "Engenheira de Dados",
+    photo: "palomamartinsr",
+    bio: "Engenheira de Dados com experiência em Business Intelligence e desenvolvimento de soluções orientadas por dados. Atuo na estruturação e otimização de processos de dados, criação de indicadores estratégicos e desenvolvimento de soluções que apoiam a tomada de decisão e aumentam a eficiência operacional. Tenho experiência em transformar dados em informações confiáveis, automatizar processos e construir produtos analíticos voltados para as necessidades do negócio. Nas horas vagas, gosto muito de nadar e de ler mangás. São atividades que me ajudam a relaxar e a manter um equilíbrio entre a rotina profissional e os momentos de lazer.",
+    socialLinks: [
+      { platform: "email", url: "palomamartinsr2@gmail.com" },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/palomamartinsr/" },
     ],
   },
 
