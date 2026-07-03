@@ -9,7 +9,7 @@
  * Todos os componentes (carrossel, grid, perfil modal) atualizam automaticamente.
  */
 
-export type SocialPlatform = "linkedin" | "instagram" | "github" | "portfolio" | "behance" | "google-scholar" | "email";
+export type SocialPlatform = "linkedin" | "instagram" | "github" | "portfolio" | "behance" | "google-scholar" | "email" | "whatsapp";
 
 export interface SocialLink {
   platform: SocialPlatform;
@@ -49,6 +49,8 @@ export const TEAM: TeamMember[] = [
     photo: "milena",
     bio: "Designer UX/UI com formação em Engenharia de Software e experiência sólida na criação de produtos digitais centrados no usuário — de sistemas institucionais complexos a design systems do zero. Tenho vivência em todas as etapas do processo de design, desde pesquisa e arquitetura da informação até prototipagem de alta fidelidade e handoff técnico. Atuo também na interface entre design e produto, com experiência em levantamento de requisitos e facilitação de times ágeis, o que me permite comunicar com desenvolvedores e stakeholders com clareza e precisão.",
     socialLinks: [
+      { platform: "whatsapp", url: "wa.me/5586995767975" },
+      { platform: "email", url: "contato.milenarduarte@gmail.com" },
       { platform: "behance",   url: "https://www.behance.net/miluarte" },
       { platform: "linkedin",  url: "https://www.linkedin.com/in/miluarte/" },
       { platform: "portfolio", url: "https://miluarte.figma.site" },

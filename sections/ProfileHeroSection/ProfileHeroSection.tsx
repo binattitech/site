@@ -10,6 +10,7 @@ import {
   BehanceLogo,
   GraduationCap,
   Envelope,
+  WhatsappLogo,
 } from "@phosphor-icons/react";
 import PersonalContribution from "@/components/PersonalContribution";
 import type { ContributionArticle, ContributionVideo } from "@/components/PersonalContribution";
@@ -24,6 +25,7 @@ const SOCIAL_ICONS: Record<string, React.ElementType> = {
   behance: BehanceLogo,
   "google-scholar": GraduationCap,
   email: Envelope,
+  whatsapp: WhatsappLogo,
 };
 
 const SOCIAL_LABELS: Record<string, string> = {
@@ -34,6 +36,7 @@ const SOCIAL_LABELS: Record<string, string> = {
   behance: "Behance",
   "google-scholar": "Google Acadêmico",
   email: "E-mail",
+  whatsapp: "WhatsApp",
 };
 
 interface ProfileHeroSectionProps {
@@ -124,9 +127,9 @@ export default function ProfileHeroSection({
                   return (
                     <a
                       key={platform}
-                      href={url}
+                      href={platform === "email" ? `mailto:${url}` : platform === "whatsapp" ? (url.startsWith("http") ? url : `https://wa.me/${url}`) : url}
                       className={styles.socialLink}
-                      target="_blank"
+                      target={platform === "email" ? undefined : "_blank"}
                       rel="noopener noreferrer"
                     >
                       <Icon size={20} weight="fill" />

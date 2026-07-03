@@ -12,6 +12,7 @@ import {
   BehanceLogo,
   GraduationCap,
   Envelope,
+  WhatsappLogo,
 } from "@phosphor-icons/react";
 import PersonalContribution from "@/components/PersonalContribution";
 import type {
@@ -27,7 +28,8 @@ export type SocialPlatform =
   | "portfolio"
   | "behance"
   | "google-scholar"
-  | "email";
+  | "email"
+  | "whatsapp";
 
 const SOCIAL_ICONS: Record<SocialPlatform, React.ElementType> = {
   linkedin: LinkedinLogo,
@@ -37,6 +39,7 @@ const SOCIAL_ICONS: Record<SocialPlatform, React.ElementType> = {
   behance: BehanceLogo,
   "google-scholar": GraduationCap,
   email: Envelope,
+  whatsapp: WhatsappLogo,
 };
 
 const SOCIAL_LABELS: Record<SocialPlatform, string> = {
@@ -47,6 +50,7 @@ const SOCIAL_LABELS: Record<SocialPlatform, string> = {
   behance: "Behance",
   "google-scholar": "Google Acadêmico",
   email: "E-mail",
+  whatsapp: "WhatsApp",
 };
 
 export interface SocialLink {
@@ -200,9 +204,9 @@ export default function WindowProfile({
                         return (
                           <a
                             key={platform}
-                            href={url}
+                            href={platform === "email" ? `mailto:${url}` : platform === "whatsapp" ? (url.startsWith("http") ? url : `https://wa.me/${url}`) : url}
                             className={styles.socialLink}
-                            target="_blank"
+                            target={platform === "email" ? undefined : "_blank"}
                             rel="noopener noreferrer"
                           >
                             <Icon
