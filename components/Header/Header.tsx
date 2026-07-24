@@ -33,7 +33,7 @@ export default function Header({
   navItems = DEFAULT_NAV,
   logoSrc = "/brand/logo.svg",
   logoAlt = "Binatti",
-  onVolunteer,
+  onVolunteer = () => { window.open("https://forms.gle/hyMJ3TPX7ated8Hx5", "_blank"); },
   onStudy = () => { window.location.href = "/trilhas"; },
   onMenuOpen,
   className,

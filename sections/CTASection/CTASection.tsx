@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/Button";
 import styles from "./CTASection.module.css";
 
@@ -46,7 +48,7 @@ export default function CTASection() {
         </div>
 
         <div className={styles.buttonWrapper}>
-          <Button content="Quero ser Voluntária" showIcon variant="filled" />
+          <Button content="Quero ser Voluntária" showIcon variant="filled" onClick={() => window.open("https://forms.gle/hyMJ3TPX7ated8Hx5", "_blank")} />
         </div>
       </div>
 
