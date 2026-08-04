@@ -66,8 +66,9 @@ export const TEAM: TeamMember[] = [
     username: "alinedmr",
     role: "Desenvolvedora de Automações",
     photo: "aline",
-    bio: "Olá! Me chamo Aline e sou acadêmica de Engenharia de Software, com foco em tecnologia, automação e desenvolvimento de soluções inteligentes. Tenho experiência na criação de automações utilizando a plataforma n8n, integrando APIs, sistemas e serviços para otimizar processos, reduzir tarefas repetitivas e aumentar a eficiência operacional.",
+    bio: "Graduanda em Engenharia de Software, com experiência em automação de processos utilizando plataformas low-code. Atuo no desenvolvimento de fluxos automatizados com ferramentas como n8n e Make, integrando sistemas, APIs e serviços para otimizar operações e aumentar a eficiência. Tenho vivência na criação de soluções automatizadas, desde o mapeamento de processos até a implementação e monitoramento de workflows, contribuindo para a transformação digital e a melhoria contínua dos processos de negócio. Amo desenhar, pintar e tudo que é feito à mão.",
     socialLinks: [
+      { platform: "email", url: "alinedmr2005@gmail.com" },
       { platform: "github", url: "https://github.com/Alinedmr" },
       { platform: "linkedin",  url: "https://www.linkedin.com/in/aline-ramos-0617b5276/" },
     ],
@@ -136,27 +137,7 @@ export const TEAM: TeamMember[] = [
       { platform: "linkedin", url: "https://www.linkedin.com/in/kevilla-aguiar/" },
     ],
   },
-  {
-    name: "Sarah Ocy",
-    username: "sarocy",
-    role: "Desenvolvedora Full Stack",
-    photo: "",
-    bio: "",
-    socialLinks: [
-      { platform: "github", url: "https://github.com/Sarocy" },
-    ],
-  },
-    {
-    name: "Iana Fonteneles",
-    username: "iana",
-    role: "Product Designer",
-    photo: "",
-    bio: "",
-    socialLinks: [
-      { platform: "github", url: "" },
-      { platform: "linkedin", url: "" },
-    ],
-  },
+
   {
     name: "Paloma Reis",
     username: "palomamartinsr",
@@ -166,6 +147,18 @@ export const TEAM: TeamMember[] = [
     socialLinks: [
       { platform: "email", url: "palomamartinsr2@gmail.com" },
       { platform: "linkedin", url: "https://www.linkedin.com/in/palomamartinsr/" },
+    ],
+  },
+  {
+    name: "Maria Clara Oliveira",
+    username: "mclairex",
+    role: "Desenvolvedora Full-Stack, Analista de Dados",
+    photo: "mclairex",
+    bio: "Desenvolvedora FullStack, Analista de Dados, Games.",
+    socialLinks: [
+      { platform: "email", url: "mclarasousadev@gmail.com" },
+      { platform: "linkedin",  url: "https://br.linkedin.com/in/mclaradev" },
+      { platform: "github", url: "https://github.com/mclairex" },
     ],
   },
 

@@ -1,0 +1,271 @@
+/* ═══════════════════════════════════════════════════════════
+   NotFoundSection
+   Fundo com padrão diagonal infinito de "404" (marquee) +
+   painel de conteúdo centralizado em primeiro plano.
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  min-height: calc(100dvh - (var(--space-11) + var(--space-3) * 2));
+  padding: var(--breakpoints-section-padding-2);
+  background: var(--bg-default);
+}
+
+/* ── Camada decorativa — padrão diagonal ──────────────────── */
+
+.marqueeLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.marqueeGrid {
+  --marquee-font-size: clamp(8rem, 22vw, 20rem);
+  --cell-w: 2ch; /* período do padrão agora é "40" (2 caracteres) */
+  --row-h: 0.86em;
+  --marquee-duration: 2.4s;
+  --marquee-steps: 6; /* 2.4s ÷ 6 passos ≈ 0.4s por "tique" — cadência observada na referência (askphill.com/404) */
+
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-weight: var(--font-weight-heading);
+  font-size: var(--marquee-font-size);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-7xl);
+  color: var(--fg-emphasis);
+  opacity: 0.9;
+}
+
+/* Cada linha é uma "janela" que recorta a própria tira de texto —
+   a tira (.track) é que se move, de forma independente por linha. */
+.row {
+  flex: 0 0 var(--row-h);
+  height: var(--row-h);
+  /* Recorta só no eixo X (para a tira deslizar sem revelar bordas);
+     no eixo Y fica visível para os dígitos nunca terem o topo/base
+     cortados pela caixa apertada da linha. */
+  overflow-x: hidden;
+  overflow-y: visible;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Span de medição — fora do fluxo, invisível, mesma tipografia das
+   linhas. Usado em JS para ler a largura real de um grupo "40". */
+.measure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Linhas ímpares → "tique" para a esquerda, uma casa por vez —
+   como o segundeiro de um relógio. O passo em si (steps) virou vários
+   keyframes com animation-timing-function por parada: segura e depois
+   ease-out até a próxima casa — um "smart animate" sutil em vez do
+   corte 100% seco do steps(). */
+.row:nth-child(odd) .track {
+  animation: marqueeLeft var(--marquee-duration) linear infinite;
+}
+
+/* Linhas pares → "tique" para a direita (direção oposta) */
+.row:nth-child(even) .track {
+  animation: marqueeRight var(--marquee-duration) linear infinite;
+}
+
+/* 6 casas (1 por sexto do ciclo). Cada casa: ~60% do tempo parada,
+   ~40% em ease-out deslizando até a próxima — daí o "tique" suavizado. */
+@keyframes marqueeLeft {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  16.667% {
+    transform: translateX(calc(var(--cell-w) * -1 / 6));
+    animation-timing-function: ease-out;
+  }
+  26.667% {
+    transform: translateX(calc(var(--cell-w) * -1 / 6));
+  }
+  33.333% {
+    transform: translateX(calc(var(--cell-w) * -2 / 6));
+    animation-timing-function: ease-out;
+  }
+  43.333% {
+    transform: translateX(calc(var(--cell-w) * -2 / 6));
+  }
+  50% {
+    transform: translateX(calc(var(--cell-w) * -3 / 6));
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translateX(calc(var(--cell-w) * -3 / 6));
+  }
+  66.667% {
+    transform: translateX(calc(var(--cell-w) * -4 / 6));
+    animation-timing-function: ease-out;
+  }
+  76.667% {
+    transform: translateX(calc(var(--cell-w) * -4 / 6));
+  }
+  83.333% {
+    transform: translateX(calc(var(--cell-w) * -5 / 6));
+    animation-timing-function: ease-out;
+  }
+  93.333% {
+    transform: translateX(calc(var(--cell-w) * -5 / 6));
+  }
+  100% {
+    /* Desloca exatamente 1 grupo do padrão — a tira é periódica nesse
+       intervalo, então o loop continua perfeitamente contínuo. */
+    transform: translateX(calc(var(--cell-w) * -1));
+    animation-timing-function: ease-out;
+  }
+}
+
+/* Espelho do marqueeLeft, com o meio-módulo de deslocamento (padrão
+   "tijolo" entre linhas pares/ímpares) embutido nos dois extremos —
+   por isso a linha nunca perde largura nem deixa vão na borda. */
+@keyframes marqueeRight {
+  0%,
+  10% {
+    transform: translateX(calc(var(--cell-w) * -3 / 6));
+  }
+  16.667% {
+    transform: translateX(calc(var(--cell-w) * -2 / 6));
+    animation-timing-function: ease-out;
+  }
+  26.667% {
+    transform: translateX(calc(var(--cell-w) * -2 / 6));
+  }
+  33.333% {
+    transform: translateX(calc(var(--cell-w) * -1 / 6));
+    animation-timing-function: ease-out;
+  }
+  43.333% {
+    transform: translateX(calc(var(--cell-w) * -1 / 6));
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translateX(0);
+  }
+  66.667% {
+    transform: translateX(calc(var(--cell-w) * 1 / 6));
+    animation-timing-function: ease-out;
+  }
+  76.667% {
+    transform: translateX(calc(var(--cell-w) * 1 / 6));
+  }
+  83.333% {
+    transform: translateX(calc(var(--cell-w) * 2 / 6));
+    animation-timing-function: ease-out;
+  }
+  93.333% {
+    transform: translateX(calc(var(--cell-w) * 2 / 6));
+  }
+  100% {
+    transform: translateX(calc(var(--cell-w) * 3 / 6));
+    animation-timing-function: ease-out;
+  }
+}
+
+/* ── Painel de conteúdo ────────────────────────────────────── */
+
+.panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 32rem;
+  width: 100%;
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  background: var(--bg-default);
+  border: 1px solid var(--black-alpha-10);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-variation-settings: var(--font-variation-heading);
+  font-size: var(--text-4xl-size);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--text-grotesque-lh);
+  letter-spacing: var(--text-grotesque-tracking-4xl);
+  color: var(--fg-emphasis);
+}
+
+.description {
+  font-family: var(--font-family);
+  font-size: var(--text-md-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-tracking);
+  color: var(--fg-default);
+  max-width: 26rem;
+}
+
+/* ── Dark theme ────────────────────────────────────────────── */
+
+:global([data-theme="dark"]) .panel {
+  border-color: var(--white-alpha-10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme="light"])) .panel {
+    border-color: var(--white-alpha-10);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+@media (min-width: 48rem) {
+  .title {
+    font-size: var(--text-5xl-size);
+    letter-spacing: var(--text-grotesque-tracking-5xl);
+  }
+}
+
+@media (min-width: 80rem) {
+  .title {
+    font-size: var(--text-6xl-size);
+    letter-spacing: var(--text-grotesque-tracking-6xl);
+  }
+}
+
+/* Usuárias que preferem menos movimento — desacelera bastante
+   em vez de remover, para preservar a composição visual. */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation-duration: 40s;
+  }
+}

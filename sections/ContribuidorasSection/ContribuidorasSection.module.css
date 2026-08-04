@@ -35,9 +35,8 @@
 .grid {
   --grid-gap: var(--breakpoints-section-content-gap);
 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--grid-gap);
+  columns: 2;
+  column-gap: var(--grid-gap);
   width: 100%;
 }
 
@@ -45,11 +44,13 @@
   display: block;
   text-decoration: none;
   width: 100%;
+  break-inside: avoid;
+  margin-bottom: var(--grid-gap);
 }
 
 @media (min-width: 48rem) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    columns: 3;
   }
 }
 
@@ -59,6 +60,6 @@
   }
 
   .grid {
-    grid-template-columns: repeat(4, 1fr);
+    columns: 5;
   }
 }
