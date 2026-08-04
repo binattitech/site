@@ -33,7 +33,7 @@
 }
 
 .grid {
-  --grid-gap: var(--space-6);
+  --grid-gap: var(--space-2);
   --grid-cols: 2;
 
   display: grid;
@@ -55,6 +55,7 @@
 
 @media (min-width: 48rem) {
   .grid {
+    --grid-gap: var(--space-4);
     --grid-cols: 3;
   }
 }
@@ -65,6 +66,6 @@
   }
 
   .grid {
-    --grid-cols: 5;
+    --grid-cols: 6;
   }
 }
