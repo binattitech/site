@@ -39,9 +39,12 @@ export interface TeamMember {
   socialLinks?: SocialLink[];
   /** Reels/vídeos do Instagram exibidos na aba Vídeos do perfil */
   videos?: TeamVideo[];
+  /** Se false, o card não é clicável e não abre o perfil. Padrão: true */
+  clickable?: boolean;
 }
 
 export const TEAM: TeamMember[] = [
+  // ── Cofundadoras ──────────────────────────────────────────────────────────
   {
     name: "Milena Duarte",
     username: "miluarte",
@@ -51,8 +54,8 @@ export const TEAM: TeamMember[] = [
     socialLinks: [
       { platform: "whatsapp", url: "5586995767975" },
       { platform: "email", url: "contato.milenarduarte@gmail.com" },
-      { platform: "behance",   url: "https://www.behance.net/miluarte" },
-      { platform: "linkedin",  url: "https://www.linkedin.com/in/miluarte/" },
+      { platform: "behance", url: "https://www.behance.net/miluarte" },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/miluarte/" },
       { platform: "portfolio", url: "https://miluarte.figma.site" },
     ],
     videos: [
@@ -70,7 +73,7 @@ export const TEAM: TeamMember[] = [
     socialLinks: [
       { platform: "email", url: "alinedmr2005@gmail.com" },
       { platform: "github", url: "https://github.com/Alinedmr" },
-      { platform: "linkedin",  url: "https://www.linkedin.com/in/aline-ramos-0617b5276/" },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/aline-ramos-0617b5276/" },
     ],
   },
   {
@@ -84,7 +87,7 @@ export const TEAM: TeamMember[] = [
       { platform: "linkedin", url: "www.linkedin.com/in/kaielly-sousa" },
       { platform: "github", url: "www.linkedin.com/in/kaielly-sousa" },
     ],
-  }, 
+  },
   {
     name: "Beatriz Barreto",
     username: "whosbea3",
@@ -93,8 +96,8 @@ export const TEAM: TeamMember[] = [
     bio: "Estudante de Engenharia de Software, pesquisadora e Analista de Suporte N2/N3. Atua com suporte técnico e tecnologia, com interesse em IA, Cibersegurança, Computação Forense e Arquitetura de Soluções. Nas horas vagas, ama assistir Hora de Aventura, seu animal preferido são pinguins e é fã do grupo TWICE.",
     socialLinks: [
       { platform: "github", url: "https://github.com/whosbea" },
-      { platform: "google-scholar",  url: "https://scholar.google.com/citations?view_op=list_works&hl=pt-BR&hl=pt-BR&user=grYhR5AAAAAJ" },
-      { platform: "linkedin",  url: "https://www.linkedin.com/in/beatriz-barreto-8b0076261/" },
+      { platform: "google-scholar", url: "https://scholar.google.com/citations?view_op=list_works&hl=pt-BR&hl=pt-BR&user=grYhR5AAAAAJ" },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/beatriz-barreto-8b0076261/" },
     ],
   },
   {
@@ -105,11 +108,11 @@ export const TEAM: TeamMember[] = [
     bio: "Eu sou Rafaela Sousa Costa, sou Engenheira de Software e tenho como objetivo encontrar soluções criativas através da tecnologia, além de explorar ainda mais essa área vasta, conhecendo cada dia algo novo para aprender.",
     socialLinks: [
       { platform: "github", url: "https://github.com/ca2sy" },
-      { platform: "linkedin",  url: "https://www.linkedin.com/in/rafaela-sousa-costa-3920572bb/" },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/rafaela-sousa-costa-3920572bb/" },
       { platform: "portfolio", url: "https://rafaela-sousa.vercel.app/" },
     ],
   },
-    {
+  {
     name: "Marina de Lima",
     username: "marinadelima",
     role: "Cofundadora",
@@ -122,6 +125,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Ingrid Ribeiro",
     username: "ingridribeiro",
+    clickable: false,
     role: "Cofundadora",
     photo: "ingrid",
     bio: "",
@@ -132,6 +136,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Kévilla Aguiar",
     username: "kevillaaguiar",
+    clickable: false,
     role: "UX/UI Design | Cofundadora",
     photo: "kevilla",
     bio: "Estudante de Engenharia de Software com foco em UI/UX Design.",
@@ -139,7 +144,52 @@ export const TEAM: TeamMember[] = [
       { platform: "linkedin", url: "https://www.linkedin.com/in/kevilla-aguiar/" },
     ],
   },
+  {
+    name: "Laura Madeira",
+    username: "lauramadeira",
+    clickable: false,
+    role: "Cofundadora",
+    photo: "laura",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  },
+  {
+    name: "Laysa Cabedo",
+    username: "laysacabedo",
+    clickable: false,
+    role: "Cofundadora",
+    photo: "laysa",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  },
+  {
+    name: "Brunna Rocha",
+    username: "brunnarocha",
+    clickable: false,
+    role: "Cofundadora",
+    photo: "brunna",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  },
+  {
+    name: "Ana Vitória Mendes",
+    username: "vitoriamendes",
+    clickable: false,
+    role: "Cofundadora",
+    photo: "ana",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  },
 
+  // ── Demais membras ────────────────────────────────────────────────────────
   {
     name: "Paloma Reis",
     username: "palomamartinsr",
@@ -159,49 +209,30 @@ export const TEAM: TeamMember[] = [
     bio: "Desenvolvedora FullStack, Analista de Dados, Games.",
     socialLinks: [
       { platform: "email", url: "mclarasousadev@gmail.com" },
-      { platform: "linkedin",  url: "https://br.linkedin.com/in/mclaradev" },
+      { platform: "linkedin", url: "https://br.linkedin.com/in/mclaradev" },
       { platform: "github", url: "https://github.com/mclairex" },
     ],
   },
-    {
-    name: "Laura Madeira",
-    username: "lauramadeira",
-    role: "Cofundadora",
-    photo: "laura",
-    bio: "",
-    socialLinks: [
-      { platform: "github", url: "" },
-    ],
-  }, 
   {
-    name: "Laysa Cabedo",
-    username: "laysacabedo",
-    role: "Cofundadora",
-    photo: "laysa",
+    name: "Luna Mendes",
+    username: "lunamendes",
+    role: "Contribuidora",
+    photo: "",
     bio: "",
-    socialLinks: [
-      { platform: "github", url: "" },
-    ],
-  }, 
-    {
-    name: "Brunna Rocha",
-    username: "brunnarocha",
-    role: "Cofundadora",
-    photo: "brunna",
-    bio: "",
-    socialLinks: [
-      { platform: "github", url: "" },
-    ],
-  }, 
-    {
-    name: "Ana Vitória Mendes",
-    username: "vitoriamendes",
-    role: "Cofundadora",
-    photo: "ana",
-    bio: "",
+    clickable: false,
     socialLinks: [
       { platform: "github", url: "" },
     ],
   },
-
+  {
+    name: "Sarah Ocy",
+    username: "sarahocy",
+    role: "Cofundadora",
+    photo: "sarahocy",
+    bio: "",
+    clickable: false,
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  },
 ];
