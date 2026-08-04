@@ -45,7 +45,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Milena Duarte",
     username: "miluarte",
-    role: "UX UI Designer",
+    role: "UX UI Designer | Cofundadora",
     photo: "milena",
     bio: "Designer UX/UI com formação em Engenharia de Software e experiência sólida na criação de produtos digitais centrados no usuário — de sistemas institucionais complexos a design systems do zero. Tenho vivência em todas as etapas do processo de design, desde pesquisa e arquitetura da informação até prototipagem de alta fidelidade e handoff técnico. Atuo também na interface entre design e produto, com experiência em levantamento de requisitos e facilitação de times ágeis, o que me permite comunicar com desenvolvedores e stakeholders com clareza e precisão.",
     socialLinks: [
@@ -64,7 +64,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Aline Ramos",
     username: "alinedmr",
-    role: "Desenvolvedora de Automações",
+    role: "Desenvolvedora de Automações | Cofundadora",
     photo: "aline",
     bio: "Graduanda em Engenharia de Software, com experiência em automação de processos utilizando plataformas low-code. Atuo no desenvolvimento de fluxos automatizados com ferramentas como n8n e Make, integrando sistemas, APIs e serviços para otimizar operações e aumentar a eficiência. Tenho vivência na criação de soluções automatizadas, desde o mapeamento de processos até a implementação e monitoramento de workflows, contribuindo para a transformação digital e a melhoria contínua dos processos de negócio. Amo desenhar, pintar e tudo que é feito à mão.",
     socialLinks: [
@@ -73,20 +73,22 @@ export const TEAM: TeamMember[] = [
       { platform: "linkedin",  url: "https://www.linkedin.com/in/aline-ramos-0617b5276/" },
     ],
   },
-    {
+  {
     name: "Kaielly Sousa",
-    username: "kaielly",
-    role: "Contribuidora",
+    username: "kaiellysousa",
+    role: "Analista de IA | Cofundadora",
     photo: "kaielly",
-    bio: "",
+    bio: "Ovolactovegetariana, estudante do 6º período de Engenharia de Software com atuação focada no desenvolvimento de Inteligência Artificial e forte interesse em Análise de Dados. Possuo experiência profissional prática como estagiária em desenvolvimento de software, complementada por uma vivência expressiva como monitora técnica em hackathons.",
     socialLinks: [
-      { platform: "github", url: "" },
+      { platform: "email", url: "kaiellysousa8530@gmail.com" },
+      { platform: "linkedin", url: "www.linkedin.com/in/kaielly-sousa" },
+      { platform: "github", url: "www.linkedin.com/in/kaielly-sousa" },
     ],
   }, 
   {
     name: "Beatriz Barreto",
     username: "whosbea3",
-    role: "Analista de Suporte N2/N3",
+    role: "Analista de Suporte N2/N3 | Cofundadora",
     photo: "bea",
     bio: "Estudante de Engenharia de Software, pesquisadora e Analista de Suporte N2/N3. Atua com suporte técnico e tecnologia, com interesse em IA, Cibersegurança, Computação Forense e Arquitetura de Soluções. Nas horas vagas, ama assistir Hora de Aventura, seu animal preferido são pinguins e é fã do grupo TWICE.",
     socialLinks: [
@@ -98,7 +100,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Rafaela Costa (Cassy)",
     username: "ca2sy",
-    role: "Desenvolvedora Full Stack",
+    role: "Desenvolvedora Full Stack | Cofundadora",
     photo: "cassy",
     bio: "Eu sou Rafaela Sousa Costa, sou Engenheira de Software e tenho como objetivo encontrar soluções criativas através da tecnologia, além de explorar ainda mais essa área vasta, conhecendo cada dia algo novo para aprender.",
     socialLinks: [
@@ -110,7 +112,7 @@ export const TEAM: TeamMember[] = [
     {
     name: "Marina de Lima",
     username: "marinadelima",
-    role: "Contribuidora",
+    role: "Cofundadora",
     photo: "marina",
     bio: "Me chamo Marina, uma paraibana meio perdida pelo Piauí. Em transição da arquitetura para a engenharia de software, divido meu tempo entre inteligência cibernética, arte e gastronomia. Levo a vida de forma espontânea, sempre guiada pela escolha que promete a melhor história pra contar.",
     socialLinks: [
@@ -120,7 +122,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Ingrid Ribeiro",
     username: "ingridribeiro",
-    role: "Contribuidora",
+    role: "Cofundadora",
     photo: "ingrid",
     bio: "",
     socialLinks: [
@@ -130,7 +132,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Kévilla Aguiar",
     username: "kevillaaguiar",
-    role: "UX/UI Design",
+    role: "UX/UI Design | Cofundadora",
     photo: "kevilla",
     bio: "Estudante de Engenharia de Software com foco em UI/UX Design.",
     socialLinks: [
@@ -159,6 +161,46 @@ export const TEAM: TeamMember[] = [
       { platform: "email", url: "mclarasousadev@gmail.com" },
       { platform: "linkedin",  url: "https://br.linkedin.com/in/mclaradev" },
       { platform: "github", url: "https://github.com/mclairex" },
+    ],
+  },
+    {
+    name: "Laura Madeira",
+    username: "lauramadeira",
+    role: "Cofundadora",
+    photo: "laura",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  }, 
+  {
+    name: "Laysa Cabedo",
+    username: "laysacabedo",
+    role: "Cofundadora",
+    photo: "laysa",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  }, 
+    {
+    name: "Brunna Rocha",
+    username: "brunnarocha",
+    role: "Cofundadora",
+    photo: "brunna",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
+    ],
+  }, 
+    {
+    name: "Ana Vitória Mendes",
+    username: "vitoriamendes",
+    role: "Cofundadora",
+    photo: "ana",
+    bio: "",
+    socialLinks: [
+      { platform: "github", url: "" },
     ],
   },
 
