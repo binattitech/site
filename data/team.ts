@@ -115,7 +115,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Marina de Lima",
     username: "marinadelima",
-    role: "Cofundadora",
+    role: "Analista de Dados | Cofundadora",
     photo: "marina",
     bio: "Me chamo Marina, uma paraibana meio perdida pelo Piauí. Em transição da arquitetura para a engenharia de software, divido meu tempo entre inteligência cibernética, arte e gastronomia. Levo a vida de forma espontânea, sempre guiada pela escolha que promete a melhor história pra contar.",
     socialLinks: [
@@ -217,7 +217,7 @@ export const TEAM: TeamMember[] = [
     name: "Luna Mendes",
     username: "lunamendes",
     role: "Contribuidora",
-    photo: "",
+    photo: "lunamendes",
     bio: "",
     clickable: false,
     socialLinks: [
